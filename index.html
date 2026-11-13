@@ -28,7 +28,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* nav */
 header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);background:color-mix(in srgb,var(--paper) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid #0000000d}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:500}
-.brand img{width:34px;height:34px;object-fit:contain}
+.brand img{width:52px;height:52px;object-fit:contain;will-change:transform}
+@media(max-width:600px){.ticker{font-size:9.5px;padding:3px 0;letter-spacing:.02em}.brand img{width:46px;height:46px}header{padding-top:8px;padding-bottom:8px}}
 nav{display:flex;gap:6px}
 nav a{text-decoration:none;color:var(--ink);padding:6px 12px;border-radius:99px;transition:background .2s}
 nav a:hover{background:var(--ink-soft)}
@@ -352,6 +353,10 @@ WB.forEach(b=>b.onclick=()=>world(b.dataset.w));
 document.querySelectorAll('nav a[href="#ux"],nav a[href="#work"]').forEach(a=>a.onclick=e=>{e.preventDefault();world(a.getAttribute('href')==='#ux'?'ux':'social',true)});
 document.getElementById('nSoc').textContent=WORK.length;
 if(location.hash==='#ux'){world('ux');setTimeout(()=>document.getElementById('worlds').scrollIntoView(),50)}
+
+// rotate logo on scroll
+(()=>{const lg=document.querySelector('.brand img');if(!lg||matchMedia('(prefers-reduced-motion: reduce)').matches)return;let t=false;
+addEventListener('scroll',()=>{if(t)return;t=true;requestAnimationFrame(()=>{lg.style.transform=`rotate(${scrollY*0.35}deg)`;t=false})},{passive:true})})();
 </script>
 </body>
 </html>
