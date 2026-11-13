@@ -36,7 +36,7 @@ nav a.cta{background:var(--ink);color:#fff}
 nav a.cta:hover{background:#1622d6}
 
 /* hero */
-.hero{padding:clamp(48px,9vw,120px) var(--pad) clamp(36px,6vw,72px);display:grid;gap:28px;max-width:1400px;margin:0 auto}
+.hero{padding:clamp(24px,5vw,72px) var(--pad) clamp(28px,4vw,48px);display:grid;gap:18px;max-width:1400px;margin:0 auto}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,8vw,112px);line-height:.95;letter-spacing:-.02em;color:var(--text)}
 .hero h1 em{color:var(--ink)}
 .hero-row{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between}
@@ -80,6 +80,8 @@ nav a.cta:hover{background:#1622d6}
 .wsw button[aria-selected=true]{background:var(--ink);color:#fff}
 .wsw button:not([aria-selected=true]):hover{background:var(--ink-soft);color:var(--ink)}
 .world[hidden]{display:none}
+.wsw button{white-space:nowrap}@media(max-width:600px){.wsw button small{display:none}.wsw button{font-size:13px;padding:11px 6px}}
+#work .section-head h2,#ux .section-head h2{display:none}#work .section-head,#ux .section-head{border-top:0;padding-top:0}
 /* ux case studies */
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
 @media(max-width:760px){.cases{grid-template-columns:1fr}}
@@ -176,10 +178,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
 <main id="top">
   <section class="hero">
     <h1>Creative content<br>&amp; <em>digital products</em><br>people feel.</h1>
-    <div class="hero-row">
-      <p>I'm Stav, a designer working in two worlds: social media &amp; creative content for brands, and UX/UI design for web and mobile products.</p>
-      <div class="chips-inline"><span>Social &amp; content</span><span>Motion &amp; branding</span><span>UX/UI design</span><span>Photography</span></div>
-    </div>
+    <p>Social media, creative content &amp; UX/UI design.</p>
   </section>
 
   <div class="worlds" id="worlds">
