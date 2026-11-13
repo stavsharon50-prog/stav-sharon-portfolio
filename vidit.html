@@ -26,7 +26,7 @@ header.nav a{text-decoration:none;color:var(--pink)}
 .hero h1{font-weight:800;font-size:clamp(44px,5.8vw,84px);line-height:.98;letter-spacing:-.045em;margin:12px 0 18px}
 .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{font-size:clamp(16px,1.6vw,19px);color:#4a4653;max-width:44ch}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-top:30px;border-top:1px solid #1d1b2622;padding-top:20px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-top:34px}
 .facts span{display:block;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .facts div{font-size:14.5px}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2vw,24px);align-items:end}
@@ -39,16 +39,19 @@ h2{text-wrap:balance;font-weight:800;font-size:clamp(32px,4.4vw,54px);line-heigh
 h2 em{font-style:normal;color:var(--pink)}
 .body p{font-size:17px;margin-bottom:16px;max-width:62ch;color:#3d3946}
 .body p.big{font-size:clamp(21px,2.3vw,27px);line-height:1.35;color:var(--ink);font-weight:600;letter-spacing:-.015em}
-.quote{font-size:clamp(23px,2.6vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.2;border-left:4px solid var(--pink);padding-left:20px;margin-top:6px}
+.quote{font-size:clamp(23px,2.6vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-top:6px}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
 .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
 @media(max-width:900px){.cards3,.cards4{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.cards3{grid-template-columns:1fr}}
-.c{background:var(--card);border-radius:22px;padding:24px;border:1px solid var(--line)}
+.c{background:var(--card);border-radius:22px;padding:24px}
+.plain .c{background:none;border:0;border-radius:0;padding:0}
+.plain .c .k{font-size:13px;font-weight:800;color:var(--pink);letter-spacing:.04em}
+.plain .c h4{font-size:19px;margin-top:8px}
 .c i{font-style:normal;font-size:26px;display:block}
 .c h4{font-size:17px;font-weight:700;margin:10px 0 6px;letter-spacing:-.01em}
 .c p{font-size:14.5px;color:var(--muted)}
-.c.pain{background:var(--blush);border-color:#f7d3c9}
+
 /* flow */
 .flow{display:grid;grid-template-columns:repeat(9,1fr);gap:clamp(8px,1.2vw,16px);margin-top:40px}
 @media(max-width:1000px){.flow{grid-template-columns:repeat(5,1fr)}}
@@ -136,10 +139,10 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">The problem</div>
   <h2>Three things that make dating apps <em>exhausting</em></h2>
-  <div class="cards3">
-   <div class="c pain"><i>💬</i><h4>Endless texting</h4><p>Chats drag on for days, lose energy, and fade out before anyone hears the other person's voice.</p></div>
-   <div class="c pain"><i>🎭</i><h4>Who is this, really?</h4><p>Old, filtered or fake photos make every match feel like a gamble, and some feel unsafe.</p></div>
-   <div class="c pain"><i>👻</i><h4>Ghosting</h4><p>With no clear next step, conversations just stop and nobody knows why.</p></div>
+  <div class="cards3 plain" style="gap:32px">
+   <div class="c"><span class="k">01</span><h4>Endless texting</h4><p>Chats drag on for days, lose energy, and fade out before anyone hears the other person's voice.</p></div>
+   <div class="c"><span class="k">02</span><h4>Who is this, really?</h4><p>Old, filtered or fake photos make every match feel like a gamble, and some feel unsafe.</p></div>
+   <div class="c"><span class="k">03</span><h4>Ghosting</h4><p>With no clear next step, conversations just stop and nobody knows why.</p></div>
   </div>
   <p class="quote" style="margin-top:44px;max-width:30ch">What if every match had to become a real conversation?</p>
  </section>
@@ -147,11 +150,11 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">Design principles</div>
   <h2>The rules behind the product</h2>
-  <div class="cards4">
-   <div class="c"><i>✅</i><h4>Real people only</h4><p>A 3-second video check for everyone, so the verified badge actually means something.</p></div>
-   <div class="c"><i>🔟</i><h4>10 messages, then talk</h4><p>Enough to break the ice and get curious, not enough to get stuck in a pen-pal loop.</p></div>
-   <div class="c"><i>🗓️</i><h4>Respect everyone's time</h4><p>Both sides share when they're free, and the app finds the overlap. No back and forth.</p></div>
-   <div class="c"><i>🛡️</i><h4>Safe by default</h4><p>The number stays private, verification videos are deleted, and block or report is always one tap away.</p></div>
+  <div class="cards4 plain" style="gap:32px">
+   <div class="c"><span class="k">01</span><h4>Real people only</h4><p>A 3-second video check for everyone, so the verified badge actually means something.</p></div>
+   <div class="c"><span class="k">02</span><h4>10 messages, then talk</h4><p>Enough to break the ice and get curious, not enough to get stuck in a pen-pal loop.</p></div>
+   <div class="c"><span class="k">03</span><h4>Respect everyone's time</h4><p>Both sides share when they're free, and the app finds the overlap. No back and forth.</p></div>
+   <div class="c"><span class="k">04</span><h4>Safe by default</h4><p>The number stays private, verification videos are deleted, and block or report is always one tap away.</p></div>
   </div>
  </section>
 
