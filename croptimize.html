@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Croptimize — Case Study · Stav Sharon</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2f7a5c;--paper:#e8eee2;--text:#14142b;--muted:#6b6b80;--g9:#0d3a2d;--g8:#14503e;--lime:#c5e17a;--cream:#f5f2ea;
+ --mono:'IBM Plex Mono',ui-monospace,monospace;--serif:'Instrument Serif',Georgia,serif;--sans:Inter,system-ui,sans-serif;--pad:clamp(18px,4vw,56px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}body{background:var(--paper);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+header.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid #0d3a2d14;font-family:var(--mono);font-size:13px}
+header.nav a{text-decoration:none;color:var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+
+/* hero */
+.hero{background:var(--g9);color:#fff;padding:clamp(56px,9vw,120px) 0 0;overflow:hidden}
+.hero .eyebrow{color:var(--lime)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,9vw,128px);line-height:.92;letter-spacing:-.02em;margin:16px 0 18px}
+.hero p.lead{max-width:56ch;font-size:clamp(16px,1.6vw,19px);color:#cfe0d6}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 0 56px;border-top:1px solid #ffffff26;padding-top:22px}
+.facts div span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#a9c4b6;margin-bottom:4px}
+.facts div{font-size:14.5px}
+@media(max-width:760px){.facts{grid-template-columns:1fr 1fr}}
+
+/* laptop mockup */
+.laptop{position:relative;margin:0 auto;width:100%;max-width:1060px}
+.laptop .lid{background:#1c1f1e;border-radius:18px 18px 4px 4px;padding:2.2% 2.2% 2.6%;box-shadow:0 40px 80px #0006,inset 0 0 0 1px #ffffff14}
+.laptop .lid::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#333;margin:-1.4% auto 1%}
+.laptop .lid img{border-radius:4px;width:100%}
+.laptop .base{height:clamp(10px,1.6vw,20px);background:linear-gradient(#d9dbd8,#a9aca8);border-radius:0 0 14px 14px;margin:0 -6%;position:relative}
+.laptop .base::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:16%;height:45%;background:#bfc1be;border-radius:0 0 8px 8px}
+.hero .laptop{margin-bottom:-6%}
+.hero-bottom{background:var(--paper);height:clamp(40px,8vw,110px)}
+
+/* sections */
+section.s{padding:clamp(64px,9vw,120px) 0}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(24px,6vw,96px)}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.01em;margin-top:10px}
+h2 em{color:var(--ink)}
+.body p{font-size:17px;margin-bottom:16px;max-width:62ch}
+.body p.big{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.25;color:var(--text)}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(28px,3.4vw,44px);line-height:1.15;color:var(--g9);border-left:3px solid var(--lime);padding-left:22px;margin:8px 0 0}
+
+.insights{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+@media(max-width:900px){.insights{grid-template-columns:1fr 1fr}}
+.ins{background:#f6f8f2;border-radius:16px;padding:22px;border:1px solid #14142b12}
+.ins b{font-family:var(--mono);color:var(--ink);font-size:13px;font-weight:500}
+.ins h4{font-size:18px;font-weight:600;margin:10px 0 6px;letter-spacing:-.01em}
+.ins p{font-size:14.5px;color:var(--muted)}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+@media(max-width:760px){.ba{grid-template-columns:1fr}}
+.ba figure{}
+.ba img{border-radius:12px;box-shadow:0 18px 44px #0d3a2d26;aspect-ratio:16/11;object-fit:cover;object-position:top}
+.ba figcaption{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding:12px 4px 2px}
+.ba figcaption b{color:var(--text);font-weight:500}
+.fixes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 28px;margin-top:28px}
+@media(max-width:760px){.fixes{grid-template-columns:1fr}}
+.fixes div{font-size:15px;padding:12px 0;border-top:1px solid #14142b1f}
+.fixes div::before{content:"→ ";color:var(--ink)}
+
+/* feature rows */
+.feat{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,5vw,72px);align-items:center;padding:clamp(40px,6vw,80px) 0;border-top:1px solid #14142b14}
+.feat:nth-child(even){grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+.feat:nth-child(even) .txt{order:2}
+@media(max-width:860px){.feat,.feat:nth-child(even){grid-template-columns:1fr}.feat:nth-child(even) .txt{order:0}}
+.feat .n{font-family:var(--mono);font-size:13px;color:var(--ink)}
+.feat h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.02;margin:8px 0 14px}
+.feat p{color:#3b3b52;font-size:16px}
+.feat ul{list-style:none;margin-top:14px}
+.feat li{font-size:14.5px;padding:7px 0;border-top:1px solid #14142b14;color:#3b3b52}
+.tile{background:none;padding:0;overflow:visible}
+.shot{border-radius:12px;box-shadow:0 24px 60px #0d3a2d33,0 0 0 1px #0d3a2d14;width:100%}
+.zoom{border-radius:14px;box-shadow:0 18px 40px #0d3a2d33;overflow:hidden}
+.zoom img{width:100%}
+
+/* design system */
+.ds{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;margin-top:40px}
+@media(max-width:860px){.ds{grid-template-columns:minmax(0,1fr)}}
+.card{background:#f6f8f2;border-radius:18px;padding:24px;border:1px solid #14142b12}
+.card h4{font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;margin-bottom:16px}
+.sw{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}@media(max-width:560px){.sw{grid-template-columns:repeat(3,minmax(0,1fr))}.type .big{font-size:40px}}
+.sw div{border-radius:12px;aspect-ratio:1/1.1;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;font-family:var(--mono);font-size:11px}
+.risk{display:flex;gap:8px;margin-top:18px}
+.risk span{flex:1;padding:10px;border-radius:10px;font-size:12.5px;font-weight:600;text-align:center}
+.type .big{font-family:Inter;font-size:56px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--g9)}
+.type .row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-top:1px solid #14142b14;font-family:Inter}
+.type .row span{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+@media(max-width:760px){.gal{grid-template-columns:1fr}}
+.gal img{border-radius:12px;box-shadow:0 10px 30px #0d3a2d22}
+
+/* cta */
+.cta{background:var(--g9);color:#fff;border-radius:28px;padding:clamp(36px,6vw,80px);display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+@media(max-width:860px){.cta{grid-template-columns:1fr}}
+.cta h2{color:#fff}.cta h2 em{color:var(--lime)}
+.cta p{color:#cfe0d6;margin-top:14px;max-width:46ch}
+.btn{display:inline-flex;gap:8px;align-items:center;background:var(--lime);color:var(--g9);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:999px;font-size:15px;margin-top:22px}
+.learn{margin-top:clamp(64px,8vw,110px)}
+.note{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:28px}
+footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.fade.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header class="nav"><a href="index.html#ux">← Stav Sharon</a><span>UX/UI Case Study · 01</span></header>
+
+<div class="hero" id="top">
+ <div class="wrap">
+  <div class="eyebrow">Climate tech · Web platform · UX/UI</div>
+  <h1>Croptimize</h1>
+  <p class="lead">Designing a climate-smart sourcing platform that helps food manufacturers decide where to source their crops, today and in the decades ahead.</p>
+  <div class="facts">
+   <div><span>Role</span>Product Designer (UX/UI)</div>
+   <div><span>Company</span>Croptimize</div>
+   <div><span>Platform</span>Web app · Desktop</div>
+   <div><span>Scope</span>Research, flows, UI, prototype</div>
+  </div>
+  <div class="laptop"><div class="lid"><img src="media/cs/farm.jpg" alt="Croptimize farm details screen"></div><div class="base"></div></div>
+ </div>
+</div>
+<div class="hero-bottom"></div>
+
+<main class="wrap">
+ <section class="s split fade">
+  <div><div class="eyebrow">Overview</div><h2>Turning climate data into <em>sourcing decisions</em></h2></div>
+  <div class="body">
+   <p class="big">Croptimize is an Israeli climate-tech startup that helps food manufacturers and global brands secure their crop supply as the climate changes.</p>
+   <p>The platform combines crop models developed at the Hebrew University with AI and geospatial data. It shows where a crop will grow best today and in the coming decades, and how risky each source is.</p>
+   <p>I designed the web platform: the experience procurement teams use to find farming regions, evaluate farms and suppliers, and make confident sourcing decisions.</p>
+  </div>
+ </section>
+
+ <section class="s split fade" style="padding-top:0">
+  <div><div class="eyebrow">The challenge</div><h2>Too much data, <em>not enough clarity</em></h2></div>
+  <div class="body">
+   <p>Procurement managers work with maps, climate models, crop-quality metrics and supplier records, usually scattered across spreadsheets, reports and separate tools.</p>
+   <p>They aren't data scientists. They need fast answers, a clear sense of risk, and something they can share with management.</p>
+   <p class="quote">"Where should we source from, and how safe is it?"</p>
+  </div>
+ </section>
+
+ <section class="s fade" style="padding-top:0">
+  <div class="eyebrow">Key insights</div>
+  <h2>What shaped the design</h2>
+  <div class="insights">
+   <div class="ins"><b>01</b><h4>Decisions, not data</h4><p>Users want a clear answer: does this farm meet our needs or not?</p></div>
+   <div class="ins"><b>02</b><h4>Risk needs context</h4><p>A number only means something next to the buyer's spec and over time.</p></div>
+   <div class="ins"><b>03</b><h4>Sourcing is comparative</h4><p>Managers compare several options before they commit.</p></div>
+   <div class="ins"><b>04</b><h4>The future is the product</h4><p>The real edge is showing how suitability shifts as the climate changes.</p></div>
+  </div>
+ </section>
+
+ <section class="s fade" style="padding-top:0">
+  <div class="eyebrow">Iterations</div>
+  <h2>From early concepts <em>to a clear system</em></h2>
+  <div class="ba">
+   <figure><img src="media/cs/v1-results.jpg" alt="Early concept of the results screen"><figcaption><b>Concept 1</b> · Data-first layout, equal-weight cards, satellite imagery</figcaption></figure>
+   <figure><img src="media/cs/v2-results.jpg" alt="Second concept of the results screen"><figcaption><b>Concept 2</b> · Nature-inspired palette, simplified navigation</figcaption></figure>
+  </div>
+  <div class="fixes">
+   <div>One decision score leads every farm</div>
+   <div>Consistent risk color scale everywhere</div>
+   <div>Quality shown against the buyer's range</div>
+   <div>Active filters visible as removable chips</div>
+   <div>Clean vector maps instead of busy imagery</div>
+   <div>Clear, labeled actions and navigation</div>
+  </div>
+ </section>
+
+ <section class="fade">
+  <div class="eyebrow" style="margin-bottom:8px">The solution</div>
+  <h2>A platform built around <em>one question</em></h2>
+
+  <div class="feat">
+   <div class="txt"><span class="n">01 — Home</span><h3>The sourcing picture at a glance</h3><p>Supply secured against the season's target, saved farms ranked by risk, and real-time alerts like heatwaves or rising dehydration.</p>
+    <ul><li>Supply breakdown by region reveals gaps</li><li>12-month risk trend per farm</li></ul></div>
+   <div class="tile"><img class="shot" src="media/cs/home.jpg" alt="Home dashboard"></div>
+  </div>
+
+  <div class="feat">
+   <div class="txt"><span class="n">02 — Explore regions</span><h3>See the future of every region</h3><p>The heart of the product: a suitability map with a climate timeline (Today → 2050) and scenarios, ranking regions by how they gain or lose over time.</p>
+    <ul><li>Optimistic, moderate and severe scenarios</li><li>Ranked regions with change vs. today</li></ul></div>
+   <div class="tile dark"><img class="shot" src="media/cs/regions.jpg" alt="Explore regions with climate scenarios"></div>
+  </div>
+
+  <div class="feat">
+   <div class="txt"><span class="n">03 — Find farms</span><h3>Search that sets expectations</h3><p>A focused panel beside a clustered map. Quick-select controls replace long dropdowns, and the button shows how many results to expect.</p></div>
+   <div class="tile"><img class="shot" src="media/cs/find.jpg" alt="Find farms screen"></div>
+  </div>
+
+  <div class="feat">
+   <div class="txt"><span class="n">04 — Farm details</span><h3>From data to a decision</h3><p>The master–detail layout keeps the list in view. A fit-to-spec score answers the main question first; risk, tonnage and climate outlook support it.</p>
+    <ul><li>Crop quality vs. buyer's required range</li><li>Scouting report with clear statuses</li><li>Export, compare and save in one place</li></ul></div>
+   <div class="tile lime"><img class="shot" src="media/cs/farm.jpg" alt="Farm details screen"></div>
+  </div>
+
+  <div class="feat">
+   <div class="txt"><span class="n">05 — Filters & vendors</span><h3>Filter by the real spec</h3><p>Range sliders let buyers filter by their actual quality specification. The vendor profile sums up reliability in one score with a clear breakdown.</p></div>
+   <div class="tile"><div class="zoom"><img src="media/cs/filters.jpg" alt="Filters drawer"></div><div class="zoom" style="margin-top:16px"><img src="media/cs/vendor.jpg" alt="Vendor profile"></div></div>
+  </div>
+
+  <div class="feat">
+   <div class="txt"><span class="n">06 — Compare</span><h3>Confident, shareable choices</h3><p>Side-by-side comparison with the best value highlighted, a one-line recommendation, and PDF export for management.</p></div>
+   <div class="tile dark"><img class="shot" src="media/cs/compare.jpg" alt="Compare farms screen"></div>
+  </div>
+ </section>
+
+ <section class="s fade">
+  <div class="eyebrow">Design system</div>
+  <h2>Calm, natural, <em>data-friendly</em></h2>
+  <div class="ds">
+   <div class="card"><h4>Color</h4>
+    <div class="sw">
+     <div style="background:#0d3a2d;color:#fff">Forest<br>#0D3A2D</div>
+     <div style="background:#14503e;color:#fff">Pine<br>#14503E</div>
+     <div style="background:#c5e17a;color:#0d3a2d">Lime<br>#C5E17A</div>
+     <div style="background:#d9e8d2;color:#0d3a2d">Sage<br>#D9E8D2</div>
+     <div style="background:#f5f2ea;color:#0d3a2d;box-shadow:inset 0 0 0 1px #0002">Cream<br>#F5F2EA</div>
+    </div>
+    <div class="risk"><span style="background:#dcefe1;color:#23663f">Low risk</span><span style="background:#f8ead0;color:#94631a">Medium</span><span style="background:#f7dccf;color:#9a3a1c">High</span></div>
+   </div>
+   <div class="card type"><h4>Typography · Inter</h4>
+    <div class="big">100,000 t</div>
+    <div class="row" style="margin-top:14px"><b style="font-size:26px">Rancho Los Álamos</b><span>Bold 26</span></div>
+    <div class="row"><span style="font-family:Inter;color:var(--text);font-size:15px;font-weight:600">Scouting report</span><span>Semibold 14</span></div>
+    <div class="row"><span style="font-family:Inter;color:var(--muted);font-size:13px">Soil moisture 18% below avg.</span><span>Regular 12</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="cta fade">
+  <div><div class="eyebrow" style="color:var(--lime)">Interactive prototype</div><h2>Try the <em>full flow</em></h2><p>Seven connected screens, from the home dashboard to exploring climate scenarios and comparing farms.</p>
+   <a class="btn" href="prototype.html">Open prototype ↗</a></div>
+  <div class="laptop" style="max-width:520px"><div class="lid"><img src="media/cs/regions.jpg" alt=""></div><div class="base"></div></div>
+ </section>
+
+ <section class="s split fade learn">
+  <div><div class="eyebrow">What I learned</div><h2>Designing for <em>decisions</em></h2></div>
+  <div class="body">
+   <p class="big">Complex data doesn't need a complex interface. Every screen was shaped around one question the user needs answered, and everything else supports that answer.</p>
+   <p class="note">Data shown in the screens is illustrative.</p>
+  </div>
+ </section>
+</main>
+
+<footer><a href="index.html#ux">← Back to all work</a><span>© 2026 Stav Sharon</span></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
