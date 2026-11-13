@@ -261,9 +261,9 @@ const W=(id)=>({cover:`w${id}.jpg`,preview:`w${id}.mp4`,media:[{t:'v',src:`w${id
 const R=(id)=>({cover:`r${id}.jpg`,preview:`rp${id}.mp4`,media:[{t:'a',src:`r${id}.mp4`,poster:`r${id}.jpg`}]});
 const I=(...s)=>({cover:s[0],cycle:s.length>1?s:null,media:s.map(x=>({t:'i',src:x}))});
 const WORK=[
- {title:'This Moment…',client:'AIG',cats:['social'],tags:['Ad campaign','Social'],...W('06')},
  {title:'Sultana',client:'Sultana Jewelry',cats:['reels'],tags:['Reel','Content creation'],...R('01')},
  {title:'Tiramisu for ₪1',client:'Restaurant promo',cats:['social','motion'],tags:['Social post','Motion'],...W('01')},
+ {title:'This Moment…',client:'AIG',cats:['social'],tags:['Ad campaign','Social'],...W('06')},
  {title:'Weekly Lineup',client:'OBI sound & kitchen',cats:['social','motion'],tags:['Weekly series','Motion'],cover:'obi-lineup-nov.jpg',cycle:['obi-lineup-nov.jpg','obi-lineup-feb.jpg','obi-lineup-dec.jpg'],
    media:[{t:'v',src:'r04.mp4',poster:'r04.jpg'},{t:'i',src:'obi-lineup-nov.jpg'},{t:'i',src:'obi-lineup-feb.jpg'},{t:'i',src:'obi-lineup-dec.jpg'}]},
  {title:'Holiday Desserts',client:'We Love You',cats:['social'],tags:['Social series','Art direction'],...I('wly-date.jpg','wly-apple.jpg','wly-flan.jpg','wly-basque.jpg','wly-cookies.jpg')},
