@@ -172,6 +172,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
 #toTop:hover{background:#1622d6}
 #worlds,#about,#contact{scroll-margin-top:90px}
 @media(min-width:601px){.wsw{max-width:none}.wsw button{font-size:15px;padding:14px 10px}.clients .section-head{margin-bottom:6px}.logos{padding:14px 0}.logos img{height:34px}.logos-track img{margin-right:68px}.about{margin-top:clamp(40px,4vw,56px)}}
+#copy.done{background:#fff;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -372,7 +373,10 @@ document.getElementById('lbClose').onclick=close;document.getElementById('lbPrev
 lb.onclick=e=>{if(e.target===lb)close()};
 addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
 
-document.getElementById('copy').onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText('stavsharon50@gmail.com');b.textContent='Copied ✓'}catch{b.textContent='stavsharon50@gmail.com'}setTimeout(()=>b.textContent='Copy email',2000)};
+(()=>{const b=document.getElementById('copy'),M='stavsharon50@gmail.com';
+const legacy=()=>{const t=document.createElement('textarea');t.value=M;t.setAttribute('readonly','');t.style.cssText='position:fixed;top:0;left:0;opacity:0;font-size:16px';document.body.appendChild(t);t.focus();t.select();t.setSelectionRange(0,M.length);let ok=false;try{ok=document.execCommand('copy')}catch(_){}t.remove();return ok};
+b.addEventListener('click',async()=>{let ok=legacy();if(!ok&&navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(M);ok=true}catch(_){}}
+b.textContent=ok?'Copied ✓':M;b.classList.toggle('done',ok);clearTimeout(b._t);b._t=setTimeout(()=>{b.textContent='Copy email';b.classList.remove('done')},2200)})})();
 
 // worlds switch
 const WB=document.querySelectorAll('.wsw button');
