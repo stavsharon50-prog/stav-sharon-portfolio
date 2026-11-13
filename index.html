@@ -97,6 +97,9 @@ nav a.cta:hover{background:#1622d6}
 .case h3{font-weight:500;font-size:15px}
 .case p{color:var(--muted);font-size:12.5px;margin-top:2px;max-width:46ch}
 .case .tag{color:var(--ink);font-size:12px;white-space:nowrap}
+.pmock{flex:1;max-width:30%;background:#141210;border-radius:14%/6.6%;padding:3%;box-shadow:0 14px 30px #1e1b1840;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pmock img{width:100%;border-radius:11%/5.1%;display:block}
+.case:hover .pmock{transform:translateY(-3%)}
 .soon{border:1px dashed #14142b33;border-radius:var(--r);aspect-ratio:16/11;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;padding:20px}
 .soon b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;color:var(--text);margin-bottom:6px}
 
@@ -185,7 +188,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
   <div class="worlds" id="worlds">
     <div class="wsw" role="tablist" aria-label="Choose work type">
       <button role="tab" aria-selected="true" data-w="social" type="button">Social &amp; Creative <small id="nSoc"></small></button>
-      <button role="tab" aria-selected="false" data-w="ux" type="button">UX/UI Design <small>1</small></button>
+      <button role="tab" aria-selected="false" data-w="ux" type="button">UX/UI Design <small>2</small></button>
     </div>
   </div>
 
@@ -196,7 +199,14 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
         <div class="cv"><div class="mock"><div class="lid"><img src="media/cs/farm.jpg" alt="Croptimize farm details screen" loading="lazy"></div><div class="base"></div></div></div>
         <div class="meta2"><div><h3>Croptimize</h3><p>Climate-smart crop sourcing platform for food manufacturers</p></div><span class="tag">Web app · Case study →</span></div>
       </a>
-      <div class="soon"><div><b>More case studies</b>coming soon</div></div>
+      <a class="case" href="getting.html">
+        <div class="cv" style="background:linear-gradient(135deg,#f9c9df,#fbe7a6 55%,#cfeefa);display:flex;gap:4%;justify-content:center;align-items:center;padding:7% 10%">
+          <div class="pmock"><img src="media/getting/02-rsvp.jpg" alt="" loading="lazy"></div>
+          <div class="pmock" style="transform:translateY(-6%)"><img src="media/getting/01-welcome.jpg" alt="getting wedding app welcome screen" loading="lazy"></div>
+          <div class="pmock"><img src="media/getting/09-who.jpg" alt="" loading="lazy"></div>
+        </div>
+        <div class="meta2"><div><h3>getting</h3><p>Wedding app for meeting people, guests &amp; shuttles, blessings and photos</p></div><span class="tag">Mobile app · Case study →</span></div>
+      </a>
     </div>
   </section>
 
