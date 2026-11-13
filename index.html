@@ -116,8 +116,10 @@ nav a{white-space:nowrap}@media(max-width:600px){nav a{padding:6px 10px;font-siz
 .about{margin-top:clamp(64px,8vw,110px)}
 .about-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
 @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
-.about img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%;max-width:300px}
-@media(max-width:820px){.about img{max-width:220px}}
+.about-vid{position:relative;width:100%;max-width:300px;border-radius:var(--r);overflow:hidden;aspect-ratio:9/16;background:#14142b}
+.about-vid video{width:100%;height:100%;object-fit:cover;display:block}
+#aboutSnd{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;border:0;background:#ffffffe6;font-size:16px;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px #0003}
+@media(max-width:820px){.about-vid{max-width:240px}}
 .about h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.5vw,60px);line-height:1;margin-bottom:22px}
 .about h3 em{color:var(--ink)}
 .about p{font-size:15px;max-width:56ch;margin-bottom:14px}
@@ -228,7 +230,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
   <section class="section about" id="about">
     <div class="section-head"><h2>About</h2></div>
     <div class="about-grid">
-      <img src="media/portrait.jpg" alt="Portrait of Stav Sharon seen through two glasses of water" loading="lazy">
+      <div class="about-vid"><video id="aboutVid" src="media/about-me.mp4" poster="media/about-me.jpg" muted loop playsinline preload="metadata" aria-label="60 seconds of me — a short video about Stav"></video><button id="aboutSnd" type="button" aria-label="Turn sound on">🔇</button></div>
       <div>
         <h3>Hey! I'm Stav <em>:)</em></h3>
         <p>I'm a creative who lives at the intersection of design, content, and storytelling. I love turning ideas into visuals that feel both intentional and impactful.</p>
@@ -323,6 +325,7 @@ CATS.forEach(([k,l])=>{
   };filters.appendChild(b);
 });
 
+(()=>{const v=document.getElementById('aboutVid'),b=document.getElementById('aboutSnd');new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?v.play().catch(()=>{}):v.pause()),{threshold:.3}).observe(v);const t=()=>{v.muted=!v.muted;b.textContent=v.muted?'🔇':'🔊';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off');v.play().catch(()=>{})};b.onclick=t;v.onclick=t})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else v.pause()}),{threshold:.25});
 grid.querySelectorAll('video').forEach(v=>io.observe(v));
 // auto-rotating image tiles
