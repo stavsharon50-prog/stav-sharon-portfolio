@@ -281,7 +281,8 @@ const WORK=[
  {title:'Paradisous',client:'Specialty coffee menu',cats:['motion'],tags:['Menu launch','Motion'],...W('09')},
  {title:'OBI\'s Sliders',client:'OBI',cats:['social','motion'],tags:['Menu launch','Social'],...W('10')},
 ];
-const CATS=[['all','All'],['social','Social Media'],['reels','Reels'],['motion','Motion Design'],['branding','Branding'],['print','Print & Menus']];
+WORK.forEach(w=>{w.cats=[...new Set(w.cats.map(c=>c==='motion'||c==='print'?'social':c))]});
+const CATS=[['all','All'],['social','Graphic Design & Social'],['reels','Reels'],['branding','Branding']];
 const grid=document.getElementById('grid'),filters=document.getElementById('filters');
 const M=s=>'media/'+s;
 
