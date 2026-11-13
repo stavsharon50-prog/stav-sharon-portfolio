@@ -32,7 +32,7 @@ header.nav a{text-decoration:none;color:var(--pink)}
 .hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(48px,7.5vw,104px);line-height:.95;letter-spacing:-.01em;margin:14px 0 18px}
 .hero h1 span{color:var(--pink)}
 .hero .lead{font-size:clamp(16px,1.6vw,19px);color:#4b4541;max-width:44ch}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-top:30px;border-top:1px solid #1e1b1822;padding-top:20px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-top:34px}
 .facts span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .facts div{font-size:14.5px}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2vw,24px);align-items:end}
@@ -47,13 +47,14 @@ h2{text-wrap:balance;font-family:var(--disp);font-weight:400;font-size:clamp(34p
 h2 em{font-style:normal;color:var(--pink)}
 .body p{font-size:17px;margin-bottom:16px;max-width:62ch;color:#3b3632}
 .body p.big{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.25;color:var(--ink)}
-.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,40px);line-height:1.15;border-left:3px solid var(--yellow);padding-left:20px;margin-top:6px}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,40px);line-height:1.15;margin-top:6px}
 
-.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:40px}
 @media(max-width:900px){.goals{grid-template-columns:1fr 1fr}}
-.goal{background:var(--card);border-radius:20px;padding:22px;border:1px solid #1e1b1810}
+.goal{padding:0}
+.goal .k{font-family:var(--mono);font-size:13px;color:var(--pink)}
 .goal i{font-style:normal;font-size:26px;display:block}
-.goal h4{font-size:17px;font-weight:700;margin:10px 0 6px}
+.goal h4{font-size:18px;font-weight:700;margin:8px 0 6px}
 .goal p{font-size:14.5px;color:var(--muted)}
 
 /* flow strip */
@@ -80,7 +81,7 @@ h2 em{font-style:normal;color:var(--pink)}
 /* voice */
 .voice{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
 @media(max-width:860px){.voice{grid-template-columns:1fr}}
-.v{background:var(--card);border-radius:20px;padding:22px;border:1px solid #1e1b1810}
+.v{background:var(--card);border-radius:20px;padding:22px}
 .v .he{font-family:var(--disp);font-size:22px;direction:rtl;text-align:right;line-height:1.3}
 .v .en{font-size:14px;color:var(--muted);margin-top:8px}
 .v .why{font-family:var(--mono);font-size:11.5px;color:var(--pink);margin-top:12px;text-transform:uppercase;letter-spacing:.05em}
@@ -88,7 +89,7 @@ h2 em{font-style:normal;color:var(--pink)}
 /* system */
 .ds{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;margin-top:40px}
 @media(max-width:860px){.ds{grid-template-columns:minmax(0,1fr)}}
-.card{background:var(--card);border-radius:20px;padding:24px;border:1px solid #1e1b1810}
+.card{background:var(--card);border-radius:20px;padding:24px}
 .card h4{font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;margin-bottom:16px}
 .sw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .sw div{border-radius:14px;aspect-ratio:1/1.15;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;font-family:var(--mono);font-size:11px}
@@ -151,10 +152,10 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="eyebrow">Design goals</div>
   <h2>What guided the design</h2>
   <div class="goals">
-   <div class="goal"><i>😄</i><h4>Make it fun</h4><p>Humor in every line of copy, so each step feels like a chat with the couple.</p></div>
-   <div class="goal"><i>👆</i><h4>One question per screen</h4><p>Short, focused steps with a progress bar, easy for grandma and for friends.</p></div>
-   <div class="goal"><i>💘</i><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div>
-   <div class="goal"><i>✨</i><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding, from the first screen on.</p></div>
+   <div class="goal"><span class="k">01</span><h4>Make it fun</h4><p>Humor in every line of copy, so each step feels like a chat with the couple.</p></div>
+   <div class="goal"><span class="k">02</span><h4>One question per screen</h4><p>Short, focused steps with a progress bar, easy for grandma and for friends.</p></div>
+   <div class="goal"><span class="k">03</span><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div>
+   <div class="goal"><span class="k">04</span><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding, from the first screen on.</p></div>
   </div>
  </section>
 
@@ -203,7 +204,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="eyebrow">Tone of voice</div>
   <h2>Copy that <em>sounds like us</em></h2>
   <div class="voice">
-   <div class="v"><div class="he">נו, באים או מה? 👀</div><div class="en">"So… are you coming or what?"</div><div class="why">Instead of "RSVP"</div></div>
+   <div class="v"><div class="he">נו, באים או מה?</div><div class="en">"So… are you coming or what?"</div><div class="why">Instead of "RSVP"</div></div>
    <div class="v"><div class="he">לא הכינוי מהצבא, בבקשה</div><div class="en">"Not your army nickname, please"</div><div class="why">Name field hint</div></div>
    <div class="v"><div class="he">תלוי אם יש בר פתוח</div><div class="en">"Depends if there's an open bar"</div><div class="why">The "maybe" option</div></div>
   </div>
