@@ -73,8 +73,9 @@ h2 em{font-style:normal;color:var(--pink)}
 .ins h4{font-size:18px;font-weight:700;margin:8px 0 6px}.ins p{font-size:14.5px;color:var(--muted)}
 .grp{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:44px;padding-bottom:10px;border-bottom:1px solid #1e1b1814}
 .grp+.nums{margin-top:28px}
-.flow.f4{grid-template-columns:repeat(4,1fr);max-width:980px}
+.flow.f4{grid-template-columns:repeat(5,1fr)}
 @media(max-width:900px){.flow.f4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px) and (min-width:521px){.flow.f4{grid-template-columns:repeat(3,1fr)}}
 .src{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:36px;line-height:1.7}
 
 /* flow strip */
@@ -272,14 +273,15 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="eyebrow">The couple's side</div>
   <h2>Everything the couple needs, <em>in one place</em></h2>
   <div class="body" style="margin-top:18px">
-   <p>Every answer a guest gives lands on the couple's side: who's coming, who still hasn't answered, how many seats each shuttle needs, every blessing and photo, and how many matches happened thanks to them. Instead of spreadsheets, calls and WhatsApp threads, the couple sees it all live and sends one reminder in their own tone.</p>
+   <p>Every answer a guest gives lands on the couple's side: who's coming, who still hasn't answered, how many seats each shuttle needs, and every blessing and photo. After the wedding, it shows how many matches happened thanks to them. Instead of spreadsheets, calls and WhatsApp threads, the couple sees it all live and sends one reminder in their own tone.</p>
    <p class="note" style="font-family:var(--mono);font-size:12px;color:var(--muted)">Concept for the next version. The couple's side isn't built in the live app yet.</p>
   </div>
   <div class="flow f4">
-   <figure><div class="phone"><img src="media/getting/c-home.jpg" alt="Couple dashboard"></div><figcaption><b>Home</b>RSVP status and matches made</figcaption></figure>
+   <figure><div class="phone"><img src="media/getting/c-home.jpg" alt="Couple dashboard"></div><figcaption><b>Home</b>RSVP status at a glance</figcaption></figure>
    <figure><div class="phone"><img src="media/getting/c-guests.jpg" alt="Guest list"></div><figcaption><b>Guests</b>Filter and nudge who hasn't answered</figcaption></figure>
    <figure><div class="phone"><img src="media/getting/c-shuttles.jpg" alt="Shuttles"></div><figcaption><b>Shuttles</b>Seats per bus, pickup details</figcaption></figure>
    <figure><div class="phone"><img src="media/getting/c-memories.jpg" alt="Blessings and photos"></div><figcaption><b>Memories</b>Blessings live on screen, all photos</figcaption></figure>
+   <figure><div class="phone"><img src="media/getting/c-after.jpg" alt="After the wedding"></div><figcaption><b>The day after</b>Matches made, photos, a thank-you</figcaption></figure>
   </div>
   <div class="ins">
    <div><span class="k">01</span><h4>One gentle nudge</h4><p>A reminder only goes to people who haven't answered, so the couple never has to chase.</p></div>
