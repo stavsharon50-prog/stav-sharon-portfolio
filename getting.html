@@ -71,6 +71,8 @@ h2 em{font-style:normal;color:var(--pink)}
 @media(max-width:860px){.ins{grid-template-columns:1fr}}
 .ins .k{font-family:var(--mono);font-size:13px;color:var(--pink)}
 .ins h4{font-size:18px;font-weight:700;margin:8px 0 6px}.ins p{font-size:14.5px;color:var(--muted)}
+.grp{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:44px;padding-bottom:10px;border-bottom:1px solid #1e1b1814}
+.grp+.nums{margin-top:28px}
 .src{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:36px;line-height:1.7}
 
 /* flow strip */
@@ -167,6 +169,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="body">
    <p>The RSVP tools I looked at collect a name and a headcount, and that's where they end. The couple still chases guests for answers, rides and photos, and singles often leave without knowing who else was there.</p>
    <p class="quote">What if the RSVP was the start of the party, not a chore?</p>
+   <p style="margin-top:18px">The humor isn't decoration. I made the RSVP fun on purpose, so guests would actually finish it, and answer early, without the couple having to chase them.</p>
   </div>
  </section>
 
@@ -174,14 +177,26 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">Desk research</div>
   <h2>What the numbers <em>say</em></h2>
+  <div class="grp">For guests</div>
   <div class="nums">
    <div><b>250–300</b><p>guests at a typical Israeli wedding, more than double the US average of 117.</p><small>Easy2Give via Mako, 2022 · The Knot</small></div>
    <div><b>25%</b><p>of guests dislike not knowing anyone at a wedding. 19% dislike mingling with strangers.</p><small>WeddingWire, 900+ guests</small></div>
    <div><b>38%</b><p>of guests exchanged numbers with someone they met at a wedding. 10% started a serious relationship from one.</p><small>WeddingWire, 1,000 guests</small></div>
-   <div><b>44%</b><p>think a late RSVP is fine, and more than 1 in 10 didn't show up after saying yes.</p><small>DatingNews survey</small></div>
-   <div><b>46%</b><p>of couples wish they had more candid photos from their day. Over half of guests already shoot on their phones.</p><small>GoodtoKnow UK · WeddingWire</small></div>
   </div>
- </section>
+  <div class="grp">For the couple</div>
+  <div class="nums">
+   <div><b>44%</b><p>of guests think a late RSVP is fine, and more than 1 in 10 didn't show up after saying yes.</p><small>DatingNews survey, 1,000+ Americans</small></div>
+   <div><b>1–2 weeks</b><p>is how long an RSVP round can take in Israel, by text and phone calls. Many couples pay a service for it, or recruit friends to call.</p><small>Kipa · Israel Hayom</small></div>
+   <div><b>₪150–350</b><p>per plate for wedding catering in Israel, so every guest who said yes and didn't come is a paid seat.</p><small>Midrag price guide</small></div>
+   <div><b>~5%</b><p>of couples collected guest photos through a dedicated app. Having to download it was the barrier, especially for older guests.</p><small>EventPics survey 2025, 620 couples &amp; planners (DE/AT)</small></div>
+   <div><b>46%</b><p>of couples wish they had more candid photos from their day, while most guest photos stay on guests' phones.</p><small>GoodtoKnow UK</small></div>
+  </div>
+  <div class="ins">
+   <div><span class="k">→</span><h4>Make the RSVP worth finishing</h4><p>If answering is fun, guests answer early, and the couple chases fewer people.</p></div>
+   <div><span class="k">→</span><h4>Changes are part of the flow</h4><p>Guests can update their RSVP, +1 and shuttle seat anytime, so the list stays true up to the day.</p></div>
+   <div><span class="k">→</span><h4>No app to download</h4><p>Getting runs in the browser from a link, so grandma can post a blessing too.</p></div>
+  </div>
+  </section>
 
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">What couples already do</div>
@@ -197,13 +212,13 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div><span class="k">02</span><h4>Not just yes or no</h4><p>Even the bracelets have a "confused" option. Status needs a middle state, not only single or taken.</p></div>
    <div><span class="k">03</span><h4>Private, not public</h4><p>A bracelet tells everyone, from your aunt to your boss. In Getting, status is opt-in and private by default.</p></div>
   </div>
-  <p class="src">Also checked: Fotify, an app that reveals Instagram handles at weddings after a mutual swipe. It covers meeting only, not RSVP, rides or photos. Names and brands in the screenshots are blurred.</p>
+  <p class="src">Also checked: Fotify, an app that reveals Instagram handles at weddings after a mutual swipe. It covers meeting only, not RSVP, rides or photos. In Israel, mit4mit's WedPlanner offers free digital invites and RSVP, but it's a planning tool for the couple, not an experience for the guests. Names and brands in the screenshots are blurred.</p>
  </section>
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">Design goals</div>
   <h2>What guided the design</h2>
   <div class="goals">
-   <div class="goal"><span class="k">01</span><h4>Make it fun</h4><p>Humor in every line of copy, so each step feels like a chat with the couple.</p></div>
+   <div class="goal"><span class="k">01</span><h4>Make it fun</h4><p>Humor in every line of copy, so each step feels like a chat with the couple, and guests actually finish the RSVP.</p></div>
    <div class="goal"><span class="k">02</span><h4>One question per screen</h4><p>Short, focused steps with a progress bar, easy for grandma and for friends.</p></div>
    <div class="goal"><span class="k">03</span><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div>
    <div class="goal"><span class="k">04</span><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding, from the first screen on.</p></div>
