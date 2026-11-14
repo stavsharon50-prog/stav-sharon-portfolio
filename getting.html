@@ -57,6 +57,22 @@ h2 em{font-style:normal;color:var(--pink)}
 .goal h4{font-size:18px;font-weight:700;margin:8px 0 6px}
 .goal p{font-size:14.5px;color:var(--muted)}
 
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px;margin-top:40px}
+@media(max-width:860px){.nums{grid-template-columns:1fr 1fr}}
+.nums b{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--pink)}
+.nums p{font-size:14.5px;color:#4b4541;margin-top:8px}
+.nums small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.03em}
+.ev{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,24px);margin-top:40px;align-items:start}
+@media(max-width:860px){.ev{grid-template-columns:1fr;max-width:420px}}
+.ev img{border-radius:16px;box-shadow:0 14px 34px #1e1b181f;background:#fff}
+.ev figcaption{font-size:14px;color:#4b4541;margin-top:14px}
+.ev figcaption b{display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--pink);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.ins{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px}
+@media(max-width:860px){.ins{grid-template-columns:1fr}}
+.ins .k{font-family:var(--mono);font-size:13px;color:var(--pink)}
+.ins h4{font-size:18px;font-weight:700;margin:8px 0 6px}.ins p{font-size:14.5px;color:var(--muted)}
+.src{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:36px;line-height:1.7}
+
 /* flow strip */
 .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1.4vw,18px);margin-top:40px}
 @media(max-width:900px){.flow{grid-template-columns:repeat(3,1fr)}}
@@ -120,12 +136,12 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <img class="glogo" src="media/getting/getting-logo.png" alt="Getting logo">
    <div class="eyebrow">Wedding app · Mobile web · UX/UI</div>
    <h1>Getting<span>.</span></h1>
-   <p class="lead">A wedding app for meeting new people, managing guests and shuttles, and collecting blessings and photos, all in one playful place. First launched for Stav &amp; Eden's wedding.</p>
+   <p class="lead">A wedding app for meeting new people, managing guests and shuttles, and collecting blessings and photos, all in one playful place. Designed first for Stav &amp; Eden's wedding, May&nbsp;2027.</p>
    <div class="facts">
     <div><span>Role</span>Product Designer (UX/UI)</div>
     <div><span>Platform</span>Mobile web app · Hebrew (RTL)</div>
     <div><span>Scope</span>Product concept, flows, UI, copy</div>
-    <div><span>First launch</span>Stav &amp; Eden's wedding · 2027</div>
+    <div><span>Status</span>In use for our wedding · May 2027</div>
    </div>
   </div>
   <div class="trio">
@@ -142,18 +158,47 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="body">
    <p class="big">Getting turns a wedding from a one-night event into a social experience: guests meet each other, and the couple manages everything in one place.</p>
    <p>The product combines three things: <b>meeting people at weddings</b>, with guest profiles and an opt-in "open to meeting" status; <b>guest and shuttle management</b>, through a playful RSVP flow; and <b>blessings and photos</b>, on a live wall and a shared album.</p>
-   <p>I designed the product end to end and launched the first version for our own wedding. The guiding brief: funny, aesthetic and dead simple, for guests of every age.</p>
+   <p>I designed the product end to end, starting with our own wedding as the first real use case. The guiding brief: funny, aesthetic and dead simple, for guests of every age.</p>
   </div>
  </section>
 
  <section class="s split fade" style="padding-top:0">
-  <div><div class="eyebrow">The challenge</div><h2>Wedding tools are <em>just forms</em></h2></div>
+  <div><div class="eyebrow">The challenge</div><h2>The RSVP is <em>a chore</em></h2></div>
   <div class="body">
-   <p>Most wedding tools are a static page and a form: name, number of guests, submit. Nobody remembers them, the couple still chases people on WhatsApp for answers, rides and photos, and singles leave without ever knowing who else was there.</p>
+   <p>The RSVP tools I looked at collect a name and a headcount, and that's where they end. The couple still chases guests for answers, rides and photos, and singles often leave without knowing who else was there.</p>
    <p class="quote">What if the RSVP was the start of the party, not a chore?</p>
   </div>
  </section>
 
+
+ <section class="s fade" style="padding-top:0">
+  <div class="eyebrow">Desk research</div>
+  <h2>What the numbers <em>say</em></h2>
+  <div class="nums">
+   <div><b>250–300</b><p>guests at a typical Israeli wedding, more than double the US average of 117.</p><small>Easy2Give via Mako, 2022 · The Knot</small></div>
+   <div><b>25%</b><p>of guests dislike not knowing anyone at a wedding. 19% dislike mingling with strangers.</p><small>WeddingWire, 900+ guests</small></div>
+   <div><b>38%</b><p>of guests exchanged numbers with someone they met at a wedding. 10% started a serious relationship from one.</p><small>WeddingWire, 1,000 guests</small></div>
+   <div><b>44%</b><p>think a late RSVP is fine, and more than 1 in 10 didn't show up after saying yes.</p><small>DatingNews survey</small></div>
+   <div><b>46%</b><p>of couples wish they had more candid photos from their day. Over half of guests already shoot on their phones.</p><small>GoodtoKnow UK · WeddingWire</small></div>
+  </div>
+ </section>
+
+ <section class="s fade" style="padding-top:0">
+  <div class="eyebrow">What couples already do</div>
+  <h2>Guests are already <em>hacking it</em></h2>
+  <div class="body" style="margin-top:18px"><p>Before designing the "Who's here" feature, I looked for what couples do today. The need was already there, solved with paper and silicone.</p></div>
+  <div class="ev">
+   <figure><img src="media/getting/evidence/sign.jpg" alt="A printed matchmaking sign left on wedding tables"><figcaption><b>The table sign</b>A couple left a sign on the tables: saw someone you like? Tell us and we'll connect you. The post got 5.2K reactions and 145 shares.</figcaption></figure>
+   <figure><img src="media/getting/evidence/bracelets-sell.jpg" alt="Packs of green, yellow and red relationship-status bracelets for sale"><figcaption><b>Status bracelets, for sale</b>An importer sells packs of green "single", yellow "confused" and red "taken" bracelets for weddings.</figcaption></figure>
+   <figure><img src="media/getting/evidence/bracelets-ask.jpg" alt="A bride asking where to buy status bracelets"><figcaption><b>At the scale of a guest list</b>A bride asks where to buy 300–400 of them, close to one for every guest.</figcaption></figure>
+  </div>
+  <div class="ins">
+   <div><span class="k">01</span><h4>The need is real</h4><p>Couples print signs and buy bracelets so their guests can meet. Getting gives that a home.</p></div>
+   <div><span class="k">02</span><h4>Not just yes or no</h4><p>Even the bracelets have a "confused" option. Status needs a middle state, not only single or taken.</p></div>
+   <div><span class="k">03</span><h4>Private, not public</h4><p>A bracelet tells everyone, from your aunt to your boss. In Getting, status is opt-in and private by default.</p></div>
+  </div>
+  <p class="src">Also checked: Fotify, an app that reveals Instagram handles at weddings after a mutual swipe. It covers meeting only, not RSVP, rides or photos. Names and brands in the screenshots are blurred.</p>
+ </section>
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">Design goals</div>
   <h2>What guided the design</h2>
@@ -241,6 +286,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div><div class="eyebrow">What I learned</div><h2>Personality is <em>a feature</em></h2></div>
   <div class="body">
    <p class="big">When the content is simple, tone and flow do the heavy lifting. One question per screen and a joke in every line can turn a chore into something guests actually enjoy.</p>
+   <p><b>Limits.</b> The numbers above are desk research from US, UK and Israeli sources, not my own users. The app hasn't been tested at a wedding yet.</p>
+   <p><b>What I'd do next.</b> Send a short survey to our guests before the wedding, add a middle "it's complicated" status, and measure at the event how many people actually use "Who's here".</p>
    <p class="note">Guest names and content shown in the screens are illustrative.</p>
   </div>
  </section>
