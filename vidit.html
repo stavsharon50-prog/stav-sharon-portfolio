@@ -105,6 +105,19 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 .next .nn b{display:inline-block;transition:transform .3s}.next:hover .nn b{transform:translateX(10px)}
 .next .ns{display:block;font-size:15px;opacity:.6;margin-top:6px}
 .next .nl{color:var(--pink);opacity:1;font-weight:700}.next .nn{font-weight:800}
+.lead2{font-size:17px;color:#4a4653;max-width:68ch;margin-top:18px}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 32px;margin-top:40px}
+@media(max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.nums b{display:block;font-size:clamp(40px,5vw,60px);font-weight:800;letter-spacing:-.045em;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nums span{display:block;font-size:14.5px;color:var(--muted);margin-top:10px;max-width:30ch}
+.vs{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+.vrow{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:28px;background:#fff;border-radius:22px;padding:24px 26px}
+@media(max-width:860px){.vrow{grid-template-columns:1fr;gap:12px}}
+.vrow .k{display:block;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:6px}
+.vrow h4{font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.vrow p{font-size:14.5px;color:#4a4653}
+.flow{grid-template-columns:repeat(5,1fr)!important}
+@media(max-width:600px){.flow{grid-template-columns:repeat(3,1fr)!important}}
 </style>
 </head>
 <body>
@@ -120,8 +133,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div class="facts">
     <div><span>Role</span>Product designer, end to end</div>
     <div><span>Platform</span>iOS app</div>
-    <div><span>Scope</span>Research, user interviews, flows, UI</div>
-    <div><span>Status</span>Early-stage startup concept</div>
+    <div><span>Scope</span>User research, product definition, UX/UI</div>
+    <div><span>Status</span>Startup didn't launch · redesigned 2026</div>
    </div>
   </div>
   <div class="trio">
@@ -137,28 +150,43 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div><div class="eyebrow">Overview</div><h2>Matches that <em>never become&nbsp;dates</em></h2></div>
   <div class="body">
    <p class="big">Most dating apps are great at creating matches and bad at turning them into real connections.</p>
-   <p>I joined an early-stage startup as its only designer and built the product from zero: research and user interviews, product definition, user flows, and every screen. The startup didn't go to market in the end, but the concept was fully designed.</p>
-   <p>For this case study I revisited the original screens and pushed them further: a new visual identity, a shorter onboarding, and the screens the core idea was missing.</p>
+   <p>I joined an early-stage startup as its only designer and built the product from zero: user research, product definition, user flows and every screen. The startup didn't go to market in the end.</p>
+   <p>For this case study I went back to my original research and screens and pushed them further: a new visual identity, a shorter onboarding, and the screens the research pointed to but the first version was missing.</p>
   </div>
  </section>
 
  <section class="s fade" style="padding-top:0">
-  <div class="eyebrow">The problem</div>
-  <h2>Three things that make dating apps <em>exhausting</em></h2>
-  <div class="cards3 plain" style="gap:32px">
-   <div class="c"><span class="k">01</span><h4>Endless texting</h4><p>Chats drag on for days, lose energy, and fade out before anyone hears the other person's voice.</p></div>
-   <div class="c"><span class="k">02</span><h4>Who is this, really?</h4><p>Old, filtered or fake photos make every match feel like a gamble, and some feel unsafe.</p></div>
-   <div class="c"><span class="k">03</span><h4>Ghosting</h4><p>With no clear next step, conversations just stop and nobody knows why.</p></div>
+  <div class="eyebrow">Research</div>
+  <h2>What <em>110 people</em> told me</h2>
+  <p class="lead2">Before designing, I ran a survey of 110 people (most aged 22–33, 85% looking for a relationship, 83% women), watched three women sign up to Raya, audited the sign-up flows of Tinder, Bumble, Hinge and Raya, and went through published research, including Pew Research Center's survey of 4,860 US adults.</p>
+  <div class="nums">
+   <div><b>5%</b><span>rated their dating-app experience 4 or 5 out of 5. The average was 2.4.</span></div>
+   <div><b>89%</b><span>want to know what the other person is looking for: serious, casual or not sure.</span></div>
+   <div><b>75%</b><span>want to see at least 3 photos before deciding.</span></div>
+   <div><b>72%</b><span>said mandatory verification would make them feel safer.</span></div>
+   <div><b>63%</b><span>move the chat to WhatsApp or Instagram within a day.</span></div>
+   <div><b>1 of 110</b><span>wanted a phone call right after a match. 70% only after days of texting or a first date.</span></div>
   </div>
-  <p class="quote" style="margin-top:44px;max-width:30ch">What if every match had to become a real conversation?</p>
+  <p class="lead2" style="margin-top:34px">In the Raya observation, the photo step was where all three participants got stuck. Two left the app to ask friends and edit their photos before coming back.</p>
+ </section>
+
+ <section class="s fade" style="padding-top:0">
+  <div class="eyebrow">Brief vs. research</div>
+  <h2>What the brief asked, and <em>what I recommended</em></h2>
+  <div class="vs">
+   <div class="vrow"><div><span class="k">Asked</span><h4>Book a call right after every match</h4></div><div><span class="k">Found</span><p>Only 1 of 110 wanted that. At the same time, voice conversations convey emotion more accurately than text (Kraus, <i>American Psychologist</i>, 2017).</p></div><div><span class="k">Outcome</span><p>A compromise: 10 messages first, then a next step. In this redesign I added a choice: talk, meet, or <b>not yet</b>.</p></div></div>
+   <div class="vrow"><div><span class="k">Asked</span><h4>Face recognition plus an ID scan</h4></div><div><span class="k">Found</span><p>72% want mandatory verification, but storing face and ID data is heavily restricted in parts of Europe, and the app was meant to go international.</p></div><div><span class="k">Outcome</span><p>A mandatory selfie-video check matched to profile photos, with consent. The video is deleted after the check.</p></div></div>
+   <div class="vrow"><div><span class="k">Asked</span><h4>A password at sign-up</h4></div><div><span class="k">Found</span><p>The apps I audited use a phone number and SMS code only. A password adds friction without adding trust.</p></div><div><span class="k">Outcome</span><p>Phone number and code. No password.</p></div></div>
+  </div>
+  <p class="quote" style="margin-top:44px;max-width:32ch">"I don't talk on the phone before we meet."</p><p style="margin-top:8px;font-size:13px;color:var(--muted)">Survey respondent</p>
  </section>
 
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">Design principles</div>
   <h2>The rules behind the product</h2>
   <div class="cards4 plain" style="gap:32px">
-   <div class="c"><span class="k">01</span><h4>Real people only</h4><p>A 3-second video check for everyone, so the verified badge actually means something.</p></div>
-   <div class="c"><span class="k">02</span><h4>10 messages, then talk</h4><p>Enough to break the ice and get curious, not enough to get stuck in a pen-pal loop.</p></div>
+   <div class="c"><span class="k">01</span><h4>Real people only</h4><p>A short video check for everyone, matched to their photos, so the badge means something.</p></div>
+   <div class="c"><span class="k">02</span><h4>10 messages, then a next step</h4><p>Enough to break the ice. Then both choose what feels right, instead of texting forever.</p></div>
    <div class="c"><span class="k">03</span><h4>Respect everyone's time</h4><p>Both sides share when they're free, and the app finds the overlap. No back and forth.</p></div>
    <div class="c"><span class="k">04</span><h4>Safe by default</h4><p>The number stays private, verification videos are deleted, and block or report is always one tap away.</p></div>
   </div>
@@ -166,16 +194,17 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 
  <section class="s fade" style="padding-top:0">
   <div class="eyebrow">Onboarding &amp; verification</div>
-  <h2>From download to <em>verified</em> in 7 steps</h2>
+  <h2>From download to <em>verified</em> in 7 steps</h2><p class="lead2">Welcome and confirmation screens aren't counted as steps.</p>
   <div class="flow">
    <figure><div class="scr"><img src="media/vidit/01-welcome.jpg" alt=""></div><figcaption><b>Welcome</b>The promise, up front</figcaption></figure>
    <figure><div class="scr"><img src="media/vidit/02-phone.jpg" alt=""></div><figcaption><b>Phone</b>Never shown</figcaption></figure>
    <figure><div class="scr"><img src="media/vidit/03-code.jpg" alt=""></div><figcaption><b>Code</b>SMS check</figcaption></figure>
-   <figure><div class="scr"><img src="media/vidit/04-basics.jpg" alt=""></div><figcaption><b>Basics</b>4 screens → 1</figcaption></figure>
+   <figure><div class="scr"><img src="media/vidit/04-basics.jpg" alt=""></div><figcaption><b>Basics</b>Incl. "looking for"</figcaption></figure>
    <figure><div class="scr"><img src="media/vidit/05-lifestyle.jpg" alt=""></div><figcaption><b>Quick ones</b>8 screens → 1</figcaption></figure>
-   <figure><div class="scr"><img src="media/vidit/06-photos.jpg" alt=""></div><figcaption><b>Photos</b>Matched to video</figcaption></figure>
+   <figure><div class="scr"><img src="media/vidit/06-photos.jpg" alt=""></div><figcaption><b>Photos</b>3 minimum</figcaption></figure>
    <figure><div class="scr"><img src="media/vidit/07-verify.jpg" alt=""></div><figcaption><b>Why verify</b>Trust first</figcaption></figure>
    <figure><div class="scr"><img src="media/vidit/08-scan.jpg" alt=""></div><figcaption><b>Face scan</b>3 seconds</figcaption></figure>
+   <figure><div class="scr"><img src="media/vidit/08b-verifying.jpg" alt=""></div><figcaption><b>Checking</b>Visible progress</figcaption></figure>
    <figure><div class="scr"><img src="media/vidit/09-verified.jpg" alt=""></div><figcaption><b>Verified</b>Badge earned</figcaption></figure>
   </div>
  </section>
@@ -191,7 +220,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="stat">
    <div><b>20+ → 7</b><span>onboarding steps</span></div>
    <div><b>8 → 1</b><span>lifestyle question screens</span></div>
-   <div><b>1</b><span>font, one coral accent</span></div>
+   <div><b>13–15</b><span>steps in Tinder and Bumble (my flow audit)</span></div>
   </div>
  </section>
 
@@ -200,25 +229,25 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <h2>From match to <em>a real conversation</em></h2>
 
   <div class="feat">
-   <div class="txt"><span class="n">01 · Trust</span><h3>A face scan that takes 3 seconds</h3><p>Before anyone can match, they record a short selfie video. It's compared with their photos and then deleted. The verified badge shows on every profile, card and chat.</p>
-    <ul><li><b>Live guidance:</b> face found, good light, turn your head</li><li><b>Private:</b> the video never appears on the profile</li><li>Explained in plain words <b>before</b> the camera opens</li></ul></div>
-   <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/07-verify.jpg" alt="Verification intro"></div><div class="scr"><img src="media/vidit/08-scan.jpg" alt="Face scan"></div></div></div>
+   <div class="txt"><span class="n">01 · Trust</span><h3>A short video check, matched to your photos</h3><p>Before anyone can match, they record a short selfie video. It's compared with their profile photos to confirm they're the person in the pictures, then deleted. It isn't a full ID check, but it makes fake profiles much harder.</p>
+    <ul><li><b>Live guidance:</b> face found, good light, turn your head</li><li><b>Private:</b> the video never appears on the profile</li><li>A "checking" screen shows the work being done. People trust a result more when they see the effort behind it</li></ul></div>
+   <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/08-scan.jpg" alt="Face scan"></div><div class="scr"><img src="media/vidit/08b-verifying.jpg" alt="Checking your video"></div></div></div>
   </div>
 
   <div class="feat">
    <div class="txt"><span class="n">02 · Discover</span><h3>Profiles that say more than a photo</h3><p>Big photos, a verified badge, and the basics as quick chips. The profile highlights what you have in common and shows whether the person is open to a call this week.</p>
-    <ul><li>"You have 4 things in common" to start the conversation</li><li>Lifestyle answers shown as chips, not paragraphs</li><li>Block and report always visible</li></ul></div>
+    <ul><li><b>"Looking for" comes first</b>, the top thing respondents wanted to see (89%)</li><li>"You have 4 things in common" to start the conversation</li><li>Lifestyle answers shown as chips, not paragraphs</li></ul></div>
    <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/10-discover.jpg" alt="Discover"></div><div class="scr"><img src="media/vidit/11-profile.jpg" alt="Profile details"></div></div></div>
   </div>
 
   <div class="feat">
-   <div class="txt"><span class="n">03 · The 10-message rule</span><h3>Every message counts</h3><p>The match screen explains the rule right away. In the chat, a counter shows how many messages are left, so both people know where the conversation is going.</p>
-    <ul><li>Two half-hearts come together on match, the same idea as the logo</li><li>Visual counter: <b>3 of 10 left</b></li><li>The chat list shows each conversation's status: messages left, waiting for a time, or call booked</li></ul></div>
-   <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/12-match.jpg" alt="It's a match"></div><div class="scr"><img src="media/vidit/14-chat.jpg" alt="Chat with counter"></div></div></div>
+   <div class="txt"><span class="n">03 · The 10-message rule</span><h3>Every message counts, then you both choose</h3><p>The match screen explains the rule right away, and a counter shows how many messages are left. When they run out, both people choose what feels right: talk first, meet, or not yet. Nobody is pushed into a call, and you only see what you both picked.</p>
+    <ul><li>Two half-hearts come together on match, the same idea as the logo</li><li><b>"Not yet"</b> adds 5 more messages and asks again later. It came straight from the survey</li><li>The chat list shows each conversation's status: messages left, waiting for a time, or call booked</li></ul></div>
+   <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/14-chat.jpg" alt="Chat with counter"></div><div class="scr"><img src="media/vidit/14b-next.jpg" alt="What feels right next"></div></div></div>
   </div>
 
   <div class="feat">
-   <div class="txt"><span class="n">04 · Picking a time</span><h3>No more "so when are you free?"</h3><p>When the messages run out, each person picks a few free slots and chooses voice or video. Vidit shows the times that work for both, and the call is booked.</p>
+   <div class="txt"><span class="n">04 · Picking a time</span><h3>No more "so when are you free?"</h3><p>If both choose to talk, each person picks a few free slots and chooses voice or video. Vidit shows the times that work for both, and the call is booked.</p>
     <ul><li>Shared slots are highlighted: <b>"Dana too"</b></li><li>Add to calendar, or reschedule</li><li>The chat stays locked until after the call, which keeps the focus on talking</li></ul></div>
    <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/15-availability.jpg" alt="Availability picker"></div><div class="scr"><img src="media/vidit/16-booked.jpg" alt="Call booked"></div></div></div>
   </div>
@@ -231,7 +260,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 
   <div class="feat">
    <div class="txt"><span class="n">06 · After the call</span><h3>A clear next step, and a kind ending</h3><p>After the call, each person answers privately: keep talking, meet in person, or not a match. If both say yes, the chat opens with no limits. If not, it closes kindly, so nobody gets ghosted.</p>
-    <ul><li>Answers are private until both respond</li><li>"Let's meet" suggests a spot nearby</li><li>Ends the ghosting problem by design</li></ul></div>
+    <ul><li>Answers are private until both respond</li><li>"Let's meet" suggests a spot nearby</li><li>Designed to reduce ghosting with a clear, kind ending</li></ul></div>
    <div class="stage"><div class="pair"><div class="scr"><img src="media/vidit/19-after.jpg" alt="After the call"></div><div class="scr"><img src="media/vidit/13-chats.jpg" alt="Chats list"></div></div></div>
   </div>
  </section>
@@ -264,9 +293,10 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <section class="s split fade learn">
   <div><div class="eyebrow">What I learned</div><h2>A constraint can be <em>the product</em></h2></div>
   <div class="body">
-   <p class="big">Limiting messages sounds like taking something away. In practice, it gives every conversation a direction and every match a reason to move forward.</p>
-   <p>Designing from zero meant defining the rules before the screens: what verification means, when a chat opens or closes, and how to end things kindly. Once the rules were clear, the interface could stay simple.</p>
-   <p class="note">Concept project for an early-stage startup that didn't launch. Names and photos shown are illustrative.</p>
+   <p class="big">The brief asked for a call after every match. The research said almost nobody wants that. Keeping the goal while giving people a choice is the part of this project I'm proudest of.</p>
+   <p>Designing from zero meant defining the rules before the screens: what verification means, when a chat moves forward, and how to end things kindly. Once the rules were clear, the interface could stay simple.</p>
+   <p><b style="color:var(--ink)">Limits:</b> the survey was mostly women (83%), the Raya observation had three participants, and the screens weren't usability-tested before the startup stopped. Next, I'd test the "What's next" choice, starting with how often people pick "Not yet" twice.</p>
+   <p class="note">Names and photos shown are illustrative.</p>
   </div>
  </section>
 </main>
