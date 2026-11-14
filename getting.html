@@ -97,6 +97,8 @@ h2 em{font-style:normal;color:var(--pink)}
 .feat li{font-size:14.5px;padding:8px 0;border-top:1px solid #1e1b1814;color:#4b4541}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2.5vw,32px);max-width:560px;margin:0 auto;width:100%}
 .pair .phone:nth-child(2){transform:translateY(10%)}
+.pair.tri{grid-template-columns:repeat(3,1fr);max-width:860px;gap:clamp(14px,3vw,40px)}
+.feat.wide{grid-template-columns:1fr!important}.feat.wide .txt{order:0!important;max-width:720px}.feat.wide .pair.tri{margin:10px auto 8%}.pair.tri .phone:nth-child(3){transform:translateY(20%)}
 .solo{max-width:290px;margin:0 auto;width:100%}
 
 /* voice */
@@ -244,10 +246,10 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="eyebrow" style="margin-bottom:8px">Inside the app</div>
   <h2>One app, <em>the whole wedding</em></h2>
 
-  <div class="feat">
-   <div class="txt"><span class="n">01 — Who's here</span><h3>Meet people at the wedding</h3><p>Guest cards with a fun fact and a status. Singles can choose to show they're open to meeting, and the app suggests someone to say hi to. I removed the singles and taken filters, so nobody ends up alone in a category.</p>
-    <ul><li>Everyone in one list, with search by name</li><li>Status is private by default</li><li>A wave turns into a match: nudge them or open their Instagram</li></ul></div>
-   <div class="pair"><div class="phone"><img src="media/getting/09-who.jpg" alt="Who's here"></div><div class="phone"><img src="media/getting/12-match.jpg" alt="It's a match"></div></div>
+  <div class="feat wide">
+   <div class="txt"><span class="n">01 — Who's here</span><h3>Meet people at the wedding</h3><p>Guest cards with a fun fact and a status. Singles can choose to show they're open to meeting, and a nudge lets someone know you noticed them. I removed the singles and taken filters, so nobody ends up alone in a category.</p>
+    <ul><li>Everyone in one list, with search by name</li><li>Status is private by default</li><li>Got nudged? Start a chat or check their Instagram</li></ul></div>
+   <div class="pair tri"><div class="phone"><img src="media/getting/12-nudge-send.jpg" alt="Sending a nudge"></div><div class="phone"><img src="media/getting/13-nudge-in.jpg" alt="Incoming nudge"></div><div class="phone"><img src="media/getting/14-chat.jpg" alt="Chat"></div></div>
   </div>
 
   <div class="feat">
@@ -257,8 +259,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   </div>
 
   <div class="feat">
-   <div class="txt"><span class="n">03 — The album</span><h3>Everyone's photos, in one place</h3><p>One shared album with an add-photo button right in the grid, and a "find me" option that shows the photos you appear in, no more begging friends on WhatsApp.</p>
-    <ul><li>One grid, add a photo anytime</li><li>"Find me" via your selfie</li><li>Private photos only for the couple</li></ul></div>
+   <div class="txt"><span class="n">03 — The album</span><h3>Everyone's photos, in one place</h3><p>One shared album with an add-photo button right in the grid. Photos sent only to the couple show up blurred with a lock. Plus a "find me" option that shows the photos you appear in, no more begging friends on WhatsApp.</p>
+    <ul><li>One grid, add a photo anytime</li><li>"Find me" via your selfie</li><li>Couple-only photos stay blurred</li></ul></div>
    <div class="solo"><div class="phone"><img src="media/getting/08-album.jpg" alt="Shared album"></div></div>
   </div>
 
