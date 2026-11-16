@@ -4,347 +4,508 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Getting — Wedding App · Case Study · Stav Sharon</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Rubik:wght@400;500;700&family=Secular+One&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Rubik:wght@400;500;600;700&family=Secular+One&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#E0569B;--ink:#1E1B18;--yellow:#F5C928;--blue:#7CCFEF;--bg:#fbf1ec;--card:#fffaf7;--muted:#6f6863;
+:root{--pink:#E0569B;--ink:#1E1B18;--yellow:#F5C928;--blue:#7CCFEF;--bg:#fbf1ec;--muted:#6f6863;--soft:#fff6f1;
+ --grad:linear-gradient(150deg,#fbd6e5 0%,#ffe3cf 50%,#efe3fa 100%);
  --mono:'IBM Plex Mono',ui-monospace,monospace;--disp:'Secular One',Rubik,sans-serif;--serif:'Instrument Serif',Georgia,serif;--sans:Rubik,system-ui,sans-serif;--pad:clamp(18px,4vw,56px)}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{overflow-x:clip}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit}
-.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
-header.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid #1e1b1812;font-family:var(--mono);font-size:13px}
-header.nav a{text-decoration:none;color:var(--pink)}
-.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--pink)}
+body{background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.w{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.n{max-width:820px;margin:0 auto;padding:0 clamp(18px,4vw,40px);text-align:center}
+.pk{color:var(--pink)}
+[dir=rtl]{font-family:var(--sans)}
 
-/* phone mockup */
-.phone{position:relative;background:#141210;border-radius:14%/6.6%;padding:3.4%;box-shadow:0 30px 60px #1e1b1838,inset 0 0 0 1.5px #3a3532;width:100%}
-.phone::after{content:"";position:absolute;top:3.15%;left:50%;transform:translateX(-50%);width:29%;height:3.5%;background:#141210;border-radius:99px;z-index:2}
-.phone img{width:100%;height:auto;display:block;border-radius:11%/5.1%}
+/* site header (same as the rest of the portfolio) */
+header.nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);background:#ffffffe0;backdrop-filter:blur(10px);border-bottom:1px solid #1e1b1814;font-family:var(--mono);font-size:13px}
+header.nav a{color:var(--pink)}
+
+/* phone */
+.phone{position:relative;width:100%;aspect-ratio:390/844;border-radius:11%/5.1%;overflow:hidden;background:#fdeee8;box-shadow:0 24px 50px #9b3a6a29,0 4px 12px #0000000f,0 0 0 1px #ffffff99}
+.phone>video,.phone>img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+
 /* hero */
-.hero{position:relative;overflow:hidden;padding:clamp(56px,8vw,110px) 0 clamp(40px,6vw,80px);
- background:radial-gradient(60% 50% at 85% 10%,#f9c9df 0,transparent 70%),radial-gradient(50% 40% at 10% 90%,#cfeefa 0,transparent 70%),radial-gradient(40% 40% at 60% 80%,#fbe7a6aa 0,transparent 70%),var(--bg)}
-.hgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,64px);align-items:center}
-@media(max-width:900px){.hgrid{grid-template-columns:1fr}}
-.glogo{width:96px;margin-bottom:18px}
-.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(48px,7.5vw,104px);line-height:.95;letter-spacing:-.01em;margin:14px 0 18px}
-.hero h1 span{color:var(--pink)}
-.hero .lead{font-size:clamp(16px,1.6vw,19px);color:#4b4541;max-width:44ch}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-top:34px}
-.facts span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-.facts div{font-size:14.5px}
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2vw,24px);align-items:end}
-.trio .phone:nth-child(1){transform:translateY(8%) rotate(-4deg)}
-.trio .phone:nth-child(3){transform:translateY(8%) rotate(4deg)}
+.hero{padding:clamp(48px,7vw,90px) 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.logo-chip{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:999px;background:var(--soft);font-family:var(--mono);font-size:12px;color:var(--muted)}
+.logo-chip img{width:30px;height:30px;border-radius:9px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,80px);line-height:1;letter-spacing:-.02em;margin:22px 0 20px}
+.hero h1 em{color:var(--pink)}
+.hero .lead{color:var(--muted);font-size:17px;max-width:520px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips span{padding:7px 13px;border-radius:999px;background:#f6f1ee;font-size:13px}
+.chips b{font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#a39b95;margin-right:6px}
+.fan{position:relative;height:clamp(440px,52vw,640px);border-radius:32px;background:var(--grad);overflow:hidden}
+.fan .phone{position:absolute;width:clamp(150px,17vw,220px);top:50%;left:50%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.fan .p1{transform:translate(-128%,-46%) rotate(-9deg);opacity:.95}
+.fan .p2{transform:translate(-50%,-52%);z-index:2;width:clamp(170px,19.5vw,250px)}
+.fan .p3{transform:translate(28%,-46%) rotate(9deg);opacity:.95}
+.fan:hover .p1{transform:translate(-138%,-48%) rotate(-12deg)}.fan:hover .p3{transform:translate(38%,-48%) rotate(12deg)}
+.sticker{position:absolute;z-index:3;font-family:var(--disp);font-size:15px;padding:8px 14px;border-radius:14px;box-shadow:0 10px 24px #0000001f}
+.s1{left:6%;top:9%;background:var(--yellow);transform:rotate(-6deg)}
+.s2{right:6%;bottom:9%;background:#fff;color:var(--pink);transform:rotate(5deg)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.fan .phone{width:150px}.fan .p2{width:175px}}
+
+/* marquee */
+.marq{margin-top:clamp(48px,7vw,80px);background:var(--pink);color:#fff;overflow:hidden;padding:16px 0;transform:rotate(-1.2deg);width:104%;margin-left:-2%}
+.marq .tr{display:flex;gap:42px;width:max-content;animation:mq 38s linear infinite;font-family:var(--disp);font-size:clamp(20px,2.4vw,28px);white-space:nowrap}
+.marq .tr span::after{content:"✦";margin-left:42px;color:var(--yellow)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* sections */
-section.s{padding:clamp(64px,9vw,120px) 0}
-.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(24px,6vw,96px)}
-@media(max-width:860px){.split{grid-template-columns:1fr}}
-h2{text-wrap:balance;font-family:var(--disp);font-weight:400;font-size:clamp(34px,4.6vw,58px);line-height:1.02;margin-top:10px}
-h2 em{font-style:normal;color:var(--pink)}
-.body p{font-size:17px;margin-bottom:16px;max-width:62ch;color:#3b3632}
-.body p.big{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.25;color:var(--ink)}
-.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,40px);line-height:1.15;margin-top:6px}
+section{padding:clamp(80px,11vw,130px) 0 0}
+.tag{display:inline-block;padding:7px 16px;border-radius:999px;background:#fdeaf2;color:var(--pink);font-size:13px;font-weight:500;margin-bottom:22px}
+.stmt{font-size:clamp(22px,2.8vw,32px);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.huge{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.8vw,88px);line-height:1;letter-spacing:-.02em}
+.huge em{color:var(--pink)}
+.body{color:var(--muted);margin-top:18px;font-size:16px}
+.n .body{margin-left:auto;margin-right:auto;max-width:640px}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#a39b95}
 
-.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:40px}
+/* problem: chat */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.split.rev>:first-child{order:2}
+@media(max-width:860px){.split{grid-template-columns:1fr}.split.rev>:first-child{order:0}}
+.chat{background:#efe7e1;border-radius:28px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.chat .hd{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-weight:600;font-size:14px}
+.chat .hd i{width:34px;height:34px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-style:normal}
+.b{max-width:78%;padding:10px 14px;border-radius:18px;line-height:1.35;opacity:0;transform:translateY(10px) scale(.97);transition:.45s cubic-bezier(.2,.8,.2,1)}
+.b.me{align-self:flex-end;background:#d9f7c9;border-bottom-right-radius:6px}
+.b.them{align-self:flex-start;background:#fff;border-bottom-left-radius:6px}
+.b small{display:block;font-size:11px;color:#8c8580;text-align:right;margin-top:2px}
+.b.sys{align-self:center;background:transparent;font-size:12px;color:#8c8580;padding:2px}
+.chat.in .b{opacity:1;transform:none}
+.split h2{text-align:left}
+.qt{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,36px);line-height:1.15;color:var(--pink);margin-top:26px}
+
+.probs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,32px);margin-top:48px}
+.plbl{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;margin-bottom:14px}
+.plbl span{width:30px;height:30px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:500}
+.pdesc{color:var(--muted);font-size:14.5px;margin-top:14px}
+.chat2{background:#f3e9f7}.chat2 .b.me{background:#fbd6e5}
+@media(max-width:760px){.probs{grid-template-columns:1fr}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.st{border-radius:24px;padding:22px 20px 20px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.st:nth-child(odd){transform:rotate(-1.5deg)}.st:nth-child(even){transform:rotate(1.2deg) translateY(8px)}
+.st:hover{transform:rotate(0) translateY(-4px)}
+.st b{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(34px,4vw,48px);line-height:1}
+.st p{font-size:14px;margin-top:10px;line-height:1.45}
+.st small{display:block;font-size:11px;opacity:.6;margin-top:10px;line-height:1.3}
+.c1{background:#fdeaf2}.c2{background:#fff3c4}.c3{background:#def3fb}.c4{background:#f1eae6}
+.grp{display:flex;align-items:center;gap:12px;margin-top:48px}
+.grp::after{content:"";flex:1;height:1px;background:#1e1b1814}
+@media(max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+
+/* polaroids */
+.pols{display:flex;justify-content:center;gap:clamp(14px,3vw,34px);margin-top:48px;flex-wrap:wrap}
+.pol{width:clamp(220px,26vw,300px);background:#fff;padding:12px 12px 16px;border-radius:6px;box-shadow:0 18px 40px #0000001f;transition:transform .4s cubic-bezier(.2,.8,.2,1);position:relative}
+.pol:nth-child(1){transform:rotate(-4deg)}.pol:nth-child(2){transform:rotate(2deg) translateY(18px)}.pol:nth-child(3){transform:rotate(-1.5deg)}
+.pol:hover{transform:rotate(0) scale(1.03);z-index:2}
+.pol::before{content:"";position:absolute;top:-10px;left:50%;width:80px;height:22px;transform:translateX(-50%) rotate(-3deg);background:#f5c92899;border-radius:2px}
+.pol img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px}
+.pol h4{font-family:var(--serif);font-weight:400;font-style:italic;font-size:22px;margin-top:10px;line-height:1.1}
+.pol p{font-size:13px;color:var(--muted);line-height:1.45;margin-top:4px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px}
+.three div{border-top:2px solid var(--pink);padding-top:14px}
+.three h4{font-size:17px;margin-bottom:4px}.three p{color:var(--muted);font-size:14.5px}
+.three .lbl{color:var(--pink)}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.note{font-size:12.5px;color:#a39b95;margin-top:28px}
+
+/* goals */
+.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.goal{border-radius:24px;padding:24px 22px;min-height:210px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.goal:hover{transform:translateY(-6px) rotate(-1deg)}
+.goal .em{font-size:30px;line-height:1}
+.goal h4{font-family:var(--disp);font-weight:400;font-size:21px;margin-top:auto;line-height:1.15}
+.goal p{font-size:14px;margin-top:6px;opacity:.8;line-height:1.45}
+.g1{background:var(--pink);color:#fff}.g2{background:var(--yellow)}.g3{background:var(--blue)}.g4{background:var(--ink);color:#fff}
 @media(max-width:900px){.goals{grid-template-columns:1fr 1fr}}
-.goal{padding:0}
-.goal .k{font-family:var(--mono);font-size:13px;color:var(--pink)}
-.goal i{font-style:normal;font-size:26px;display:block}
-.goal h4{font-size:18px;font-weight:700;margin:8px 0 6px}
-.goal p{font-size:14.5px;color:var(--muted)}
 
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px;margin-top:40px}
-@media(max-width:860px){.nums{grid-template-columns:1fr 1fr}}
-.nums b{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--pink)}
-.nums p{font-size:14.5px;color:#4b4541;margin-top:8px}
-.nums small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.03em}
-.ev{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,24px);margin-top:40px;align-items:start}
-@media(max-width:860px){.ev{grid-template-columns:1fr;max-width:420px}}
-.ev img{border-radius:16px;box-shadow:0 14px 34px #1e1b181f;background:#fff}
-.ev figcaption{font-size:14px;color:#4b4541;margin-top:14px}
-.ev figcaption b{display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--pink);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
-.ins{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px}
-@media(max-width:860px){.ins{grid-template-columns:1fr}}
-.ins .k{font-family:var(--mono);font-size:13px;color:var(--pink)}
-.ins h4{font-size:18px;font-weight:700;margin:8px 0 6px}.ins p{font-size:14.5px;color:var(--muted)}
-.grp{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:44px;padding-bottom:10px;border-bottom:1px solid #1e1b1814}
-.grp+.nums{margin-top:28px}
-.flow.f4{grid-template-columns:repeat(5,1fr)}
-@media(max-width:900px){.flow.f4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px) and (min-width:521px){.flow.f4{grid-template-columns:repeat(3,1fr)}}
-.src{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:36px;line-height:1.7}
+/* onboarding with synced steps */
+.flow{border-radius:32px;background:var(--grad);padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-top:44px}
+.flow .phone{width:clamp(220px,24vw,290px)}
+.steps{list-style:none;display:grid;gap:6px}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;padding:12px 16px;border-radius:18px;transition:background .35s,transform .35s;cursor:pointer}
+.steps li .k{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#ffffff88;font-family:var(--mono);font-size:12px;transition:.35s}
+.steps li b{display:block;font-size:17px;font-weight:600}
+.steps li span{font-size:14px;color:var(--muted)}
+.steps li span[dir]{display:inline-block;font-family:var(--sans)}
+.steps li.on{background:#fff;transform:translateX(6px);box-shadow:0 10px 26px #9b3a6a1a}
+.steps li.on .k{background:var(--pink);color:#fff}
+@media(max-width:760px){.flow{grid-template-columns:1fr;justify-items:center}.steps{width:100%}}
 
-/* flow strip */
-.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1.4vw,18px);margin-top:40px}
-@media(max-width:900px){.flow{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.flow{grid-template-columns:repeat(2,1fr)}}
-.flow figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:12px;text-align:center}
-.flow figcaption b{display:block;color:var(--ink);font-weight:500;font-size:12.5px}
+/* features */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.feat.rev .stage{order:2}
+.stage{border-radius:32px;padding:clamp(28px,4vw,52px) 0;display:grid;place-items:center;position:relative;overflow:hidden}
+.stage .phone{width:clamp(220px,24vw,280px)}
+.stage.pink{background:var(--grad)}.stage.dark{background:var(--ink)}.stage.yel{background:#fff3c4}.stage.blu{background:#def3fb}
+.feat .num{font-family:var(--mono);font-size:12px;color:var(--pink);letter-spacing:.08em}
+.feat h3{font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;line-height:1.15;margin:8px 0 14px;font-weight:600}
+.feat h3 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--pink);font-size:1.15em}
+.feat p.body{margin-top:0}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pills span{padding:8px 14px;border-radius:999px;background:#f6f1ee;font-size:13.5px}
+.bub{position:absolute;z-index:2;padding:10px 14px;border-radius:18px;font-size:14px;box-shadow:0 12px 30px #0000002e;font-family:var(--sans);max-width:200px;line-height:1.3}
+.bub.l{left:7%;top:20%;background:#fff;border-bottom-left-radius:6px;transform:rotate(-4deg)}
+.bub.r{right:7%;bottom:22%;background:var(--pink);color:#fff;border-bottom-right-radius:6px;transform:rotate(3deg)}
+.bub small{display:block;font-size:11px;opacity:.65}
+.duo{display:flex;gap:16px;justify-content:center;align-items:flex-end}
+.duo .phone{width:clamp(170px,18vw,220px)}
+.duo .phone:nth-child(2){transform:translateY(-24px) rotate(3deg)}
+@media(max-width:860px){.feat{grid-template-columns:1fr}.feat.rev .stage{order:0}.bub{display:none}}
 
-/* feature rows */
-.feat{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,6vw,96px);align-items:center;padding:clamp(40px,6vw,80px) 0;border-top:1px solid #1e1b1814}
-.feat:nth-child(even){grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
-.feat:nth-child(even) .txt{order:2}
-@media(max-width:860px){.feat,.feat:nth-child(even){grid-template-columns:1fr}.feat:nth-child(even) .txt{order:0}}
-.feat .n{font-family:var(--mono);font-size:13px;color:var(--pink)}
-.feat h3{font-family:var(--disp);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.05;margin:8px 0 14px}
-.feat p{color:#4b4541}
-.feat ul{list-style:none;margin-top:14px}
-.feat li{font-size:14.5px;padding:8px 0;border-top:1px solid #1e1b1814;color:#4b4541}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2.5vw,32px);max-width:560px;margin:0 auto;width:100%}
-.pair .phone:nth-child(2){transform:translateY(10%)}
-.pair.tri{grid-template-columns:repeat(3,1fr);max-width:860px;gap:clamp(14px,3vw,40px)}
-.feat.wide{grid-template-columns:1fr!important}.feat.wide .txt{order:0!important;max-width:720px}.feat.wide .pair.tri{margin:10px auto 8%}.pair.tri .phone:nth-child(3){transform:translateY(20%)}
-.solo{max-width:290px;margin:0 auto;width:100%}
+/* couple carousel */
+.couple{border-radius:32px;background:var(--ink);color:#fff;padding:clamp(32px,5vw,64px) 0 clamp(32px,5vw,56px);margin-top:44px;overflow:hidden}
+.couple .top{padding:0 clamp(28px,5vw,64px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.couple .top p{color:#d7cfca;max-width:560px;font-size:15.5px}
+.couple .top .lbl{color:#ffffff80}
+.rail{display:flex;gap:22px;overflow-x:auto;padding:36px clamp(28px,5vw,64px) 10px;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:none;width:clamp(200px,20vw,240px);scroll-snap-align:start}
+.rail .phone{box-shadow:0 24px 50px #00000059}
+.rail figcaption{margin-top:14px}
+.rail figcaption b{display:block;font-size:16px}
+.rail figcaption span{font-size:13.5px;color:#bfb6b0}
+.hint{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#ffffff66;padding:0 clamp(28px,5vw,64px);margin-top:14px}
+.cpts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.cpts h4{font-size:17px}.cpts p{color:var(--muted);font-size:14.5px}
+.cpts div{background:#f6f1ee;border-radius:22px;padding:22px}
+@media(max-width:760px){.cpts{grid-template-columns:1fr}}
 
-/* voice */
-.voice{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
-@media(max-width:860px){.voice{grid-template-columns:1fr}}
-.v{background:var(--card);border-radius:20px;padding:22px}
-.v .he{font-family:var(--disp);font-size:22px;direction:rtl;text-align:right;line-height:1.3}
-.v .en{font-size:14px;color:var(--muted);margin-top:8px}
-.v .why{font-family:var(--mono);font-size:11.5px;color:var(--pink);margin-top:12px;text-transform:uppercase;letter-spacing:.05em}
+/* tone */
+.tone{max-width:640px;margin:44px auto 0;display:flex;flex-direction:column;gap:22px}
+.tv{display:flex;flex-direction:column;max-width:80%}
+.tv:nth-child(even){align-self:flex-end;align-items:flex-end}
+.tv .he{font-family:var(--disp);font-size:clamp(22px,2.6vw,28px);padding:12px 20px;border-radius:24px;background:#fdeaf2;line-height:1.25}
+.tv:nth-child(even) .he{background:var(--pink);color:#fff}
+.tv .en{font-size:14px;margin-top:6px;padding:0 8px}
+.tv .en small{color:#a39b95;font-family:var(--mono);font-size:11px;letter-spacing:.06em;margin-left:6px;text-transform:uppercase}
 
-/* system */
-.ds{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;margin-top:40px}
-@media(max-width:860px){.ds{grid-template-columns:minmax(0,1fr)}}
-.card{background:var(--card);border-radius:20px;padding:24px}
-.card h4{font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;margin-bottom:16px}
-.sw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.sw div{border-radius:14px;aspect-ratio:1/1.15;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;font-family:var(--mono);font-size:11px}
-.grad{height:46px;border-radius:14px;margin-top:12px;background:linear-gradient(120deg,#f9c9df,#fbe7a6,#cfeefa)}
-.type .big{font-family:var(--disp);font-size:52px;line-height:1;direction:rtl;text-align:right}
-.type .row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-top:1px solid #1e1b1814}
-.type .row span{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+/* visual language */
+.vl{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:44px}
+.vl>div{border-radius:28px;background:#f6f1ee;padding:28px}
+.dots{display:flex;gap:14px;flex-wrap:wrap}
+.dots div{text-align:center;font-size:13px;font-weight:500}
+.dots i{display:block;width:clamp(64px,7vw,88px);aspect-ratio:1;border-radius:50%;margin-bottom:8px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.dots div:hover i{transform:scale(1.08) rotate(-8deg)}
+.dots small{display:block;font-family:var(--mono);font-size:10.5px;color:#a39b95}
+.ty{display:flex;gap:22px;align-items:center}
+.ty img{width:84px;height:84px;border-radius:22px}
+.ty .a{font-family:var(--disp);font-size:42px;line-height:1}
+.ty p{font-size:14px;color:var(--muted);margin-top:6px}
+@media(max-width:760px){.vl{grid-template-columns:1fr}}
 
-.learn .note{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:24px}
-footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
-.fade.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
-.next{display:block;max-width:1240px;margin:0 auto;padding:clamp(48px,7vw,96px) var(--pad);text-decoration:none;color:inherit;border-top:1px solid #0000000f}
-.next .nl{display:block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.6}
-.next .nn{display:block;font-size:clamp(40px,6.5vw,88px);font-weight:700;letter-spacing:-.035em;line-height:1.05;margin-top:8px}
-.next .nn b{display:inline-block;transition:transform .3s}.next:hover .nn b{transform:translateX(10px)}
+/* next + footer (same as the rest of the portfolio) */
+.next{display:block;max-width:1240px;margin:clamp(80px,10vw,130px) auto 0;padding:clamp(48px,7vw,96px) var(--pad);border-top:1px solid #0000000f}
+.next .nl{display:block;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.6}
+.next .nn{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.5vw,88px);letter-spacing:-.01em;line-height:1.05;margin-top:8px}
+.next .nn b{display:inline-block;font-weight:400;transition:transform .3s}.next:hover .nn b{transform:translateX(10px)}
 .next .ns{display:block;font-size:15px;opacity:.6;margin-top:6px}
-.next .nn{font-family:var(--disp);font-weight:400;letter-spacing:-.01em}.next .nl{font-family:var(--mono);color:var(--pink);opacity:1}
+footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marq .tr{animation:none}}
 </style>
 </head>
 <body>
 <header class="nav"><a href="index.html#ux">← Stav Sharon</a><span>Getting</span></header>
 
-<div class="hero" id="top">
- <div class="wrap hgrid">
-  <div>
-   <img class="glogo" src="media/getting/getting-logo.png" alt="Getting logo">
-   <div class="eyebrow">Wedding app · Mobile web · UX/UI</div>
-   <h1>Getting<span>.</span></h1>
-   <p class="lead">A wedding app for meeting new people, managing guests and shuttles, and collecting blessings and photos, all in one playful place. Designed first for Stav &amp; Eden's wedding, May&nbsp;2027.</p>
-   <div class="facts">
-    <div><span>Role</span>Product Designer (UX/UI)</div>
-    <div><span>Platform</span>Mobile web app · Hebrew (RTL)</div>
-    <div><span>Scope</span>Product concept, flows, UI, copy</div>
-    <div><span>Status</span>In use for our wedding · May 2027</div>
+<header class="hero">
+ <div class="w hero-grid">
+  <div class="rv">
+   <span class="logo-chip"><img src="media/getting/getting-logo.png" alt="">Wedding app · Mobile web · UX/UI</span>
+   <h1>Turning the wedding RSVP into <em>the start of the party</em></h1>
+   <p class="lead">Getting is a wedding app for meeting new people, managing guests and shuttles, and collecting blessings and photos, all in one playful place. I designed it first for our own wedding, Stav &amp; Eden, May 2027.</p>
+   <div class="chips">
+    <span><b>Role</b>Product Designer</span>
+    <span><b>Platform</b>Mobile web · Hebrew RTL</span>
+    <span><b>Scope</b>Concept, flows, UI, copy</span>
+    <span><b>Status</b>In use for our wedding</span>
    </div>
   </div>
-  <div class="trio">
-   <div class="phone"><img src="media/getting/02-rsvp.jpg" alt="RSVP screen"></div>
-   <div class="phone"><img src="media/getting/01-welcome.jpg" alt="Welcome screen"></div>
-   <div class="phone"><img src="media/getting/07-wall.jpg" alt="Blessings wall"></div>
+  <div class="fan rv">
+   <span class="sticker s1" dir="rtl">נו, באים או מה? 👀</span>
+   <span class="sticker s2">No app to download</span>
+   <div class="phone p1"><img src="media/getting/01-welcome.jpg" alt="Welcome screen"></div>
+   <div class="phone p2"><video src="media/getting/vid/rsvp.mp4" poster="media/getting/vid/rsvp.jpg" muted loop playsinline preload="metadata"></video></div>
+   <div class="phone p3"><img src="media/getting/07-wall.jpg" alt="The wall"></div>
   </div>
  </div>
-</div>
+ <div class="marq" aria-hidden="true"><div class="tr" dir="rtl">
+  <span>נו, באים או מה?</span><span>לא הכינוי מהצבא, בבקשה</span><span>תלוי אם יש בר פתוח</span><span>כי אף אחד לא רוצה להיות הנהג התורן</span><span>שיזהו אותך ליד הבר</span><span>יאללה, אחרי החופה בבר</span>
+  <span>נו, באים או מה?</span><span>לא הכינוי מהצבא, בבקשה</span><span>תלוי אם יש בר פתוח</span><span>כי אף אחד לא רוצה להיות הנהג התורן</span><span>שיזהו אותך ליד הבר</span><span>יאללה, אחרי החופה בבר</span>
+ </div></div>
+</header>
 
-<main class="wrap">
- <section class="s split fade">
-  <div><div class="eyebrow">Overview</div><h2>Weddings are full of <em>people you haven't&nbsp;met</em></h2></div>
-  <div class="body">
-   <p class="big">Getting turns a wedding from a one-night event into a social experience: guests meet each other, and the couple manages everything in one place.</p>
-   <p>The product combines three things: <b>meeting people at weddings</b>, with guest profiles and an opt-in "open to meeting" status; <b>guest and shuttle management</b>, through a playful RSVP flow; and <b>blessings and photos</b>, on a live wall and a shared album.</p>
-   <p>I designed the product end to end, starting with our own wedding as the first real use case. The guiding brief: funny, aesthetic and dead simple, for guests of every age.</p>
+<section>
+ <div class="n rv">
+  <span class="tag">Two problems</span>
+  <p class="stmt">The couple chases guests for answers. <span class="pk">And single guests leave without meeting anyone.</span></p>
+  <p class="body">A wedding brings hundreds of people into one room, but the tools around it only collect a name and a headcount. Getting was built to solve both: an RSVP guests actually finish, and an easy, private way to meet someone at the wedding.</p>
+ </div>
+ <div class="w probs">
+  <div class="rv">
+   <p class="plbl"><span>01</span>For the couple · the RSVP chase</p>
+   <div class="chat" id="chat">
+    <div class="hd"><i>💍</i>Wedding RSVPs · 250 guests</div>
+    <div class="b me">Hi! Are you coming to our wedding? 🙏<small>Mon 10:02 ✓✓</small></div>
+    <div class="b sys">Seen</div>
+    <div class="b me">Just a reminder, we need numbers by Friday 😅<small>Wed 18:40 ✓✓</small></div>
+    <div class="b them">Probably! Can I tell you next week?<small>Thu 23:15</small></div>
+    <div class="b me">Also… do you need a ride? 🚌<small>Fri 09:01 ✓</small></div>
+   </div>
+   <p class="pdesc">RSVP rounds take weeks of texts and calls, and rides and photos are chased separately.</p>
   </div>
- </section>
+  <div class="rv">
+   <p class="plbl"><span>02</span>For the guests · meeting someone</p>
+   <div class="chat chat2">
+    <div class="hd"><i>👀</i>The bride · the day after</div>
+    <div class="b me">Who was the guy in the blue shirt next to the bar?<small>Sat 11:20 ✓✓</small></div>
+    <div class="b them">No idea 😅 there were 300 people<small>Sat 11:42</small></div>
+    <div class="b me">Can you ask around? He was cute 🙈<small>Sat 11:43 ✓✓</small></div>
+    <div class="b them">I'll try… on my honeymoon 😂<small>Sat 12:05</small></div>
+   </div>
+   <p class="pdesc">Singles notice someone, but there's no easy way to find out who they were, or if they're single too.</p>
+  </div>
+ </div>
+ <div class="n rv"><p class="qt" style="margin-top:56px">What if the RSVP was the start of the party, and the party was where you met someone?</p></div>
+</section>
 
- <section class="s split fade" style="padding-top:0">
-  <div><div class="eyebrow">The challenge</div><h2>The RSVP is <em>a chore</em></h2></div>
-  <div class="body">
-   <p>The RSVP tools I looked at collect a name and a headcount, and that's where they end. The couple still chases guests for answers, rides and photos, and singles often leave without knowing who else was there.</p>
-   <p class="quote">What if the RSVP was the start of the party, not a chore?</p>
-   <p style="margin-top:18px">The humor isn't decoration. I made the RSVP fun on purpose, so guests would actually finish it, and answer early, without the couple having to chase them.</p>
+<section>
+ <div class="n rv">
+  <span class="tag">Desk research</span>
+  <p class="stmt">Big guest lists, slow answers, <span class="pk">and a lot of people who don't know each other.</span></p>
+ </div>
+ <div class="w">
+  <p class="grp lbl rv">For guests</p>
+  <div class="stats rv">
+   <div class="st c1"><b>250–300</b><p>guests at a typical Israeli wedding, more than double the US average of 117.</p><small>Easy2Give via Mako, 2022 · The Knot</small></div>
+   <div class="st c2"><b>25%</b><p>of guests dislike not knowing anyone at a wedding. 19% dislike mingling with strangers.</p><small>WeddingWire, 900+ guests</small></div>
+   <div class="st c3"><b>38%</b><p>exchanged numbers with someone they met at a wedding. 10% started a serious relationship from one.</p><small>WeddingWire, 1,000 guests</small></div>
+   <div class="st c4"><b>~5%</b><p>of couples collected guest photos through a dedicated app. Downloading it was the barrier.</p><small>EventPics survey 2025, 620 couples &amp; planners</small></div>
   </div>
- </section>
+  <p class="grp lbl rv">For the couple</p>
+  <div class="stats rv">
+   <div class="st c3"><b>44%</b><p>of guests think a late RSVP is fine, and more than 1 in 10 didn't show up after saying yes.</p><small>DatingNews survey, 1,000+ Americans</small></div>
+   <div class="st c1"><b>1–2 wks</b><p>is how long an RSVP round can take in Israel, by text and phone calls.</p><small>Kipa · Israel Hayom</small></div>
+   <div class="st c2"><b>46%</b><p>of couples wish they had more candid photos, while most guest photos stay on guests' phones.</p><small>GoodtoKnow UK</small></div>
+   <div class="st c4"><b>0</b><p>apps to download in Getting. It runs in the browser from a link, so grandma can post a blessing too.</p><small>Design decision</small></div>
+  </div>
+ </div>
+</section>
 
+<section>
+ <div class="n rv">
+  <span class="tag">What couples already do</span>
+  <h2 class="huge">Guests are already <em>hacking it</em></h2>
+  <p class="body">Before designing "Who's here", I looked for what couples do today. The need was already there, solved with paper and silicone.</p>
+ </div>
+ <div class="w">
+  <div class="pols rv">
+   <figure class="pol"><img src="media/getting/evidence/sign.jpg" alt="A table sign at a wedding"><h4>The table sign</h4><p>Saw someone you like? Tell us and we'll connect you. 5.2K reactions, 145 shares.</p></figure>
+   <figure class="pol"><img src="media/getting/evidence/bracelets-sell.jpg" alt="Status bracelets for sale"><h4>Bracelets, for sale</h4><p>Green for single, yellow for confused, red for taken.</p></figure>
+   <figure class="pol"><img src="media/getting/evidence/bracelets-ask.jpg" alt="A bride asking where to buy bracelets"><h4>At guest-list scale</h4><p>A bride asks where to buy 300–400, close to one per guest.</p></figure>
+  </div>
+  <div class="three rv">
+   <div><p class="lbl">01</p><h4>The need is real</h4><p>Couples print signs and buy bracelets so their guests can meet. Getting gives that a home.</p></div>
+   <div><p class="lbl">02</p><h4>Not just yes or no</h4><p>Even the bracelets have a "confused" option. Status needs a middle state.</p></div>
+   <div><p class="lbl">03</p><h4>Private, not public</h4><p>A bracelet tells everyone, from your aunt to your boss. In Getting, status is opt-in.</p></div>
+  </div>
+  <p class="note rv">Also checked: Fotify (meeting only) and mit4mit's WedPlanner (planning for the couple, not an experience for guests). Names and brands in the screenshots are blurred.</p>
+ </div>
+</section>
 
- <section class="s fade" style="padding-top:0">
-  <div class="eyebrow">Desk research</div>
-  <h2>What the numbers <em>say</em></h2>
-  <div class="grp">For guests</div>
-  <div class="nums">
-   <div><b>250–300</b><p>guests at a typical Israeli wedding, more than double the US average of 117.</p><small>Easy2Give via Mako, 2022 · The Knot</small></div>
-   <div><b>25%</b><p>of guests dislike not knowing anyone at a wedding. 19% dislike mingling with strangers.</p><small>WeddingWire, 900+ guests</small></div>
-   <div><b>38%</b><p>of guests exchanged numbers with someone they met at a wedding. 10% started a serious relationship from one.</p><small>WeddingWire, 1,000 guests</small></div>
-  </div>
-  <div class="grp">For the couple</div>
-  <div class="nums">
-   <div><b>44%</b><p>of guests think a late RSVP is fine, and more than 1 in 10 didn't show up after saying yes.</p><small>DatingNews survey, 1,000+ Americans</small></div>
-   <div><b>1–2 weeks</b><p>is how long an RSVP round can take in Israel, by text and phone calls. Many couples pay a service for it, or recruit friends to call.</p><small>Kipa · Israel Hayom</small></div>
-   <div><b>~5%</b><p>of couples collected guest photos through a dedicated app. Having to download it was the barrier, especially for older guests.</p><small>EventPics survey 2025, 620 couples &amp; planners (DE/AT)</small></div>
-   <div><b>46%</b><p>of couples wish they had more candid photos from their day, while most guest photos stay on guests' phones.</p><small>GoodtoKnow UK</small></div>
-  </div>
-  <div class="ins">
-   <div><span class="k">→</span><h4>Make the RSVP worth finishing</h4><p>If answering is fun, guests answer early, and the couple chases fewer people.</p></div>
-   <div><span class="k">→</span><h4>Changes are part of the flow</h4><p>Guests can update their RSVP, +1 and shuttle seat anytime, so the list stays true up to the day.</p></div>
-   <div><span class="k">→</span><h4>No app to download</h4><p>Getting runs in the browser from a link, so grandma can post a blessing too.</p></div>
-  </div>
-  </section>
+<section>
+ <div class="n rv">
+  <span class="tag">Design goals</span>
+  <p class="stmt">Funny, aesthetic and dead simple, <span class="pk">for guests of every age.</span></p>
+ </div>
+ <div class="w"><div class="goals rv">
+  <div class="goal g1"><span class="em">😂</span><h4>Make it fun</h4><p>A joke in every line, so each step feels like a chat with the couple.</p></div>
+  <div class="goal g2"><span class="em">☝️</span><h4>One question per screen</h4><p>Short steps with a progress bar, easy for grandma and for friends.</p></div>
+  <div class="goal g3"><span class="em">🤝</span><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div>
+  <div class="goal g4"><span class="em">🪩</span><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding from the first screen.</p></div>
+ </div></div>
+</section>
 
- <section class="s fade" style="padding-top:0">
-  <div class="eyebrow">What couples already do</div>
-  <h2>Guests are already <em>hacking it</em></h2>
-  <div class="body" style="margin-top:18px"><p>Before designing the "Who's here" feature, I looked for what couples do today. The need was already there, solved with paper and silicone.</p></div>
-  <div class="ev">
-   <figure><img src="media/getting/evidence/sign.jpg" alt="A printed matchmaking sign left on wedding tables"><figcaption><b>The table sign</b>A couple left a sign on the tables: saw someone you like? Tell us and we'll connect you. The post got 5.2K reactions and 145 shares.</figcaption></figure>
-   <figure><img src="media/getting/evidence/bracelets-sell.jpg" alt="Packs of green, yellow and red relationship-status bracelets for sale"><figcaption><b>Status bracelets, for sale</b>An importer sells packs of green "single", yellow "confused" and red "taken" bracelets for weddings.</figcaption></figure>
-   <figure><img src="media/getting/evidence/bracelets-ask.jpg" alt="A bride asking where to buy status bracelets"><figcaption><b>At the scale of a guest list</b>A bride asks where to buy 300–400 of them, close to one for every guest.</figcaption></figure>
+<section>
+ <div class="n rv">
+  <span class="tag">Onboarding</span>
+  <h2 class="huge">An RSVP that builds <em>a guest profile</em></h2>
+ </div>
+ <div class="w">
+  <div class="flow rv">
+   <div class="phone"><video id="flowv" src="media/getting/vid/rsvp.mp4" poster="media/getting/vid/rsvp.jpg" muted loop playsinline preload="metadata"></video></div>
+   <ol class="steps" id="steps">
+    <li data-t="0"><span class="k">01</span><div><b>Welcome</b><span>Date, venue, the couple</span></div></li>
+    <li data-t="1.8"><span class="k">02</span><div><b>RSVP</b><span>Coming, maybe, or <span dir="rtl">"תלוי אם יש בר פתוח"</span></span></div></li>
+    <li data-t="3.8"><span class="k">03</span><div><b>Who are you</b><span>Name, phone, +1, and how to address you</span></div></li>
+    <li data-t="8.7"><span class="k">04</span><div><b>Shuttle</b><span>Need a ride? Pick a stop</span></div></li>
+    <li data-t="12.6"><span class="k">05</span><div><b>The fun part</b><span>Status, Instagram, a weird fact</span></div></li>
+    <li data-t="14.6"><span class="k">06</span><div><b>Selfie</b><span>So people find you at the bar</span></div></li>
+   </ol>
   </div>
-  <div class="ins">
-   <div><span class="k">01</span><h4>The need is real</h4><p>Couples print signs and buy bracelets so their guests can meet. Getting gives that a home.</p></div>
-   <div><span class="k">02</span><h4>Not just yes or no</h4><p>Even the bracelets have a "confused" option. Status needs a middle state, not only single or taken.</p></div>
-   <div><span class="k">03</span><h4>Private, not public</h4><p>A bracelet tells everyone, from your aunt to your boss. In Getting, status is opt-in and private by default.</p></div>
-  </div>
-  <p class="src">Also checked: Fotify, an app that reveals Instagram handles at weddings after a mutual swipe. It covers meeting only, not RSVP, rides or photos. In Israel, mit4mit's WedPlanner offers free digital invites and RSVP, but it's a planning tool for the couple, not an experience for the guests. Names and brands in the screenshots are blurred.</p>
- </section>
- <section class="s fade" style="padding-top:0">
-  <div class="eyebrow">Design goals</div>
-  <h2>What guided the design</h2>
-  <div class="goals">
-   <div class="goal"><span class="k">01</span><h4>Make it fun</h4><p>Humor in every line of copy, so each step feels like a chat with the couple, and guests actually finish the RSVP.</p></div>
-   <div class="goal"><span class="k">02</span><h4>One question per screen</h4><p>Short, focused steps with a progress bar, easy for grandma and for friends.</p></div>
-   <div class="goal"><span class="k">03</span><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div>
-   <div class="goal"><span class="k">04</span><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding, from the first screen on.</p></div>
-  </div>
- </section>
+ </div>
+</section>
 
- <section class="s fade" style="padding-top:0">
-  <div class="eyebrow">Onboarding flow</div>
-  <h2>RSVP that builds <em>a guest profile</em></h2>
-  <div class="flow">
-   <figure><div class="phone"><img src="media/getting/01-welcome.jpg" alt=""></div><figcaption><b>Welcome</b>Date, venue, the couple</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/02-rsvp.jpg" alt=""></div><figcaption><b>RSVP</b>Coming, maybe, or not</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/03-name.jpg" alt=""></div><figcaption><b>Who are you</b>Name, +1, how to address you</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/04-bus.jpg" alt=""></div><figcaption><b>Shuttle</b>Need a ride?</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/05-fun.jpg" alt=""></div><figcaption><b>The fun part</b>Status, Instagram, fun fact</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/06-photo.jpg" alt=""></div><figcaption><b>Selfie</b>So people find you</figcaption></figure>
-  </div>
- </section>
+<section>
+ <div class="n rv">
+  <span class="tag">Inside the app</span>
+  <p class="stmt">One app for the whole wedding. <span class="pk">Every feature started from a real moment.</span></p>
+ </div>
+ <div class="w" style="display:grid;gap:clamp(64px,9vw,110px);margin-top:56px">
 
- <section class="fade">
-  <div class="eyebrow" style="margin-bottom:8px">Inside the app</div>
-  <h2>One app, <em>the whole wedding</em></h2>
-
-  <div class="feat wide">
-   <div class="txt"><span class="n">01 — Who's here</span><h3>Meet people at the wedding</h3><p>Guest cards with a fun fact and a status. Singles can choose to show they're open to meeting, and a nudge lets someone know you noticed them. I removed the singles and taken filters, so nobody ends up alone in a category.</p>
-    <ul><li>Everyone in one list, with search by name</li><li>Status is private by default</li><li>Got nudged? Start a chat or check their Instagram</li></ul></div>
-   <div class="pair tri"><div class="phone"><img src="media/getting/12-nudge-send.jpg" alt="Sending a nudge"></div><div class="phone"><img src="media/getting/13-nudge-in.jpg" alt="Incoming nudge"></div><div class="phone"><img src="media/getting/14-chat.jpg" alt="Chat"></div></div>
-  </div>
-
-  <div class="feat">
-   <div class="txt"><span class="n">02 — The wall</span><h3>Blessings, photos and a countdown</h3><p>The heart of the app: guests post blessings and photos for the couple, see how many days are left, and get prompts when they don't know what to write.</p>
-    <ul><li>Live feed of blessings and photos</li><li>Countdown and RSVP stats</li><li>Writing prompts: "funny", "emotional", "selfie"</li></ul></div>
-   <div class="solo"><div class="phone"><img src="media/getting/07-wall.jpg" alt="Blessings wall"></div></div>
-  </div>
-
-  <div class="feat">
-   <div class="txt"><span class="n">03 — The album</span><h3>Everyone's photos, in one place</h3><p>One shared album with an add-photo button right in the grid. Photos sent only to the couple show up blurred with a lock. Plus a "find me" option that shows the photos you appear in, no more begging friends on WhatsApp.</p>
-    <ul><li>One grid, add a photo anytime</li><li>"Find me" via your selfie</li><li>Couple-only photos stay blurred</li></ul></div>
-   <div class="solo"><div class="phone"><img src="media/getting/08-album.jpg" alt="Shared album"></div></div>
-  </div>
-
-  <div class="feat">
-   <div class="txt"><span class="n">04 — A gift</span><h3>A gift, without the envelope</h3><p>Guests can send money to the couple straight from the app, with a note. They type an amount, add a few words and choose Bit, PayBox or a card. Only the couple sees how much.</p>
-    <ul><li>Type any amount</li><li>A note that arrives with the gift</li><li>The amount stays private</li></ul></div>
-   <div class="pair"><div class="phone"><img src="media/getting/15-gift.jpg" alt="Choosing a gift"></div><div class="phone"><img src="media/getting/16-gift-sent.jpg" alt="Gift sent"></div></div>
+  <div class="feat rv">
+   <div class="stage dark">
+    <div class="bub l" dir="rtl"><small>עומר נדנדה לך</small>👉 נדנוד</div>
+    <div class="bub r" dir="rtl">יאללה, אחרי החופה בבר</div>
+    <div class="phone"><video src="media/getting/vid/who.mp4" poster="media/getting/vid/who.jpg" muted loop playsinline preload="metadata"></video></div>
+   </div>
+   <div>
+    <span class="num">01 · WHO'S HERE</span>
+    <h3>Meet people, <em>without the bracelet</em></h3>
+    <p class="body">Guest cards with a fun fact and a status. Singles can choose to show they're open to meeting, and a nudge lets someone know you noticed them. I removed the singles and taken filters, so nobody ends up alone in a category.</p>
+    <div class="pills"><span>Search by name</span><span>Status private by default</span><span>Nudge → chat or Instagram</span></div>
+   </div>
   </div>
 
-  <div class="feat">
-   <div class="txt"><span class="n">05 — Guests & shuttles</span><h3>Guest & shuttle management</h3><p>Every guest sees and edits their RSVP, +1 and shuttle seat at any time, so the couple always has an up-to-date list. Those who can't make it still leave a blessing, with no guilt.</p></div>
-   <div class="pair"><div class="phone"><img src="media/getting/10-me.jpg" alt="My profile"></div><div class="phone"><img src="media/getting/11-bye.jpg" alt="Can't make it"></div></div>
+  <div class="feat rev rv">
+   <div class="stage pink"><div class="phone"><video src="media/getting/vid/wall.mp4" poster="media/getting/vid/wall.jpg" muted loop playsinline preload="metadata"></video></div></div>
+   <div>
+    <span class="num">02 · THE WALL</span>
+    <h3>Blessings, photos <em>and a countdown</em></h3>
+    <p class="body">The heart of the app. Guests post blessings and photos for the couple and see how many days are left. When they don't know what to write, a starter does the hard part.</p>
+    <div class="pills"><span>Live feed</span><span>Countdown</span><span>Writing starters</span><span>Reactions</span></div>
+   </div>
   </div>
- </section>
 
- <section class="s fade">
-  <div class="eyebrow">The couple's side</div>
-  <h2>Everything the couple needs, <em>in one place</em></h2>
-  <div class="body" style="margin-top:18px">
-   <p>Every answer a guest gives lands on the couple's side: who's coming, who still hasn't answered, how many seats each shuttle needs, and every blessing and photo. After the wedding, it shows how many matches happened thanks to them. Instead of spreadsheets, calls and WhatsApp threads, the couple sees it all live and sends one reminder in their own tone.</p>
-   <p class="note" style="font-family:var(--mono);font-size:12px;color:var(--muted)">Concept for the next version. The couple's side isn't built in the live app yet.</p>
+  <div class="feat rv">
+   <div class="stage blu"><div class="phone"><video src="media/getting/vid/album.mp4" poster="media/getting/vid/album.jpg" muted loop playsinline preload="metadata"></video></div></div>
+   <div>
+    <span class="num">03 · THE ALBUM</span>
+    <h3>Everyone's photos, <em>in one place</em></h3>
+    <p class="body">One shared grid with an add-photo tile. Photos sent only to the couple show up blurred with a lock. And "find me" uses your selfie to show the photos you appear in, so no more begging friends on WhatsApp.</p>
+    <div class="pills"><span>Add anytime</span><span>Find me</span><span>Couple-only stays private</span></div>
+   </div>
   </div>
-  <div class="flow f4">
-   <figure><div class="phone"><img src="media/getting/c-home.jpg" alt="Couple dashboard"></div><figcaption><b>Home</b>RSVP status at a glance</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/c-guests.jpg" alt="Guest list"></div><figcaption><b>Guests</b>Filter and nudge who hasn't answered</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/c-shuttles.jpg" alt="Shuttles"></div><figcaption><b>Shuttles</b>Seats per bus, export for the bus company</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/c-memories.jpg" alt="Blessings and photos"></div><figcaption><b>Memories</b>All blessings and guest photos</figcaption></figure>
-   <figure><div class="phone"><img src="media/getting/c-after.jpg" alt="After the wedding"></div><figcaption><b>The day after</b>Matches made, photos, a thank-you</figcaption></figure>
-  </div>
-  <div class="ins">
-   <div><span class="k">01</span><h4>One gentle nudge</h4><p>A reminder only goes to people who haven't answered, so the couple never has to chase.</p></div>
-   <div><span class="k">02</span><h4>Numbers that stay true</h4><p>Guests update their own RSVP and seat, so the headcount for the venue and the buses is always current.</p></div>
-   <div><span class="k">03</span><h4>Memories, not admin</h4><p>Blessings and guest photos collect in one place, ready to download after the wedding.</p></div>
-  </div>
- </section>
 
- <section class="s fade">
-  <div class="eyebrow">Tone of voice</div>
-  <h2>Copy that <em>sounds like us</em></h2>
-  <div class="voice">
-   <div class="v"><div class="he">נו, באים או מה?</div><div class="en">"So… are you coming or what?"</div><div class="why">Instead of "RSVP"</div></div>
-   <div class="v"><div class="he">לא הכינוי מהצבא, בבקשה</div><div class="en">"Not your army nickname, please"</div><div class="why">Name field hint</div></div>
-   <div class="v"><div class="he">את בפנים! / אתה בפנים!</div><div class="en">"You're in!", in the guest's own form</div><div class="why">No more את/ה slashes</div></div>
-   <div class="v"><div class="he">תלוי אם יש בר פתוח</div><div class="en">"Depends if there's an open bar"</div><div class="why">The "maybe" option</div></div>
+  <div class="feat rev rv">
+   <div class="stage yel"><div class="phone"><video src="media/getting/vid/gift.mp4" poster="media/getting/vid/gift.jpg" muted loop playsinline preload="metadata"></video></div></div>
+   <div>
+    <span class="num">04 · A GIFT</span>
+    <h3>A gift, <em>without the envelope</em></h3>
+    <p class="body">Guests type any amount, add a few words and pay with Bit, PayBox or a card. The note arrives with the gift, and only the couple sees how much.</p>
+    <div class="pills"><span>Type any amount</span><span>A note with the gift</span><span>The amount stays private</span></div>
+   </div>
   </div>
- </section>
 
- <section class="s fade" style="padding-top:0">
-  <div class="eyebrow">Visual language</div>
-  <h2>Festive, bright, <em>a little cheeky</em></h2>
-  <div class="ds">
-   <div class="card"><h4>Color</h4>
-    <div class="sw">
-     <div style="background:#E0569B;color:#fff">Pink<br>#E0569B</div>
-     <div style="background:#F5C928;color:#1E1B18">Yellow<br>#F5C928</div>
-     <div style="background:#7CCFEF;color:#1E1B18">Sky<br>#7CCFEF</div>
-     <div style="background:#1E1B18;color:#fff">Ink<br>#1E1B18</div>
+  <div class="feat rv">
+   <div class="stage pink"><div class="duo"><div class="phone"><img src="media/getting/10-me.jpg" alt="Guest profile"></div><div class="phone"><img src="media/getting/11-bye.jpg" alt="Can't make it screen"></div></div></div>
+   <div>
+    <span class="num">05 · GUESTS &amp; SHUTTLES</span>
+    <h3>Plans change. <em>That's fine.</em></h3>
+    <p class="body">Every guest can edit their RSVP, +1 and shuttle seat at any time, so the couple always has a current list. Those who can't make it still leave a blessing, with no guilt.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="w">
+  <div class="couple rv">
+   <div class="top">
+    <div>
+     <span class="tag" style="background:#ffffff14;color:#fff">The couple's side</span>
+     <h2 class="huge" style="color:#fff">Everything the couple needs, <em>live</em></h2>
     </div>
-    <div class="grad"></div>
+    <p>Every answer a guest gives lands here: who's coming, who hasn't answered, seats per shuttle, every blessing and photo. After the wedding, it shows how many matches happened thanks to them.<br><span class="lbl" style="display:inline-block;margin-top:10px">Concept · not built in the live app yet</span></p>
    </div>
-   <div class="card type"><h4>Logo & typography</h4><img src="media/getting/getting-logo.png" alt="" style="width:90px;margin:0 0 14px auto">
-    <div class="big" style="direction:ltr;text-align:left">Getting</div>
-    <div class="row" style="margin-top:14px"><b style="font-family:var(--disp);font-size:24px;font-weight:400">Secular One</b><span>Headlines</span></div>
-    <div class="row"><span style="font-family:Rubik;color:var(--ink);font-size:15px">Rubik · body, buttons, forms</span><span>Text</span></div>
+   <div class="rail" id="rail">
+    <figure><div class="phone"><img src="media/getting/c-home.jpg" alt=""></div><figcaption><b>Home</b><span>RSVP status at a glance</span></figcaption></figure>
+    <figure><div class="phone"><img src="media/getting/c-guests.jpg" alt=""></div><figcaption><b>Guests</b><span>Nudge whoever hasn't answered</span></figcaption></figure>
+    <figure><div class="phone"><img src="media/getting/c-shuttles.jpg" alt=""></div><figcaption><b>Shuttles</b><span>Seats per bus, export for the company</span></figcaption></figure>
+    <figure><div class="phone"><img src="media/getting/c-memories.jpg" alt=""></div><figcaption><b>Memories</b><span>All blessings and guest photos</span></figcaption></figure>
+    <figure><div class="phone"><img src="media/getting/c-after.jpg" alt=""></div><figcaption><b>The day after</b><span>Matches made, photos, a thank-you</span></figcaption></figure>
    </div>
+   <p class="hint">DRAG →</p>
   </div>
- </section>
+  <div class="cpts rv">
+   <div><h4>One gentle nudge</h4><p>A reminder goes only to people who haven't answered, so the couple never has to chase.</p></div>
+   <div><h4>Numbers that stay true</h4><p>Guests update their own RSVP and seat, so the headcount for the venue and buses is always current.</p></div>
+   <div><h4>Memories, not admin</h4><p>Blessings and guest photos collect in one place, ready to download after the wedding.</p></div>
+  </div>
+ </div>
+</section>
 
- <section class="s split fade learn">
-  <div><div class="eyebrow">What I learned</div><h2>Personality is <em>a feature</em></h2></div>
-  <div class="body">
-   <p class="big">When the content is simple, tone and flow do the heavy lifting. One question per screen and a joke in every line can turn a chore into something guests actually enjoy.</p>
-   <p><b>Limits.</b> The numbers above are desk research from US, UK and Israeli sources, not my own users. The app hasn't been tested at a wedding yet.</p>
-   <p><b>What I'd do next.</b> Send a short survey to our guests before the wedding, add a middle "it's complicated" status, and measure at the event how many people actually use "Who's here".</p>
-   <p class="note">Guest names and content shown in the screens are illustrative.</p>
+<section>
+ <div class="n rv">
+  <span class="tag">Tone of voice</span>
+  <h2 class="huge">Copy that <em>sounds like us</em></h2>
+ </div>
+ <div class="w"><div class="tone rv">
+  <div class="tv"><span class="he" dir="rtl">נו, באים או מה? 👀</span><span class="en">"So… are you coming or what?"<small>Instead of "RSVP"</small></span></div>
+  <div class="tv"><span class="he" dir="rtl">לא הכינוי מהצבא, בבקשה</span><span class="en">"Not your army nickname, please"<small>Name field hint</small></span></div>
+  <div class="tv"><span class="he" dir="rtl">את בפנים! / אתה בפנים!</span><span class="en">"You're in!", in the guest's own form<small>No more את/ה slashes</small></span></div>
+  <div class="tv"><span class="he" dir="rtl">תלוי אם יש בר פתוח</span><span class="en">"Depends if there's an open bar"<small>The "maybe" option</small></span></div>
+ </div></div>
+</section>
+
+<section>
+ <div class="n rv">
+  <span class="tag">Visual language</span>
+  <p class="stmt">Festive, bright, <span class="pk">a little cheeky.</span></p>
+ </div>
+ <div class="w"><div class="vl rv">
+  <div class="dots">
+   <div><i style="background:#E0569B"></i>Pink<small>#E0569B</small></div>
+   <div><i style="background:#F5C928"></i>Yellow<small>#F5C928</small></div>
+   <div><i style="background:#7CCFEF"></i>Sky<small>#7CCFEF</small></div>
+   <div><i style="background:#1E1B18"></i>Ink<small>#1E1B18</small></div>
   </div>
- </section>
-</main>
+  <div class="ty"><img src="media/getting/getting-logo.png" alt="Getting logo"><div><p class="a">Getting</p><p>Secular One for headlines · Rubik for text, buttons and forms</p></div></div>
+ </div></div>
+</section>
+
+<section>
+ <div class="n rv">
+  <span class="tag">What I learned</span>
+  <h2 class="huge">Personality <em>is a feature</em></h2>
+  <p class="body">When the content is simple, tone and flow do the heavy lifting. One question per screen and a joke in every line can turn a chore into something guests actually enjoy.</p>
+  <p class="body"><b style="color:var(--ink)">Limits.</b> The numbers above are desk research from US, UK and Israeli sources, not my own users. The app hasn't been tested at a wedding yet.</p>
+  <p class="body"><b style="color:var(--ink)">Next.</b> Send a short survey to our guests before the wedding, add a middle "it's complicated" status, and measure at the event how many people actually use "Who's here".</p>
+  <p class="note">Guest names and content shown in the screens are illustrative.</p>
+ </div>
+</section>
 
 <a class="next" href="vidit.html"><span class="nl">Next project</span><span class="nn">Vidit <b>→</b></span><span class="ns">Dating app</span></a>
 <footer><a href="index.html#ux">← All work</a><span>© 2026 Stav Sharon</span></footer>
+
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// chat bubbles pop in one by one
+document.querySelectorAll('.chat').forEach((chat,k)=>new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.disconnect();chat.querySelectorAll('.b').forEach((b,i)=>setTimeout(()=>b.style.cssText='opacity:1;transform:none',300+k*250+i*550))}),{threshold:.4}).observe(chat));
+// play videos only when visible
+const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.3});
+document.querySelectorAll('video').forEach(v=>vo.observe(v));
+// onboarding steps follow the video
+const fv=document.getElementById('flowv'),lis=[...document.querySelectorAll('#steps li')];
+fv.addEventListener('timeupdate',()=>{let k=0;lis.forEach((l,i)=>{if(fv.currentTime>=+l.dataset.t)k=i});lis.forEach((l,i)=>l.classList.toggle('on',i===k))});
+lis.forEach(l=>l.addEventListener('click',()=>{fv.currentTime=+l.dataset.t;fv.play().catch(()=>{})}));
+lis[0].classList.add('on');
+// drag to scroll the couple rail
+const rail=document.getElementById('rail');let dn=false,sx=0,sl=0;
+rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=rail.scrollLeft;rail.style.scrollSnapType='none'});
+addEventListener('pointerup',()=>{if(dn){dn=false;rail.style.scrollSnapType=''}});
+rail.addEventListener('pointermove',e=>{if(dn){rail.scrollLeft=sl-(e.clientX-sx)}});
 </script>
 </body>
 </html>
