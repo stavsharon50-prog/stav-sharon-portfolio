@@ -36,6 +36,7 @@ header.nav a{color:var(--acc)}
 .tile{position:relative;border-radius:28px;background:var(--tile);overflow:hidden;padding:clamp(28px,5vw,64px)}
 .tile.grey{background:var(--grey)}
 .tile.dark{background:radial-gradient(120% 90% at 50% 0%,#1d5a45 0%,#0d3a2d 60%,#0a2c22 100%)}
+@media(max-width:600px){.tile{border-radius:20px}.hero-tile{padding-top:56px}}
 .big-word{position:absolute;left:0;right:0;top:clamp(22px,3.6vw,46px);text-align:center;font-size:clamp(26px,5.2vw,70px);font-weight:700;letter-spacing:-.03em;color:#fff;opacity:.75;line-height:1;pointer-events:none;white-space:nowrap}
 .browser{position:relative;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px #0d3a2d26,0 0 0 1px #0d3a2d0f}
 .browser .bar{height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#f7f6f2;border-bottom:1px solid #0000000a}
@@ -53,9 +54,9 @@ header.nav a{color:var(--acc)}
 @media(max-width:900px){.float{display:none}}
 
 /* caption overlay on tiles */
-.cap{position:absolute;left:0;right:0;bottom:0;padding:22px clamp(22px,4vw,44px) 26px;background:linear-gradient(#ffffff00,#eef3e9e6 30%);backdrop-filter:blur(2px);font-size:clamp(17px,2vw,24px);line-height:1.35;letter-spacing:-.015em;font-weight:500;color:#26332c}
-.cap.dk{background:linear-gradient(#0a2c2200,#0a2c22f0 35%);color:#e7f0ea}
-.vtile{padding:clamp(24px,4.5vw,56px) clamp(24px,4.5vw,56px) clamp(110px,12vw,150px)}
+.cap{position:relative;max-width:900px;margin:clamp(22px,3vw,34px) auto 0;font-size:clamp(16px,1.9vw,22px);line-height:1.4;letter-spacing:-.015em;font-weight:500;color:#26332c}
+.cap.dk{color:#e7f0ea}
+.vtile{padding:clamp(18px,4.5vw,56px)}
 .vtile .browser{max-width:900px;margin:0 auto}
 
 /* PSO */
