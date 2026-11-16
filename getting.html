@@ -10,7 +10,7 @@
  --grad:linear-gradient(150deg,#fbd6e5 0%,#ffe3cf 50%,#efe3fa 100%);
  --mono:'IBM Plex Mono',ui-monospace,monospace;--disp:'Secular One',Rubik,sans-serif;--serif:'Instrument Serif',Georgia,serif;--sans:Rubik,system-ui,sans-serif;--pad:clamp(18px,4vw,56px)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -35,19 +35,19 @@ header.nav a{color:var(--pink)}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,80px);line-height:1;letter-spacing:-.02em;margin:22px 0 20px}
 .hero h1 em{color:var(--pink)}
 .hero .lead{color:var(--muted);font-size:17px;max-width:520px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.chips span{padding:7px 13px;border-radius:999px;background:#f6f1ee;font-size:13px}
-.chips b{font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#a39b95;margin-right:6px}
-.fan{position:relative;height:clamp(440px,52vw,640px);border-radius:32px;background:var(--grad);overflow:hidden}
-.fan .phone{position:absolute;width:clamp(150px,17vw,220px);top:50%;left:50%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.fan .p1{transform:translate(-128%,-46%) rotate(-9deg);opacity:.95}
-.fan .p2{transform:translate(-50%,-52%);z-index:2;width:clamp(170px,19.5vw,250px)}
-.fan .p3{transform:translate(28%,-46%) rotate(9deg);opacity:.95}
-.fan:hover .p1{transform:translate(-138%,-48%) rotate(-12deg)}.fan:hover .p3{transform:translate(38%,-48%) rotate(12deg)}
-.sticker{position:absolute;z-index:3;font-family:var(--disp);font-size:15px;padding:8px 14px;border-radius:14px;box-shadow:0 10px 24px #0000001f}
-.s1{left:6%;top:9%;background:var(--yellow);transform:rotate(-6deg)}
-.s2{right:6%;bottom:9%;background:#fff;color:var(--pink);transform:rotate(5deg)}
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.fan .phone{width:150px}.fan .p2{width:175px}}
+.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:26px;max-width:520px}
+.chips span{padding:10px 14px;border-radius:16px;background:#f6f1ee;font-size:14px;line-height:1.3}
+.chips b{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#a39b95;margin-bottom:3px}
+.fan{position:relative;aspect-ratio:1/0.98;border-radius:32px;background:var(--grad);overflow:hidden}
+.fan .phone{position:absolute;top:50%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.fan .p1{width:28%;left:3%;transform:translateY(-46%) rotate(-5deg)}
+.fan .p2{width:36%;left:32%;transform:translateY(-50%);z-index:2}
+.fan .p3{width:28%;right:3%;transform:translateY(-46%) rotate(5deg)}
+.fan:hover .p1{transform:translateY(-48%) rotate(-7deg)}.fan:hover .p3{transform:translateY(-48%) rotate(7deg)}
+.sticker{position:absolute;z-index:3;font-family:var(--disp);font-size:clamp(11px,1.3vw,15px);padding:.5em .9em;border-radius:12px;box-shadow:0 8px 20px #0000001a;white-space:nowrap}
+.s1{left:5%;top:5%;background:var(--yellow);transform:rotate(-4deg)}
+.s2{right:5%;bottom:5%;background:#fff;color:var(--pink);transform:rotate(3deg)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.fan{border-radius:24px}}
 
 /* marquee */
 .marq{margin-top:clamp(48px,7vw,80px);background:var(--pink);color:#fff;overflow:hidden;padding:16px 0;transform:rotate(-1.2deg);width:104%;margin-left:-2%}
@@ -118,13 +118,14 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 
 /* goals */
 .goals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
-.goal{border-radius:24px;padding:24px 22px;min-height:210px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.goal:hover{transform:translateY(-6px) rotate(-1deg)}
-.goal .em{font-size:30px;line-height:1}
-.goal h4{font-family:var(--disp);font-weight:400;font-size:21px;margin-top:auto;line-height:1.15}
-.goal p{font-size:14px;margin-top:6px;opacity:.8;line-height:1.45}
-.g1{background:var(--pink);color:#fff}.g2{background:var(--yellow)}.g3{background:var(--blue)}.g4{background:var(--ink);color:#fff}
+.goal{border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.goal:hover{transform:translateY(-4px)}
+.goal .em{width:44px;height:44px;border-radius:14px;background:#ffffff40;display:grid;place-items:center;font-size:22px;line-height:1;flex:none}
+.goal h4{font-family:var(--disp);font-weight:400;font-size:20px;line-height:1.15}
+.goal p{font-size:14px;margin-top:4px;opacity:.85;line-height:1.45}
+.g1{background:var(--pink);color:#fff}.g2{background:var(--yellow)}.g3{background:var(--blue)}.g4{background:var(--ink);color:#fff}.g4 .em{background:#ffffff1a}
 @media(max-width:900px){.goals{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.goals{grid-template-columns:1fr;gap:10px}.goal{flex-direction:row;align-items:flex-start;padding:18px}.goal h4{font-size:18px}}
 
 /* onboarding with synced steps */
 .flow{border-radius:32px;background:var(--grad);padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-top:44px}
@@ -161,18 +162,16 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 @media(max-width:860px){.feat{grid-template-columns:1fr}.feat.rev .stage{order:0}.bub{display:none}}
 
 /* couple carousel */
-.couple{border-radius:32px;background:var(--ink);color:#fff;padding:clamp(32px,5vw,64px) 0 clamp(32px,5vw,56px);margin-top:44px;overflow:hidden}
-.couple .top{padding:0 clamp(28px,5vw,64px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.couple .top p{color:#d7cfca;max-width:560px;font-size:15.5px}
-.couple .top .lbl{color:#ffffff80}
-.rail{display:flex;gap:22px;overflow-x:auto;padding:36px clamp(28px,5vw,64px) 10px;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
+.couple{margin-top:0}
+.rail{display:flex;gap:clamp(18px,3vw,32px);overflow-x:auto;padding:40px clamp(18px,4vw,40px) 16px;margin:0 calc(-1*clamp(18px,4vw,40px));scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
 .rail::-webkit-scrollbar{display:none}
-.rail figure{flex:none;width:clamp(200px,20vw,240px);scroll-snap-align:start}
-.rail .phone{box-shadow:0 24px 50px #00000059}
-.rail figcaption{margin-top:14px}
+.rail figure{flex:none;width:clamp(210px,21vw,250px);scroll-snap-align:center}
+.rail figure:nth-child(odd) .phone{transform:rotate(-1.5deg)}.rail figure:nth-child(even) .phone{transform:rotate(1.5deg) translateY(14px)}
+.rail figcaption{margin-top:22px}
 .rail figcaption b{display:block;font-size:16px}
-.rail figcaption span{font-size:13.5px;color:#bfb6b0}
-.hint{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#ffffff66;padding:0 clamp(28px,5vw,64px);margin-top:14px}
+.rail figcaption span{font-size:13.5px;color:var(--muted)}
+.hint{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#a39b95;text-align:center;margin-top:6px}
+@media(max-width:600px){.rail figure{width:64vw}}
 .cpts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
 .cpts h4{font-size:17px}.cpts p{color:var(--muted);font-size:14.5px}
 .cpts div{background:#f6f1ee;border-radius:22px;padding:22px}
@@ -332,10 +331,10 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <p class="stmt">Funny, aesthetic and dead simple, <span class="pk">for guests of every age.</span></p>
  </div>
  <div class="w"><div class="goals rv">
-  <div class="goal g1"><span class="em">😂</span><h4>Make it fun</h4><p>A joke in every line, so each step feels like a chat with the couple.</p></div>
-  <div class="goal g2"><span class="em">☝️</span><h4>One question per screen</h4><p>Short steps with a progress bar, easy for grandma and for friends.</p></div>
-  <div class="goal g3"><span class="em">🤝</span><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div>
-  <div class="goal g4"><span class="em">🪩</span><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding from the first screen.</p></div>
+  <div class="goal g1"><span class="em">😂</span><div><h4>Make it fun</h4><p>A joke in every line, so each step feels like a chat with the couple.</p></div></div>
+  <div class="goal g2"><span class="em">☝️</span><div><h4>One question per screen</h4><p>Short steps with a progress bar, easy for grandma and for friends.</p></div></div>
+  <div class="goal g3"><span class="em">🤝</span><div><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div></div>
+  <div class="goal g4"><span class="em">🪩</span><div><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding from the first screen.</p></div></div>
  </div></div>
 </section>
 
@@ -423,14 +422,13 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 
 <section>
  <div class="w">
+  <div class="n rv">
+   <span class="tag">The couple's side</span>
+   <h2 class="huge">Everything the couple needs, <em>live</em></h2>
+   <p class="body">Every answer a guest gives lands here: who's coming, who hasn't answered, seats per shuttle, every blessing and photo. After the wedding, it shows how many matches happened thanks to them.</p>
+   <p class="lbl" style="margin-top:14px">Concept · not built in the live app yet</p>
+  </div>
   <div class="couple rv">
-   <div class="top">
-    <div>
-     <span class="tag" style="background:#ffffff14;color:#fff">The couple's side</span>
-     <h2 class="huge" style="color:#fff">Everything the couple needs, <em>live</em></h2>
-    </div>
-    <p>Every answer a guest gives lands here: who's coming, who hasn't answered, seats per shuttle, every blessing and photo. After the wedding, it shows how many matches happened thanks to them.<br><span class="lbl" style="display:inline-block;margin-top:10px">Concept · not built in the live app yet</span></p>
-   </div>
    <div class="rail" id="rail">
     <figure><div class="phone"><img src="media/getting/c-home.jpg" alt=""></div><figcaption><b>Home</b><span>RSVP status at a glance</span></figcaption></figure>
     <figure><div class="phone"><img src="media/getting/c-guests.jpg" alt=""></div><figcaption><b>Guests</b><span>Nudge whoever hasn't answered</span></figcaption></figure>
@@ -438,7 +436,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
     <figure><div class="phone"><img src="media/getting/c-memories.jpg" alt=""></div><figcaption><b>Memories</b><span>All blessings and guest photos</span></figcaption></figure>
     <figure><div class="phone"><img src="media/getting/c-after.jpg" alt=""></div><figcaption><b>The day after</b><span>Matches made, photos, a thank-you</span></figcaption></figure>
    </div>
-   <p class="hint">DRAG →</p>
+   <p class="hint">SWIPE OR DRAG →</p>
   </div>
   <div class="cpts rv">
    <div><h4>One gentle nudge</h4><p>A reminder goes only to people who haven't answered, so the couple never has to chase.</p></div>
