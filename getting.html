@@ -170,13 +170,18 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 .couple{margin-top:0}
 .rail{display:flex;gap:clamp(18px,3vw,32px);overflow-x:auto;padding:40px clamp(18px,4vw,40px) 16px;margin:0 calc(-1*clamp(18px,4vw,40px));scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
 .rail::-webkit-scrollbar{display:none}
-.rail figure{flex:none;width:clamp(210px,21vw,250px);scroll-snap-align:center}
-.rail figure:nth-child(odd) .phone{transform:rotate(-1.5deg)}.rail figure:nth-child(even) .phone{transform:rotate(1.5deg) translateY(14px)}
+.rail figure{flex:none;width:clamp(170px,16vw,200px);scroll-snap-align:start}
 .rail figcaption{margin-top:22px}
 .rail figcaption b{display:block;font-size:16px}
 .rail figcaption span{font-size:13.5px;color:var(--muted)}
-.hint{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#a39b95;text-align:center;margin-top:6px}
-@media(max-width:600px){.rail figure{width:64vw}}
+.couple{position:relative}
+.couple::after{content:"";position:absolute;right:calc(-1*clamp(18px,4vw,40px));top:40px;bottom:70px;width:70px;background:linear-gradient(90deg,#fff0,#fff);pointer-events:none}
+.rctl{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:10px}
+.rctl button{width:44px;height:44px;border-radius:50%;border:0;background:#f6f1ee;color:var(--ink);font-size:18px;cursor:pointer;transition:.2s;display:grid;place-items:center}
+.rctl button:hover{background:var(--pink);color:#fff}
+.rctl button:disabled{opacity:.35;cursor:default;background:#f6f1ee;color:var(--ink)}
+.rctl span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#a39b95;min-width:150px;text-align:center}
+@media(max-width:600px){.rail figure{width:52vw}}
 .cpts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
 .cpts h4{font-size:17px}.cpts p{color:var(--muted);font-size:14.5px}
 .cpts div{background:#f6f1ee;border-radius:22px;padding:22px}
@@ -425,7 +430,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
     <figure><div class="phone"><img src="media/getting/c-memories.jpg" alt=""></div><figcaption><b>Memories</b><span>All blessings and guest photos</span></figcaption></figure>
     <figure><div class="phone"><img src="media/getting/c-after.jpg" alt=""></div><figcaption><b>The day after</b><span>Matches made, photos, a thank-you</span></figcaption></figure>
    </div>
-   <p class="hint">SWIPE OR DRAG →</p>
+   <div class="rctl"><button id="rprev" aria-label="Previous screens">←</button><span id="rcount">SWIPE · 5 SCREENS</span><button id="rnext" aria-label="Next screens">→</button></div>
   </div>
   <div class="cpts rv">
    <div><h4>One gentle nudge</h4><p>A reminder only goes to people who haven't answered, so the couple never has to chase.</p></div>
@@ -496,6 +501,11 @@ const rail=document.getElementById('rail');let dn=false,sx=0,sl=0;
 rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=rail.scrollLeft;rail.style.scrollSnapType='none'});
 addEventListener('pointerup',()=>{if(dn){dn=false;rail.style.scrollSnapType=''}});
 rail.addEventListener('pointermove',e=>{if(dn){rail.scrollLeft=sl-(e.clientX-sx)}});
+const step=()=>{const f=rail.querySelector('figure');return f.getBoundingClientRect().width+parseFloat(getComputedStyle(rail).columnGap||24)};
+document.getElementById('rprev').onclick=()=>rail.scrollBy({left:-step(),behavior:'smooth'});
+document.getElementById('rnext').onclick=()=>rail.scrollBy({left:step(),behavior:'smooth'});
+const upd=()=>{const max=rail.scrollWidth-rail.clientWidth-2;document.getElementById('rprev').disabled=rail.scrollLeft<4;document.getElementById('rnext').disabled=rail.scrollLeft>=max;const i=Math.min(5,Math.round(rail.scrollLeft/step())+1);document.getElementById('rcount').textContent=max<4?'5 SCREENS':(i+' / 5 · SWIPE')};
+rail.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 </script>
 </body>
 </html>
