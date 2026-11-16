@@ -111,6 +111,7 @@ section{padding:clamp(72px,10vw,120px) 0 0}
 .iter figcaption{padding:16px 18px 18px;text-align:left}
 .iter figcaption .lbl{border:0;padding:0;margin-bottom:6px;font-size:10.5px}
 .iter figcaption p{font-size:14px;color:var(--muted)}
+.iter.one{grid-template-columns:1fr;max-width:760px;margin-left:auto;margin-right:auto}.iter.one img{aspect-ratio:1.4}
 @media(max-width:760px){.iter{grid-template-columns:1fr}}
 .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px;margin-top:56px}
 .grid6 div{border-top:1px solid #0000000f;padding-top:14px;transition:border-color .3s}
@@ -290,12 +291,11 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 <section>
  <div class="n rv">
   <span class="tag">Iterations</span>
-  <p class="stmt">The first concepts showed everything. <span class="acc">The final system shows what matters first.</span></p>
+  <p class="stmt">The first concept showed everything. <span class="acc">The final system shows what matters first.</span></p>
  </div>
  <div class="w">
-  <div class="iter rv">
-   <figure><img src="media/cs/v1-results.jpg" alt="Concept 1"><figcaption><p class="lbl">Concept 1 · Data first</p><p>Equal-weight cards and satellite imagery. Everything visible, nothing prioritized.</p></figcaption></figure>
-   <figure><img src="media/cs/v2-results.jpg" alt="Concept 2"><figcaption><p class="lbl">Concept 2 · Calmer</p><p>A nature-inspired palette and simpler navigation, the base for the final system.</p></figcaption></figure>
+  <div class="iter one rv">
+   <figure><img src="media/cs/v1-results.jpg" alt="Concept 1"><figcaption><p class="lbl">First concept · Data first</p><p>Equal-weight cards and satellite imagery. Everything was visible, and nothing was prioritized. The changes below came out of it.</p></figcaption></figure>
   </div>
   <div class="grid6 rv">
    <div><span class="no">01</span><h4>One decision score</h4><p>Each farm is led by a single, clear score.</p></div>
