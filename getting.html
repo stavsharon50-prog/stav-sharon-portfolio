@@ -88,6 +88,11 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 .pdesc{color:var(--muted);font-size:14.5px;margin-top:14px}
 .chat2{background:#f3e9f7}.chat2 .b.me{background:#fbd6e5}
 @media(max-width:760px){.probs{grid-template-columns:1fr}}
+.stats.s3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.stats.s3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.split .stmt{text-align:left}
+.chat[dir=rtl] .b small{text-align:left}
+.qt{text-align:center}
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:20px;align-items:stretch}
 .st{border-radius:22px;padding:22px;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
@@ -221,85 +226,75 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <div class="w hero-grid">
   <div class="rv">
    <span class="logo-chip"><img src="media/getting/getting-logo.png" alt="">Wedding app · Mobile web · UX/UI</span>
-   <h1>Turning the wedding RSVP into <em>the start of the party</em></h1>
-   <p class="lead">Getting is a wedding app for meeting new people, managing guests and shuttles, and collecting blessings and photos, all in one playful place. I designed it first for our own wedding, Stav &amp; Eden, May 2027.</p>
+   <h1>Getting<em>.</em></h1>
+   <p class="lead">A wedding app for meeting new people, managing guests and shuttles, and collecting blessings and photos, all in one playful place. Designed first for Stav &amp; Eden's wedding, May 2027.</p>
    <div class="chips">
-    <span><b>Role</b>Product Designer</span>
-    <span><b>Platform</b>Mobile web · Hebrew RTL</span>
-    <span><b>Scope</b>Concept, flows, UI, copy</span>
-    <span><b>Status</b>In use for our wedding</span>
+    <span><b>Role</b>Product Designer (UX/UI)</span>
+    <span><b>Platform</b>Mobile web app · Hebrew (RTL)</span>
+    <span><b>Scope</b>Product concept, flows, UI, copy</span>
+    <span><b>Status</b>In use for our wedding · May 2027</span>
    </div>
   </div>
   <div class="fan rv">
-   <span class="sticker s1" dir="rtl">נו, באים או מה? 👀</span>
-   <span class="sticker s2">No app to download</span>
    <div class="phone p1"><img src="media/getting/01-welcome.jpg" alt="Welcome screen"></div>
    <div class="phone p2"><video src="media/getting/vid/rsvp.mp4" poster="media/getting/vid/rsvp.jpg" muted loop playsinline preload="metadata"></video></div>
    <div class="phone p3"><img src="media/getting/07-wall.jpg" alt="The wall"></div>
   </div>
  </div>
- <div class="marq" aria-hidden="true"><div class="tr" dir="rtl">
-  <span>נו, באים או מה?</span><span>לא הכינוי מהצבא, בבקשה</span><span>תלוי אם יש בר פתוח</span><span>כי אף אחד לא רוצה להיות הנהג התורן</span><span>שיזהו אותך ליד הבר</span><span>יאללה, אחרי החופה בבר</span>
-  <span>נו, באים או מה?</span><span>לא הכינוי מהצבא, בבקשה</span><span>תלוי אם יש בר פתוח</span><span>כי אף אחד לא רוצה להיות הנהג התורן</span><span>שיזהו אותך ליד הבר</span><span>יאללה, אחרי החופה בבר</span>
- </div></div>
 </header>
 
 <section>
+ <div class="w split">
+  <div class="rv">
+   <span class="tag">Overview</span>
+   <h2 class="stmt">Weddings are full of people <span class="pk">you haven't met</span></h2>
+   <p class="body">Getting turns a wedding from a one-night event into a social experience: guests meet each other, and the couple manages everything in one place.</p>
+   <p class="body">The product combines three things: meeting people at weddings, with guest profiles and an opt-in "open to meeting" status; guest and shuttle management, through a playful RSVP flow; and blessings and photos, on a live wall and a shared album.</p>
+   <p class="body">I designed the product end to end, starting with our own wedding as the first real use case. The guiding brief: funny, aesthetic and dead simple, for guests of every age.</p>
+  </div>
+  <div class="chat chat2 rv" id="chat" dir="rtl">
+   <div class="hd"><i>👀</i>הכלה · יום אחרי החתונה</div>
+   <div class="b me">מי זה היה הבחור בחולצה הכחולה ליד הבר?<small>11:20 ✓✓</small></div>
+   <div class="b them">אין לי מושג 😅 היו שם 300 איש<small>11:42</small></div>
+   <div class="b me">את יכולה לברר? הוא היה חמוד 🙈<small>11:43 ✓✓</small></div>
+   <div class="b them">אנסה… מהירח דבש 😂<small>12:05</small></div>
+  </div>
+ </div>
+</section>
+
+<section>
  <div class="n rv">
-  <span class="tag">Two problems</span>
-  <p class="stmt">The couple chases guests for answers, rides and photos. <span class="pk">And single guests leave without meeting anyone.</span></p>
-  <p class="body">A wedding brings hundreds of people into one room, but the tools around it only collect a name and a headcount. Getting was built to solve both: one place for RSVPs, rides, blessings and photos that guests actually enjoy, and an easy, private way to meet someone at the wedding.</p>
+  <span class="tag">The challenge</span>
+  <h2 class="huge">The RSVP <em>is a chore</em></h2>
+  <p class="body">The RSVP tools I looked at collect a name and a headcount, and that's where they end. The couple still chases guests for answers, rides and photos, and singles often leave without knowing who else was there.</p>
+  <p class="qt">"What if the RSVP was the start of the party, not a chore?"</p>
+  <p class="body">The humor isn't decoration. I made the RSVP fun on purpose, so guests would actually finish it, and answer early, without the couple having to chase them.</p>
  </div>
- <div class="w probs">
-  <div class="rv">
-   <p class="plbl"><span>01</span>For the couple · RSVPs, rides, photos &amp; blessings</p>
-   <div class="chat" id="chat">
-    <div class="hd"><i>💍</i>Wedding RSVPs · 250 guests</div>
-    <div class="b me">Hi! Are you coming to our wedding? 🙏<small>Mon 10:02 ✓✓</small></div>
-    <div class="b sys">Seen</div>
-    <div class="b me">Just a reminder, we need numbers by Friday 😅<small>Wed 18:40 ✓✓</small></div>
-    <div class="b them">Probably! Can I tell you next week?<small>Thu 23:15</small></div>
-    <div class="b me">Also… do you need a ride? 🚌<small>Fri 09:01 ✓</small></div>
-    <div class="b sys">· the week after the wedding ·</div>
-    <div class="b me">Send us your photos and videos from the wedding! 📸🥹<small>Sun 20:30 ✓✓</small></div>
-    <div class="b them">Sure! I'll find them later ❤️<small>Wed 22:10</small></div>
-   </div>
-   <p class="pdesc">RSVP rounds take weeks of texts and calls. Rides are handled separately, blessings get lost, and most guest photos never leave guests' phones.</p>
-  </div>
-  <div class="rv">
-   <p class="plbl"><span>02</span>For the guests · meeting someone</p>
-   <div class="chat chat2">
-    <div class="hd"><i>👀</i>The bride · the day after</div>
-    <div class="b me">Who was the guy in the blue shirt next to the bar?<small>Sat 11:20 ✓✓</small></div>
-    <div class="b them">No idea 😅 there were 300 people<small>Sat 11:42</small></div>
-    <div class="b me">Can you ask around? He was cute 🙈<small>Sat 11:43 ✓✓</small></div>
-    <div class="b them">I'll try… on my honeymoon 😂<small>Sat 12:05</small></div>
-   </div>
-   <p class="pdesc">Singles notice someone, but there's no easy way to find out who they were, or if they're single too.</p>
-  </div>
- </div>
- <div class="n rv"><p class="qt" style="margin-top:56px">What if the RSVP was the start of the party, and the party was where you met someone?</p></div>
 </section>
 
 <section>
  <div class="n rv">
   <span class="tag">Desk research</span>
-  <p class="stmt">Big guest lists, slow answers, <span class="pk">and a lot of people who don't know each other.</span></p>
+  <h2 class="huge">What the <em>numbers</em> say</h2>
  </div>
  <div class="w">
   <p class="grp lbl rv">For guests</p>
-  <div class="stats rv">
+  <div class="stats s3 rv">
    <div class="st c1"><b>250–300</b><p>guests at a typical Israeli wedding, more than double the US average of 117.</p><small>Easy2Give via Mako, 2022 · The Knot</small></div>
    <div class="st c2"><b>25%</b><p>of guests dislike not knowing anyone at a wedding. 19% dislike mingling with strangers.</p><small>WeddingWire, 900+ guests</small></div>
-   <div class="st c3"><b>38%</b><p>exchanged numbers with someone they met at a wedding. 10% started a serious relationship from one.</p><small>WeddingWire, 1,000 guests</small></div>
-   <div class="st c4"><b>~5%</b><p>of couples collected guest photos through a dedicated app. Downloading it was the barrier.</p><small>EventPics survey 2025, 620 couples &amp; planners</small></div>
+   <div class="st c3"><b>38%</b><p>of guests exchanged numbers with someone they met at a wedding. 10% started a serious relationship from one.</p><small>WeddingWire, 1,000 guests</small></div>
   </div>
   <p class="grp lbl rv">For the couple</p>
   <div class="stats rv">
    <div class="st c3"><b>44%</b><p>of guests think a late RSVP is fine, and more than 1 in 10 didn't show up after saying yes.</p><small>DatingNews survey, 1,000+ Americans</small></div>
-   <div class="st c1"><b>1–2 wks</b><p>is how long an RSVP round can take in Israel, by text and phone calls.</p><small>Kipa · Israel Hayom</small></div>
-   <div class="st c2"><b>46%</b><p>of couples wish they had more candid photos, while most guest photos stay on guests' phones.</p><small>GoodtoKnow UK</small></div>
-   <div class="st c4"><b>0</b><p>apps to download in Getting. It runs in the browser from a link, so grandma can post a blessing too.</p><small>Design decision</small></div>
+   <div class="st c1"><b>1–2 weeks</b><p>is how long an RSVP round can take in Israel, by text and phone calls. Many couples pay a service for it, or recruit friends to call.</p><small>Kipa · Israel Hayom</small></div>
+   <div class="st c4"><b>~5%</b><p>of couples collected guest photos through a dedicated app. Having to download it was the barrier, especially for older guests.</p><small>EventPics survey 2025, 620 couples &amp; planners (DE/AT)</small></div>
+   <div class="st c2"><b>46%</b><p>of couples wish they had more candid photos from their day, while most guest photos stay on guests' phones.</p><small>GoodtoKnow UK</small></div>
+  </div>
+  <div class="three rv">
+   <div><p class="lbl">→</p><h4>Make the RSVP worth finishing</h4><p>If answering is fun, guests answer early, and the couple chases fewer people.</p></div>
+   <div><p class="lbl">→</p><h4>Changes are part of the flow</h4><p>Guests can update their RSVP, +1 and shuttle seat anytime, so the list stays true up to the day.</p></div>
+   <div><p class="lbl">→</p><h4>No app to download</h4><p>Getting runs in the browser from a link, so grandma can post a blessing too.</p></div>
   </div>
  </div>
 </section>
@@ -308,51 +303,51 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <div class="n rv">
   <span class="tag">What couples already do</span>
   <h2 class="huge">Guests are already <em>hacking it</em></h2>
-  <p class="body">Before designing "Who's here", I looked for what couples do today. The need was already there, solved with paper and silicone.</p>
+  <p class="body">Before designing the "Who's here" feature, I looked for what couples do today. The need was already there, solved with paper and silicone.</p>
  </div>
  <div class="w">
   <div class="pols rv">
-   <figure class="pol"><img src="media/getting/evidence/sign.jpg" alt="A table sign at a wedding"><h4>The table sign</h4><p>Saw someone you like? Tell us and we'll connect you. 5.2K reactions, 145 shares.</p></figure>
-   <figure class="pol"><img src="media/getting/evidence/bracelets-sell.jpg" alt="Status bracelets for sale"><h4>Bracelets, for sale</h4><p>Green for single, yellow for confused, red for taken.</p></figure>
-   <figure class="pol"><img src="media/getting/evidence/bracelets-ask.jpg" alt="A bride asking where to buy bracelets"><h4>At guest-list scale</h4><p>A bride asks where to buy 300–400, close to one per guest.</p></figure>
+   <figure class="pol"><img src="media/getting/evidence/sign.jpg" alt="A table sign at a wedding"><h4>The table sign</h4><p>A couple left a sign on the tables: saw someone you like? Tell us and we'll connect you. The post got 5.2K reactions and 145 shares.</p></figure>
+   <figure class="pol"><img src="media/getting/evidence/bracelets-sell.jpg" alt="Status bracelets for sale"><h4>Status bracelets, for sale</h4><p>An importer sells packs of green "single", yellow "confused" and red "taken" bracelets for weddings.</p></figure>
+   <figure class="pol"><img src="media/getting/evidence/bracelets-ask.jpg" alt="A bride asking where to buy bracelets"><h4>At the scale of a guest list</h4><p>A bride asks where to buy 300–400 of them, close to one for every guest.</p></figure>
   </div>
   <div class="three rv">
    <div><p class="lbl">01</p><h4>The need is real</h4><p>Couples print signs and buy bracelets so their guests can meet. Getting gives that a home.</p></div>
-   <div><p class="lbl">02</p><h4>Not just yes or no</h4><p>Even the bracelets have a "confused" option. Status needs a middle state.</p></div>
-   <div><p class="lbl">03</p><h4>Private, not public</h4><p>A bracelet tells everyone, from your aunt to your boss. In Getting, status is opt-in.</p></div>
+   <div><p class="lbl">02</p><h4>Not just yes or no</h4><p>Even the bracelets have a "confused" option. Status needs a middle state, not only single or taken.</p></div>
+   <div><p class="lbl">03</p><h4>Private, not public</h4><p>A bracelet tells everyone, from your aunt to your boss. In Getting, status is opt-in and private by default.</p></div>
   </div>
-  <p class="note rv">Also checked: Fotify (meeting only) and mit4mit's WedPlanner (planning for the couple, not an experience for guests). Names and brands in the screenshots are blurred.</p>
+  <p class="note rv">Also checked: Fotify, an app that reveals Instagram handles at weddings after a mutual swipe. It covers meeting only, not RSVP, rides or photos. In Israel, mit4mit's WedPlanner offers free digital invites and RSVP, but it's a planning tool for the couple, not an experience for the guests. Names and brands in the screenshots are blurred.</p>
  </div>
 </section>
 
 <section>
  <div class="n rv">
   <span class="tag">Design goals</span>
-  <p class="stmt">Funny, aesthetic and dead simple, <span class="pk">for guests of every age.</span></p>
+  <h2 class="huge">What guided <em>the design</em></h2>
  </div>
  <div class="w"><div class="goals rv">
-  <div class="goal g1"><span class="no">01</span><div><h4>Make it fun</h4><p>A joke in every line, so each step feels like a chat with the couple.</p></div></div>
-  <div class="goal g2"><span class="no">02</span><div><h4>One question per screen</h4><p>Short steps with a progress bar, easy for grandma and for friends.</p></div></div>
+  <div class="goal g1"><span class="no">01</span><div><h4>Make it fun</h4><p>Humor in every line of copy, so each step feels like a chat with the couple, and guests actually finish the RSVP.</p></div></div>
+  <div class="goal g2"><span class="no">02</span><div><h4>One question per screen</h4><p>Short, focused steps with a progress bar, easy for grandma and for friends.</p></div></div>
   <div class="goal g3"><span class="no">03</span><div><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div></div>
-  <div class="goal g4"><span class="no">04</span><div><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding from the first screen.</p></div></div>
+  <div class="goal g4"><span class="no">04</span><div><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding, from the first screen on.</p></div></div>
  </div></div>
 </section>
 
 <section>
  <div class="n rv">
-  <span class="tag">Onboarding</span>
-  <h2 class="huge">An RSVP that builds <em>a guest profile</em></h2>
+  <span class="tag">Onboarding flow</span>
+  <h2 class="huge">RSVP that builds <em>a guest profile</em></h2>
  </div>
  <div class="w">
   <div class="flow rv">
    <div class="phone"><video id="flowv" src="media/getting/vid/rsvp.mp4" poster="media/getting/vid/rsvp.jpg" muted loop playsinline preload="metadata"></video></div>
    <ol class="steps" id="steps">
     <li data-t="0"><span class="k">01</span><div><b>Welcome</b><span>Date, venue, the couple</span></div></li>
-    <li data-t="1.8"><span class="k">02</span><div><b>RSVP</b><span>Coming, maybe, or <span dir="rtl">"תלוי אם יש בר פתוח"</span></span></div></li>
-    <li data-t="3.8"><span class="k">03</span><div><b>Who are you</b><span>Name, phone, +1, and how to address you</span></div></li>
-    <li data-t="8.7"><span class="k">04</span><div><b>Shuttle</b><span>Need a ride? Pick a stop</span></div></li>
-    <li data-t="12.6"><span class="k">05</span><div><b>The fun part</b><span>Status, Instagram, a weird fact</span></div></li>
-    <li data-t="14.6"><span class="k">06</span><div><b>Selfie</b><span>So people find you at the bar</span></div></li>
+    <li data-t="1.8"><span class="k">02</span><div><b>RSVP</b><span>Coming, maybe, or not</span></div></li>
+    <li data-t="3.8"><span class="k">03</span><div><b>Who are you</b><span>Name, +1, how to address you</span></div></li>
+    <li data-t="8.7"><span class="k">04</span><div><b>Shuttle</b><span>Need a ride?</span></div></li>
+    <li data-t="12.6"><span class="k">05</span><div><b>The fun part</b><span>Status, Instagram, fun fact</span></div></li>
+    <li data-t="14.6"><span class="k">06</span><div><b>Selfie</b><span>So people find you</span></div></li>
    </ol>
   </div>
  </div>
@@ -361,21 +356,17 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 <section>
  <div class="n rv">
   <span class="tag">Inside the app</span>
-  <p class="stmt">One app for the whole wedding. <span class="pk">Every feature started from a real moment.</span></p>
+  <h2 class="huge">One app, <em>the whole wedding</em></h2>
  </div>
  <div class="w" style="display:grid;gap:clamp(64px,9vw,110px);margin-top:56px">
 
   <div class="feat rv">
-   <div class="stage dark">
-    <div class="bub l" dir="rtl"><small>עומר נדנדה לך</small>👉 נדנוד</div>
-    <div class="bub r" dir="rtl">יאללה, אחרי החופה בבר</div>
-    <div class="phone"><video src="media/getting/vid/who.mp4" poster="media/getting/vid/who.jpg" muted loop playsinline preload="metadata"></video></div>
-   </div>
+   <div class="stage dark"><div class="phone"><video src="media/getting/vid/who.mp4" poster="media/getting/vid/who.jpg" muted loop playsinline preload="metadata"></video></div></div>
    <div>
     <span class="num">01 · WHO'S HERE</span>
-    <h3>Meet people, <em>without the bracelet</em></h3>
+    <h3>Meet people <em>at the wedding</em></h3>
     <p class="body">Guest cards with a fun fact and a status. Singles can choose to show they're open to meeting, and a nudge lets someone know you noticed them. I removed the singles and taken filters, so nobody ends up alone in a category.</p>
-    <div class="pills"><span>Search by name</span><span>Status private by default</span><span>Nudge → chat or Instagram</span></div>
+    <div class="pills"><span>Everyone in one list, with search by name</span><span>Status is private by default</span><span>Got nudged? Start a chat or check their Instagram</span></div>
    </div>
   </div>
 
@@ -384,8 +375,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div>
     <span class="num">02 · THE WALL</span>
     <h3>Blessings, photos <em>and a countdown</em></h3>
-    <p class="body">The heart of the app. Guests post blessings and photos for the couple and see how many days are left. When they don't know what to write, a starter does the hard part.</p>
-    <div class="pills"><span>Live feed</span><span>Countdown</span><span>Writing starters</span><span>Reactions</span></div>
+    <p class="body">The heart of the app: guests post blessings and photos for the couple, see how many days are left, and get prompts when they don't know what to write.</p>
+    <div class="pills"><span>Live feed of blessings and photos</span><span>Countdown and RSVP stats</span><span>Writing prompts: "funny", "emotional", "selfie"</span></div>
    </div>
   </div>
 
@@ -394,8 +385,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div>
     <span class="num">03 · THE ALBUM</span>
     <h3>Everyone's photos, <em>in one place</em></h3>
-    <p class="body">One shared grid with an add-photo tile. Photos sent only to the couple show up blurred with a lock. And "find me" uses your selfie to show the photos you appear in, so no more begging friends on WhatsApp.</p>
-    <div class="pills"><span>Add anytime</span><span>Find me</span><span>Couple-only stays private</span></div>
+    <p class="body">One shared album with an add-photo button right in the grid. Photos sent only to the couple show up blurred with a lock. Plus a "find me" option that shows the photos you appear in, no more begging friends on WhatsApp.</p>
+    <div class="pills"><span>One grid, add a photo anytime</span><span>"Find me" via your selfie</span><span>Couple-only photos stay blurred</span></div>
    </div>
   </div>
 
@@ -404,8 +395,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div>
     <span class="num">04 · A GIFT</span>
     <h3>A gift, <em>without the envelope</em></h3>
-    <p class="body">Guests type any amount, add a few words and pay with Bit, PayBox or a card. The note arrives with the gift, and only the couple sees how much.</p>
-    <div class="pills"><span>Type any amount</span><span>A note with the gift</span><span>The amount stays private</span></div>
+    <p class="body">Guests can send money to the couple straight from the app, with a note. They type an amount, add a few words and choose Bit, PayBox or a card. Only the couple sees how much.</p>
+    <div class="pills"><span>Type any amount</span><span>A note that arrives with the gift</span><span>The amount stays private</span></div>
    </div>
   </div>
 
@@ -413,8 +404,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div class="stage pink"><div class="duo"><div class="phone"><img src="media/getting/10-me.jpg" alt="Guest profile"></div><div class="phone"><img src="media/getting/11-bye.jpg" alt="Can't make it screen"></div></div></div>
    <div>
     <span class="num">05 · GUESTS &amp; SHUTTLES</span>
-    <h3>Plans change. <em>That's fine.</em></h3>
-    <p class="body">Every guest can edit their RSVP, +1 and shuttle seat at any time, so the couple always has a current list. Those who can't make it still leave a blessing, with no guilt.</p>
+    <h3>Guest &amp; shuttle <em>management</em></h3>
+    <p class="body">Every guest sees and edits their RSVP, +1 and shuttle seat at any time, so the couple always has an up-to-date list. Those who can't make it still leave a blessing, with no guilt.</p>
    </div>
   </div>
  </div>
@@ -424,23 +415,23 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <div class="w">
   <div class="n rv">
    <span class="tag">The couple's side</span>
-   <h2 class="huge">Everything the couple needs, <em>live</em></h2>
-   <p class="body">Every answer a guest gives lands here: who's coming, who hasn't answered, seats per shuttle, every blessing and photo. After the wedding, it shows how many matches happened thanks to them.</p>
-   <p class="lbl" style="margin-top:14px">Concept · not built in the live app yet</p>
+   <h2 class="huge">Everything the couple needs, <em>in one place</em></h2>
+   <p class="body">Every answer a guest gives lands on the couple's side: who's coming, who still hasn't answered, how many seats each shuttle needs, and every blessing and photo. After the wedding, it shows how many matches happened thanks to them. Instead of spreadsheets, calls and WhatsApp threads, the couple sees it all live and sends one reminder in their own tone.</p>
+   <p class="lbl" style="margin-top:14px">Concept for the next version. The couple's side isn't built in the live app yet.</p>
   </div>
   <div class="couple rv">
    <div class="rail" id="rail">
     <figure><div class="phone"><img src="media/getting/c-home.jpg" alt=""></div><figcaption><b>Home</b><span>RSVP status at a glance</span></figcaption></figure>
-    <figure><div class="phone"><img src="media/getting/c-guests.jpg" alt=""></div><figcaption><b>Guests</b><span>Nudge whoever hasn't answered</span></figcaption></figure>
-    <figure><div class="phone"><img src="media/getting/c-shuttles.jpg" alt=""></div><figcaption><b>Shuttles</b><span>Seats per bus, export for the company</span></figcaption></figure>
+    <figure><div class="phone"><img src="media/getting/c-guests.jpg" alt=""></div><figcaption><b>Guests</b><span>Filter and nudge who hasn't answered</span></figcaption></figure>
+    <figure><div class="phone"><img src="media/getting/c-shuttles.jpg" alt=""></div><figcaption><b>Shuttles</b><span>Seats per bus, export for the bus company</span></figcaption></figure>
     <figure><div class="phone"><img src="media/getting/c-memories.jpg" alt=""></div><figcaption><b>Memories</b><span>All blessings and guest photos</span></figcaption></figure>
     <figure><div class="phone"><img src="media/getting/c-after.jpg" alt=""></div><figcaption><b>The day after</b><span>Matches made, photos, a thank-you</span></figcaption></figure>
    </div>
    <p class="hint">SWIPE OR DRAG →</p>
   </div>
   <div class="cpts rv">
-   <div><h4>One gentle nudge</h4><p>A reminder goes only to people who haven't answered, so the couple never has to chase.</p></div>
-   <div><h4>Numbers that stay true</h4><p>Guests update their own RSVP and seat, so the headcount for the venue and buses is always current.</p></div>
+   <div><h4>One gentle nudge</h4><p>A reminder only goes to people who haven't answered, so the couple never has to chase.</p></div>
+   <div><h4>Numbers that stay true</h4><p>Guests update their own RSVP and seat, so the headcount for the venue and the buses is always current.</p></div>
    <div><h4>Memories, not admin</h4><p>Blessings and guest photos collect in one place, ready to download after the wedding.</p></div>
   </div>
  </div>
@@ -452,7 +443,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <h2 class="huge">Copy that <em>sounds like us</em></h2>
  </div>
  <div class="w"><div class="tone rv">
-  <div class="tv"><span class="he" dir="rtl">נו, באים או מה? 👀</span><span class="en">"So… are you coming or what?"<small>Instead of "RSVP"</small></span></div>
+  <div class="tv"><span class="he" dir="rtl">נו, באים או מה?</span><span class="en">"So… are you coming or what?"<small>Instead of "RSVP"</small></span></div>
   <div class="tv"><span class="he" dir="rtl">לא הכינוי מהצבא, בבקשה</span><span class="en">"Not your army nickname, please"<small>Name field hint</small></span></div>
   <div class="tv"><span class="he" dir="rtl">את בפנים! / אתה בפנים!</span><span class="en">"You're in!", in the guest's own form<small>No more את/ה slashes</small></span></div>
   <div class="tv"><span class="he" dir="rtl">תלוי אם יש בר פתוח</span><span class="en">"Depends if there's an open bar"<small>The "maybe" option</small></span></div>
@@ -462,7 +453,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 <section>
  <div class="n rv">
   <span class="tag">Visual language</span>
-  <p class="stmt">Festive, bright, <span class="pk">a little cheeky.</span></p>
+  <h2 class="huge">Festive, bright, <em>a little cheeky</em></h2>
  </div>
  <div class="w"><div class="vl rv">
   <div class="dots">
@@ -471,7 +462,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div><i style="background:#7CCFEF"></i>Sky<small>#7CCFEF</small></div>
    <div><i style="background:#1E1B18"></i>Ink<small>#1E1B18</small></div>
   </div>
-  <div class="ty"><img src="media/getting/getting-logo.png" alt="Getting logo"><div><p class="a">Getting</p><p>Secular One for headlines · Rubik for text, buttons and forms</p></div></div>
+  <div class="ty"><img src="media/getting/getting-logo.png" alt="Getting logo"><div><p class="a">Getting</p><p>Secular One · Headlines<br>Rubik · body, buttons, forms</p></div></div>
  </div></div>
 </section>
 
@@ -481,7 +472,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <h2 class="huge">Personality <em>is a feature</em></h2>
   <p class="body">When the content is simple, tone and flow do the heavy lifting. One question per screen and a joke in every line can turn a chore into something guests actually enjoy.</p>
   <p class="body"><b style="color:var(--ink)">Limits.</b> The numbers above are desk research from US, UK and Israeli sources, not my own users. The app hasn't been tested at a wedding yet.</p>
-  <p class="body"><b style="color:var(--ink)">Next.</b> Send a short survey to our guests before the wedding, add a middle "it's complicated" status, and measure at the event how many people actually use "Who's here".</p>
+  <p class="body"><b style="color:var(--ink)">What I'd do next.</b> Send a short survey to our guests before the wedding, add a middle "it's complicated" status, and measure at the event how many people actually use "Who's here".</p>
   <p class="note">Guest names and content shown in the screens are illustrative.</p>
  </div>
 </section>
