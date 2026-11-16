@@ -118,14 +118,14 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 
 /* goals */
 .goals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
-.goal{border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.goal{border-radius:24px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:40px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .goal:hover{transform:translateY(-4px)}
-.goal .em{width:44px;height:44px;border-radius:14px;background:#ffffff40;display:grid;place-items:center;font-size:22px;line-height:1;flex:none}
+.goal .no{font-family:var(--mono);font-size:12px;letter-spacing:.08em;opacity:.7}
 .goal h4{font-family:var(--disp);font-weight:400;font-size:20px;line-height:1.15}
 .goal p{font-size:14px;margin-top:4px;opacity:.85;line-height:1.45}
-.g1{background:var(--pink);color:#fff}.g2{background:var(--yellow)}.g3{background:var(--blue)}.g4{background:var(--ink);color:#fff}.g4 .em{background:#ffffff1a}
+.g1{background:var(--pink);color:#fff}.g2{background:var(--yellow)}.g3{background:var(--blue)}.g4{background:var(--ink);color:#fff}
 @media(max-width:900px){.goals{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.goals{grid-template-columns:1fr;gap:10px}.goal{flex-direction:row;align-items:flex-start;padding:18px}.goal h4{font-size:18px}}
+@media(max-width:600px){.goals{grid-template-columns:1fr;gap:10px}.goal{min-height:0;gap:18px;padding:18px 20px 20px}.goal h4{font-size:19px}}
 
 /* onboarding with synced steps */
 .flow{border-radius:32px;background:var(--grad);padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-top:44px}
@@ -331,10 +331,10 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <p class="stmt">Funny, aesthetic and dead simple, <span class="pk">for guests of every age.</span></p>
  </div>
  <div class="w"><div class="goals rv">
-  <div class="goal g1"><span class="em">😂</span><div><h4>Make it fun</h4><p>A joke in every line, so each step feels like a chat with the couple.</p></div></div>
-  <div class="goal g2"><span class="em">☝️</span><div><h4>One question per screen</h4><p>Short steps with a progress bar, easy for grandma and for friends.</p></div></div>
-  <div class="goal g3"><span class="em">🤝</span><div><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div></div>
-  <div class="goal g4"><span class="em">🪩</span><div><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding from the first screen.</p></div></div>
+  <div class="goal g1"><span class="no">01</span><div><h4>Make it fun</h4><p>A joke in every line, so each step feels like a chat with the couple.</p></div></div>
+  <div class="goal g2"><span class="no">02</span><div><h4>One question per screen</h4><p>Short steps with a progress bar, easy for grandma and for friends.</p></div></div>
+  <div class="goal g3"><span class="no">03</span><div><h4>Connection, opt-in</h4><p>Meeting people is built in, but every guest decides what to share.</p></div></div>
+  <div class="goal g4"><span class="no">04</span><div><h4>Feel the vibe</h4><p>A bright, festive look that matches the wedding from the first screen.</p></div></div>
  </div></div>
 </section>
 
