@@ -149,6 +149,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
 .thumb img.cover-logo{object-fit:cover;transform:scale(1.25)}
 .cycle img{opacity:0;transition:none!important}
 .cycle img.on{opacity:1}
+.thumb .stats{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--text);border-radius:99px;padding:3px 10px;font-size:11.5px}
 .thumb .badge{position:absolute;left:12px;top:12px;background:#fff;color:var(--text);border-radius:99px;padding:3px 10px;font-size:11.5px}
 .thumb .pages{position:absolute;left:12px;top:12px;background:#fff;color:var(--text);border-radius:99px;padding:3px 10px;font-size:11.5px}
 .lb-gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;max-width:min(66vw,1000px);align-items:center}
@@ -289,14 +290,14 @@ const W=(id)=>({cover:`w${id}.jpg`,preview:`w${id}.mp4`,media:[{t:'v',src:`w${id
 const R=(id)=>({cover:`r${id}.jpg`,preview:`rp${id}.mp4`,media:[{t:'a',src:`r${id}.mp4`,poster:`r${id}.jpg`}]});
 const I=(...s)=>({cover:s[0],cycle:s.length>1?s:null,media:s.map(x=>({t:'i',src:x}))});
 const WORK=[
- {title:'Tiramisu for ₪1',client:'Restaurant promo',cats:['social','motion'],tags:['Social post','Motion'],...W('01')},
+ {title:'Tiramisu for ₪1',client:'Restaurant promo',stats:'2,186 shares · 1,220 likes',cats:['social','motion'],tags:['Social post','Motion'],...W('01')},
  {title:'Sultana',client:'Sultana Jewelry',cats:['reels'],tags:['Reel','Content creation'],...R('01')},
  {title:'Weekly Lineup',client:'OBI sound & kitchen',cats:['social','motion'],tags:['Weekly series','Motion'],cover:'obi-lineup-nov.jpg',cycle:['obi-lineup-nov.jpg','obi-lineup-feb.jpg','obi-lineup-dec.jpg'],
    media:[{t:'v',src:'r04.mp4',poster:'r04.jpg'},{t:'i',src:'obi-lineup-nov.jpg'},{t:'i',src:'obi-lineup-feb.jpg'},{t:'i',src:'obi-lineup-dec.jpg'}]},
  {title:'Holiday Desserts',client:'We Love You',cats:['social'],tags:['Social series','Art direction'],...I('wly-date.jpg','wly-apple.jpg','wly-flan.jpg','wly-basque.jpg','wly-cookies.jpg')},
  {title:'Ran Danker Live',client:'NMC Live',cats:['motion'],tags:['Show poster','Motion'],...W('04')},
  {title:'Open-Air Aperitivo',client:'Café Europa',cats:['motion'],tags:['Event poster','Motion'],...W('11')},
- {title:'OBI × Downtown Ramen',client:'OBI',cats:['motion'],tags:['Collab series','Motion'],...W('12')},
+ {title:'OBI × Downtown Ramen',client:'OBI',stats:'308 shares · 229 likes',cats:['motion'],tags:['Collab series','Motion'],...W('12')},
  {title:'Golden Illusion',client:'Galleria Europa',cats:['motion'],tags:['Event poster','Motion'],...W('03')},
  {title:'Purim Disco Night',client:'Event',cats:['motion'],tags:['Event poster','Illustration'],...W('05')},
  {title:'Artist Visual',client:'Music release',cats:['motion'],tags:['Cover art','Motion'],...W('02')},
@@ -324,7 +325,8 @@ WORK.forEach((w,i)=>{
     ?`<video muted loop playsinline preload="none" poster="${M(w.cover)}" src="${M(w.preview)}"></video>`
     :`<img src="${M(w.cover)}" alt="${w.tags[0]}" loading="lazy" class="${cls}">`;
   const badge=w.media.some(m=>m.t==='a')?'<span class="badge">▶ Reel · sound</span>':w.media.length>1?`<span class="badge">${w.media.length} pieces</span>`:'';
-  b.innerHTML=`<div class="thumb">${media}${badge}<span class="open">View ↗</span></div>
+  const st=w.stats?`<span class="stats">${w.stats}</span>`:'';
+  b.innerHTML=`<div class="thumb">${media}${badge}${st}<span class="open">View ↗</span></div>
 `;
   b.setAttribute('aria-label',`${w.tags.join(', ')}. Open`);
   b.onclick=()=>open(i);grid.appendChild(b);
@@ -363,7 +365,7 @@ function show(i){stopAll();cur=i;const w=WORK[i],vis=visible();
   lg.classList.toggle('single',w.media.length===1);lg.scrollLeft=0;
   const first=lg.querySelector('video');if(first&&first.muted)first.play().catch(()=>{});
   document.getElementById('lbTitle').textContent='';document.getElementById('lbClient').textContent='';
-  document.getElementById('lbTags').innerHTML=w.tags.map(t=>`<span>${t}</span>`).join('');
+  document.getElementById('lbTags').innerHTML=w.tags.map(t=>`<span>${t}</span>`).join('')+(w.stats?`<span>${w.stats}</span>`:'');
   document.getElementById('lbHint').textContent=w.media.length>1?`${w.media.length} pieces · scroll sideways →`:(w.media[0].t==='a'?'Press play for sound 🔊':'');
   document.getElementById('lbCount').textContent=`${String(vis.indexOf(i)+1).padStart(2,'0')} / ${String(vis.length).padStart(2,'0')}`}
 function open(i){last=document.activeElement;show(i);lb.classList.add('on');document.body.style.overflow='hidden';document.getElementById('lbClose').focus()}
