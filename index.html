@@ -326,7 +326,6 @@ const WORK=[
  {title:'Meuyarim',client:'Meuyarim',cats:['branding'],tags:['Logo','Branding'],...I('logo-mey.jpg')},
  {title:'Sourdough Bakery',client:'Bakery reel',cats:['reels'],tags:['Reel','Content creation'],...R('02')},
  {title:'This Moment…',client:'AIG',cats:['social'],tags:['Ad campaign','Social'],...W('06')},
- {title:'Restaurant Menu',client:'OBI',cats:['print'],tags:['Menu design','Print'],...I('obi-menu-1.jpg','obi-menu-2.jpg'),fit:'contain'},
  {title:'OBI\'s Sliders',client:'OBI',cats:['social','motion'],tags:['Menu launch','Social'],...W('10')},
 ];
 WORK.forEach(w=>{w.cats=[...new Set(w.cats.map(c=>c==='motion'||c==='print'?'social':c))]});
