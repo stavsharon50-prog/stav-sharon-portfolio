@@ -398,6 +398,9 @@ WB.forEach(b=>b.onclick=()=>world(b.dataset.w));
 document.querySelectorAll('nav a[href="#ux"],nav a[href="#work"]').forEach(a=>a.onclick=e=>{e.preventDefault();world(a.getAttribute('href')==='#ux'?'ux':'social',true)});
 document.getElementById('nSoc').textContent=WORK.length;
 if(location.hash==='#ux'){world('ux');setTimeout(()=>document.getElementById('worlds').scrollIntoView(),50)}
+// keep the URL clean so a refresh starts at the top instead of jumping to a section
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+document.querySelectorAll('a[href^="#"]').forEach(a=>{if(a.onclick)return;a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
 
 // rotate logo on scroll
 (()=>{const lg=document.querySelector('.brand img');if(!lg||matchMedia('(prefers-reduced-motion: reduce)').matches)return;let t=false;
