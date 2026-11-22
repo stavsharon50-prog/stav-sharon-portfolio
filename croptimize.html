@@ -120,6 +120,9 @@ section{padding:clamp(72px,10vw,120px) 0 0}
 .grid6 .no{font-family:var(--mono);font-size:12px;color:var(--acc)}
 .grid6 h4{font-size:17px;letter-spacing:-.015em;margin:8px 0 4px}
 .grid6 p{color:var(--muted);font-size:14.5px}
+.grid6 p+p{margin-top:6px}.grid6 p b{color:var(--text);font-weight:600}
+.validate{max-width:640px;margin:36px auto 0;text-align:left}
+.validate .lbl{text-align:center;border:0;padding:0}
 @media(max-width:760px){.grid6{grid-template-columns:1fr}}
 
 /* design system */
@@ -201,13 +204,16 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="ask"><div class="who"><span class="av">PM</span>Procurement manager</div>Does this farm meet our spec, or not?</div>
   <div class="ask"><div class="who"><span class="av" style="background:#2f7a5c">HQ</span>Management</div>How exposed is our supply if this season goes wrong?</div>
   <div class="ask"><div class="who"><span class="av" style="background:#94631a">SC</span>Sourcing lead</div>Which region will still work for us in 2035?</div>
- </div></div>
+ </div>
+ <div class="n"><p class="note">Three roles, defined with the founders from the product brief.</p></div></div>
 </section>
 
 <section>
  <div class="n rv">
-  <span class="tag">Starting points</span>
-  <p class="stmt">No existing product, no competitors and no users to interview in Israel. <span class="acc">So I aligned with the founders on four principles first.</span></p>
+  <span class="tag">Design process &amp; constraints</span>
+  <p class="stmt">A tight timeline, no existing product, no competitors and no access to end users. <span class="acc">So instead of guessing, I aligned with the founders on four principles.</span></p>
+  <p class="body">User interviews and usability testing weren't possible. I worked from the business goals and the founders' requirements, turned them into clear flows, and explored different approaches until the interface made complex climate data simple to act on.</p>
+  <p class="lbl" style="border:0;margin-top:40px">Design considerations</p>
  </div>
  <div class="w"><div class="cards rv">
   <div class="card"><span class="no">01</span><h4>Decisions, not data</h4><p>Users want a clear answer: does this farm meet our needs or not?</p></div>
@@ -219,9 +225,9 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 
 <section>
  <div class="n rv">
-  <span class="tag">Key insight</span>
-  <h2 class="huge">People didn't need more data. <span class="acc">They needed a decision.</span></h2>
-  <p class="body">Every screen was shaped around one question the user needs answered. The data is still there, but it supports the answer instead of competing with it.</p>
+  <span class="tag">The guiding idea</span>
+  <h2 class="huge">People don't need more data. <span class="acc">They need a decision.</span></h2>
+  <p class="body">This became the rule for every screen: shape it around one question the user needs answered. The data is still there, but it supports the answer instead of competing with it.</p>
  </div>
 </section>
 
@@ -237,7 +243,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="tile dark vtile rv">
    <div class="browser"><div class="bar"><i></i><i></i><i></i><em>Find farms</em></div>
     <video src="media/crop2/find.mp4" poster="media/crop2/find.jpg" muted loop playsinline preload="metadata"></video></div>
-   <p class="cap dk">Search that sets expectations. Quick-select controls replace long dropdowns, and the button shows how many results to expect before you leave the search.</p>
+   <p class="cap dk">Search that sets expectations. Quick-select controls replace long dropdowns, and the button shows how many results to expect before you leave the search, so no one lands on an empty page.</p>
   </div>
  </div>
 </section>
@@ -247,7 +253,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="tile vtile rv">
    <div class="browser"><div class="bar"><i></i><i></i><i></i><em>Filters</em></div>
     <video src="media/crop2/filters.mp4" poster="media/crop2/filters.jpg" muted loop playsinline preload="metadata"></video></div>
-   <p class="cap">Filter by the real spec. Range sliders match the buyer's actual quality requirements, and active filters stay visible as chips you can remove.</p>
+   <p class="cap">Filter by the real spec. Buyers think in spec ranges, not single values, so range sliders match their actual quality requirements. Active filters stay visible as chips, so it's always clear why a farm is in the results.</p>
   </div>
  </div>
 </section>
@@ -259,8 +265,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div>
    <p class="stmt" style="text-align:left">One farm, <span class="acc">one page.</span></p>
    <div class="pts" style="margin-top:22px">
-    <div><h4>Risk over time</h4><p>A yearly chart shows when dehydration or climate risk peaks, instead of a single number.</p></div>
-    <div><h4>Scouting report</h4><p>Climate stability, dehydration and soil disease, each with a clear status.</p></div>
+    <div><h4>Risk over time</h4><p>A yearly chart shows when dehydration or climate risk peaks. A single number would hide the year things go wrong.</p></div>
+    <div><h4>Scouting report</h4><p>Climate stability, dehydration and soil disease, each with a clear status, so the user reads a verdict, not raw readings.</p></div>
     <div><h4>Crop quality against the spec</h4><p>Protein, gluten, fiber and starch on range sliders, so a mismatch is visible at a glance.</p></div>
    </div>
   </div>
@@ -274,9 +280,9 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div>
    <p class="stmt" style="text-align:left">Who stands behind the crop, <span class="acc">in one place.</span></p>
    <div class="pts" style="margin-top:22px">
-    <div><h4>One overall score</h4><p>Based on delivery, volume, climate resilience and quality over the last five years.</p></div>
-    <div><h4>Parcels and crop buyers</h4><p>Which land the vendor works and who already buys from them.</p></div>
-    <div><h4>Contact in one click</h4><p>Details and a direct action, without leaving the farm page.</p></div>
+    <div><h4>One overall score</h4><p>Based on delivery, volume, climate resilience and quality over the last five years. One good season can be luck; five years shows reliability.</p></div>
+    <div><h4>Parcels and crop buyers</h4><p>Which land the vendor works and who already buys from them, because other buyers are a strong trust signal.</p></div>
+    <div><h4>Contact in one click</h4><p>Details and a direct action, so a decision doesn't end in a dead end.</p></div>
    </div>
   </div>
  </div>
@@ -289,15 +295,15 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  </div>
  <div class="w">
   <div class="iter one rv">
-   <figure><img src="media/cs/v1-results.jpg" alt="Concept 1"><figcaption><p class="lbl">First concept · Data first</p><p>Equal-weight cards and satellite imagery. Everything was visible, and nothing was prioritized. The changes below came out of it.</p></figcaption></figure>
+   <figure><img src="media/cs/v1-results.jpg" alt="Concept 1"><figcaption><p class="lbl">First concept · Data first</p><p>Equal-weight cards and satellite imagery. Everything was visible, and nothing was prioritized. Each change below answers a problem it exposed.</p></figcaption></figure>
   </div>
   <div class="grid6 rv">
-   <div><span class="no">01</span><h4>Key facts first</h4><p>Location, tonnage, risk and vendors lead every farm page.</p></div>
-   <div><span class="no">02</span><h4>One risk scale</h4><p>The same risk colors everywhere in the product.</p></div>
-   <div><span class="no">03</span><h4>Quality in context</h4><p>Shown against the buyer's required range.</p></div>
-   <div><span class="no">04</span><h4>Visible filters</h4><p>Active filters appear as removable chips.</p></div>
-   <div><span class="no">05</span><h4>Clean maps</h4><p>Vector maps instead of busy satellite imagery.</p></div>
-   <div><span class="no">06</span><h4>Clear actions</h4><p>Labeled actions and navigation, no guessing.</p></div>
+   <div><span class="no">01</span><h4>Key facts first</h4><p><b>Problem</b> With equal-weight cards, the facts that drive a decision were buried.</p><p><b>Change</b> Location, tonnage, risk and vendors lead every farm page.</p></div>
+   <div><span class="no">02</span><h4>One risk scale</h4><p><b>Problem</b> If risk looks different on each screen, users have to relearn it every time.</p><p><b>Change</b> The same three risk colors everywhere in the product.</p></div>
+   <div><span class="no">03</span><h4>Quality in context</h4><p><b>Problem</b> A quality number alone doesn't say if it's good enough.</p><p><b>Change</b> Shown against the buyer's required range.</p></div>
+   <div><span class="no">04</span><h4>Visible filters</h4><p><b>Problem</b> Hidden filters make results hard to trust.</p><p><b>Change</b> Active filters appear as removable chips.</p></div>
+   <div><span class="no">05</span><h4>Clean maps</h4><p><b>Problem</b> Satellite imagery competed with the risk data for attention.</p><p><b>Change</b> Vector maps that let the risk colors carry the meaning.</p></div>
+   <div><span class="no">06</span><h4>Clear actions</h4><p><b>Problem</b> Icon-only actions made users guess what happens next.</p><p><b>Change</b> Labeled actions and navigation.</p></div>
   </div>
  </div>
 </section>
@@ -332,7 +338,15 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <div class="n rv">
   <span class="tag">Reflection</span>
   <p class="stmt">Complex data doesn't need a complex interface. <span class="acc">It needs a clear question on every screen.</span></p>
-  <p class="body">Designing a product with no benchmark meant every decision had to be explained, not borrowed. Next, I would test the flows with procurement managers once the product reaches its first customers, starting with Farm details and the Vendor profile, where the decision actually happens.</p>
+  <p class="body">Without a benchmark or users to test with, every decision had to be justified on its own, not borrowed. It taught me to prioritize ruthlessly, design around one clear question per screen, and know exactly what to validate first once users are available.</p>
+  <div class="validate">
+   <p class="lbl">What I'd validate next</p>
+   <div class="pts">
+    <div><h4>Farm details</h4><p>Can a procurement manager tell whether a farm meets spec in under a minute?</p></div>
+    <div><h4>Risk over time</h4><p>Do users read the 10-year risk chart the way it was intended?</p></div>
+    <div><h4>Vendor profile</h4><p>Do they trust the overall score, and what would they need to see behind it?</p></div>
+   </div>
+  </div>
   <p class="note">Data shown in the screens is illustrative.</p>
  </div>
 </section>
