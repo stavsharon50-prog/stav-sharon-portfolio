@@ -82,6 +82,7 @@ nav a{white-space:nowrap}@media(max-width:600px){nav a{padding:6px 10px;font-siz
 .wsw button[aria-selected=true]{background:var(--ink);color:#fff}
 .wsw button:not([aria-selected=true]):hover{background:var(--ink-soft);color:var(--ink)}
 .world[hidden]{display:none}
+.results[hidden]{display:none}
 .wsw button{white-space:nowrap}@media(max-width:600px){.wsw button small{display:none}.wsw button{font-size:13px;padding:11px 6px}}
 #work .section-head h2,#ux .section-head h2{display:none}#work .section-head,#ux .section-head{border-top:0;padding-top:0}
 /* ux case studies */
@@ -390,7 +391,7 @@ b.textContent=ok?'Copied ✓':M;b.classList.toggle('done',ok);clearTimeout(b._t)
 
 // worlds switch
 const WB=document.querySelectorAll('.wsw button');
-function world(w,scroll){WB.forEach(b=>b.setAttribute('aria-selected',b.dataset.w===w));document.getElementById('ux').hidden=w!=='ux';document.getElementById('work').hidden=w!=='social';
+function world(w,scroll){WB.forEach(b=>b.setAttribute('aria-selected',b.dataset.w===w));document.getElementById('ux').hidden=w!=='ux';document.getElementById('work').hidden=w!=='social';document.getElementById('results').hidden=w!=='social';
   if(w==='social')grid.querySelectorAll('video').forEach(v=>{const r=v.getBoundingClientRect();if(r.top<innerHeight)v.play().catch(()=>{})});
   if(scroll)document.getElementById('worlds').scrollIntoView({behavior:'smooth'})}
 WB.forEach(b=>b.onclick=()=>world(b.dataset.w));
