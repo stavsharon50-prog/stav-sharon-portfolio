@@ -114,6 +114,9 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 .steps li span{font-size:13.5px;color:var(--muted)}
 .steps li.on{background:#fff;box-shadow:0 10px 26px #f2416f1a}
 .steps li.on .k{background:var(--pink);color:#fff}
+.steps li.x .k{background:transparent;box-shadow:inset 0 0 0 1px #1d1b2626;font-size:8.5px;letter-spacing:.04em;text-transform:uppercase}
+.steps li.x b{font-weight:600;color:var(--muted)}
+.steps li.x.on .k{background:var(--pink);color:#fff;box-shadow:none}
 @media(max-width:860px){.flow{grid-template-columns:1fr;justify-items:center}.steps{width:100%}}
 @media(max-width:520px){.steps{grid-template-columns:1fr}}
 
@@ -185,7 +188,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="rv">
    <span class="logo-chip"><img src="media/vidit/logo.png" alt="Vidit">Dating app · iOS · Research &amp; UX/UI</span>
    <h1>Less texting.<br><em>More real.</em></h1>
-   <p class="lead">Vidit is a dating app built around real conversations. Every profile is video-verified, and every match gets 10 messages before it's time to actually talk.</p>
+   <p class="lead">Vidit is a dating app built around real conversations. Every profile would be video-verified, and every match gets 10 messages before it's time to actually talk.</p>
    <div class="chips">
     <span><b>Role</b>Product designer, end to end</span>
     <span><b>Platform</b>iOS app</span>
@@ -239,7 +242,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  </div>
  <div class="w"><div class="briefs rv">
   <div class="brief"><div><span class="lbl">Asked</span><p>Book a call right after every match</p></div><div><span class="lbl">Found</span><p>Only 1 of 107 wanted that. At the same time, voice conversations convey emotion more accurately than text (Kraus, American Psychologist, 2017).</p></div><div class="out"><span class="lbl">Outcome</span><p>A compromise: 10 messages first, then a next step. In this redesign I added a choice: talk, meet, or not yet.</p></div></div>
-  <div class="brief"><div><span class="lbl">Asked</span><p>Face recognition plus an ID scan</p></div><div><span class="lbl">Found</span><p>72% want mandatory verification, but storing face and ID data is heavily restricted in parts of Europe, and the app was meant to go international.</p></div><div class="out"><span class="lbl">Outcome</span><p>A mandatory selfie-video check matched to profile photos, with consent. The video is deleted after the check.</p></div></div>
+  <div class="brief"><div><span class="lbl">Asked</span><p>Face recognition plus an ID scan</p></div><div><span class="lbl">Found</span><p>72% want mandatory verification, but storing face and ID data is heavily restricted in parts of Europe, and the app was meant to go international.</p></div><div class="out"><span class="lbl">Outcome</span><p>A mandatory selfie-video check matched to profile photos, with consent. The video would be deleted after the check.</p></div></div>
   <div class="brief"><div><span class="lbl">Asked</span><p>A password at sign-up</p></div><div><span class="lbl">Found</span><p>The apps I audited use a phone number and SMS code only. A password adds friction without adding trust.</p></div><div class="out"><span class="lbl">Outcome</span><p>Phone number and code. No password.</p></div></div>
  </div></div>
 </section>
@@ -278,7 +281,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <div class="goal g1"><span class="no">01</span><div><h4>Verified profiles</h4><p>A short video check for everyone, matched to their photos, to reduce impersonation and fake profiles.</p></div></div>
   <div class="goal g2"><span class="no">02</span><div><h4>10 messages, then a next step</h4><p>Enough to break the ice. Then both choose what feels right, instead of texting forever.</p></div></div>
   <div class="goal g3"><span class="no">03</span><div><h4>Respect everyone's time</h4><p>Both sides share when they're free, and the app finds the overlap. No back and forth.</p></div></div>
-  <div class="goal g4"><span class="no">04</span><div><h4>Safer by default</h4><p>The number stays private, verification videos are deleted, and block or report is always one tap away.</p></div></div>
+  <div class="goal g4"><span class="no">04</span><div><h4>Safer by default</h4><p>The number stays private, verification videos would be deleted, and block or report is always one tap away.</p></div></div>
  </div></div>
 </section>
 
@@ -286,7 +289,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  <div class="n rv">
   <span class="tag">Onboarding &amp; verification</span>
   <h2 class="huge">From download to verified <em>in 7 steps</em></h2>
-  <p class="note">Welcome and confirmation screens aren't counted as steps.</p>
+  <p class="note">Numbered: the 7 steps that ask something of the user. Welcome, checking and confirmation screens are shown but not counted.</p>
  </div>
  <div class="w">
   <div class="flow rv">
@@ -294,16 +297,16 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
     <img src="media/vidit/01-welcome.jpg" alt=""><img src="media/vidit/02-phone.jpg" alt=""><img src="media/vidit/03-code.jpg" alt=""><img src="media/vidit/04-basics.jpg" alt=""><img src="media/vidit/05-lifestyle.jpg" alt=""><img src="media/vidit/06-photos.jpg" alt=""><img src="media/vidit/07-verify.jpg" alt=""><img src="media/vidit/08-scan.jpg" alt=""><img src="media/vidit/08b-verifying.jpg" alt=""><img src="media/vidit/09-verified.jpg" alt="">
    </div>
    <ol class="steps" id="steps">
-    <li><span class="k">01</span><div><b>Welcome</b><span>The promise, up front</span></div></li>
-    <li><span class="k">02</span><div><b>Phone</b><span>Never shown</span></div></li>
-    <li><span class="k">03</span><div><b>Code</b><span>SMS check</span></div></li>
-    <li><span class="k">04</span><div><b>Basics</b><span>Incl. "looking for"</span></div></li>
-    <li><span class="k">05</span><div><b>Quick ones</b><span>8 screens → 1</span></div></li>
-    <li><span class="k">06</span><div><b>Photos</b><span>3 minimum</span></div></li>
-    <li><span class="k">07</span><div><b>Why verify</b><span>Trust first</span></div></li>
-    <li><span class="k">08</span><div><b>Face scan</b><span>3 seconds</span></div></li>
-    <li><span class="k">09</span><div><b>Checking</b><span>Visible progress</span></div></li>
-    <li><span class="k">10</span><div><b>Verified</b><span>Badge earned</span></div></li>
+    <li class="x"><span class="k">Start</span><div><b>Welcome</b><span>The promise, up front</span></div></li>
+    <li><span class="k">01</span><div><b>Phone</b><span>Never shown</span></div></li>
+    <li><span class="k">02</span><div><b>Code</b><span>SMS check</span></div></li>
+    <li><span class="k">03</span><div><b>Basics</b><span>Incl. "looking for"</span></div></li>
+    <li><span class="k">04</span><div><b>Quick ones</b><span>8 screens → 1</span></div></li>
+    <li><span class="k">05</span><div><b>Photos</b><span>3 minimum</span></div></li>
+    <li><span class="k">06</span><div><b>Why verify</b><span>Trust first</span></div></li>
+    <li><span class="k">07</span><div><b>Face scan</b><span>3 seconds</span></div></li>
+    <li class="x"><span class="k">Wait</span><div><b>Checking</b><span>Visible progress</span></div></li>
+    <li class="x"><span class="k">Done</span><div><b>Verified</b><span>Badge earned</span></div></li>
    </ol>
   </div>
  </div>
@@ -340,7 +343,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div>
     <span class="num">01 · Trust</span>
     <h3>A short video check, matched to your photos</h3>
-    <p class="body">Before anyone can match, they record a short selfie video. It's compared with their profile photos to confirm they're the person in the pictures, then deleted. It isn't a full ID check and doesn't guarantee that every user is genuine or safe, but it helps reduce impersonation.</p>
+    <p class="body">Before anyone can match, they record a short selfie video. It's compared with their profile photos to confirm they're the person in the pictures, then deleted. This is a proposed design, not a system that was built and tested: the matching technology and privacy handling would need technical and legal review before launch. It isn't a full ID check and doesn't guarantee that every user is genuine or safe, but it helps reduce impersonation.</p>
     <ul class="pts"><li>Live guidance: face found, good light, turn your head</li><li>Private: the video never appears on the profile</li><li>A "checking" screen shows the work being done. People trust a result more when they see the effort behind it</li></ul>
    </div>
   </div>
