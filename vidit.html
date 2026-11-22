@@ -66,6 +66,17 @@ section{padding:clamp(80px,11vw,130px) 0 0}
 .t1{background:#ffe9e1}.t2{background:#fde4ea}.t3{background:#f4f0ec}
 .callout{margin-top:14px;border-radius:22px;padding:22px 24px;background:var(--ink);color:#f3eef1;font-size:15.5px;display:flex;gap:14px;align-items:flex-start}
 .callout .lbl{color:#ffb9a6;flex:none;padding-top:3px}
+.st .so{margin-top:auto;padding-top:10px;border-top:1px solid #1d1b261f;font-size:13px;line-height:1.4;opacity:.85}
+.st .so b{font-family:var(--sans);font-size:inherit;font-weight:600;letter-spacing:0;line-height:inherit}
+.why{max-width:760px;margin:40px auto 0;display:grid;gap:14px;padding:0 clamp(18px,4vw,40px);text-align:left}
+.why>div{border-radius:22px;padding:22px 24px;background:#f6f2ef}
+.why .lbl{display:block;margin-bottom:8px}
+.why p{font-size:15px;line-height:1.55}
+.why ul{list-style:none;display:grid;gap:8px;margin-top:10px}
+.why li{font-size:14.5px;line-height:1.5;padding-left:16px;position:relative}
+.why li:before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--pink)}
+.why .tr{background:var(--blush)}
+.why .tr .lbl{color:var(--pink)}
 @media(max-width:860px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.st{padding:18px}.st p{font-size:13.5px}.callout{flex-direction:column;gap:6px}}
 
 /* brief vs research */
@@ -210,12 +221,12 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
  </div>
  <div class="w">
   <div class="stats rv">
-   <div class="st t1"><b>5%</b><p>rated their dating-app experience 4 or 5 out of 5. The average was 2.4.</p></div>
-   <div class="st t2"><b>89%</b><p>want to know what the other person is looking for: serious, casual or not sure.</p></div>
-   <div class="st t3"><b>75%</b><p>want to see at least 3 photos before deciding.</p></div>
-   <div class="st t2"><b>72%</b><p>said mandatory verification would make them feel safer.</p></div>
-   <div class="st t3"><b>63%</b><p>move the chat to WhatsApp or Instagram within a day.</p></div>
-   <div class="st t1"><b>1 of 110</b><p>wanted a phone call right after a match. 70% only after days of texting or a first date.</p></div>
+   <div class="st t1"><b>5%</b><p>rated their dating-app experience 4 or 5 out of 5. The average was 2.4.</p><p class="so"><b>Led to:</b> confirming the problem was worth solving.</p></div>
+   <div class="st t2"><b>89%</b><p>want to know what the other person is looking for: serious, casual or not sure.</p><p class="so"><b>Led to:</b> "Looking for" in onboarding, shown first on every profile.</p></div>
+   <div class="st t3"><b>75%</b><p>want to see at least 3 photos before deciding.</p><p class="so"><b>Led to:</b> a minimum of 3 photos per profile.</p></div>
+   <div class="st t2"><b>72%</b><p>said mandatory verification would make them feel safer.</p><p class="so"><b>Led to:</b> a required video check before anyone can match.</p></div>
+   <div class="st t3"><b>63%</b><p>move the chat to WhatsApp or Instagram within a day.</p><p class="so"><b>Led to:</b> calls inside the app, so no one has to share a number.</p></div>
+   <div class="st t1"><b>1 of 110</b><p>wanted a phone call right after a match. 70% only after days of texting or a first date.</p><p class="so"><b>Led to:</b> 10 messages first, instead of a call right away.</p></div>
   </div>
   <div class="callout rv"><span class="lbl">Raya observation</span><p>In the Raya observation, the photo step was where all three participants got stuck. Two left the app to ask friends and edit their photos before coming back.</p></div>
  </div>
@@ -242,14 +253,32 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 
 <section>
  <div class="n rv">
+  <span class="tag">The key decision</span>
+  <h2 class="huge">Why <em>10 messages?</em></h2>
+  <p class="body">A call right after the match was the founders' core idea, the thing that made Vidit different. The research pointed the other way: only 1 of 110 wanted it, and most would rather text first. Forcing a call risked scaring people off before the product had a chance.</p>
+ </div>
+ <div class="why rv">
+  <div><span class="lbl">The options on the table</span>
+   <ul>
+    <li><b>A call right after the match</b>, as in the brief. True to the idea, but likely to drive most users away.</li>
+    <li><b>Unlimited texting</b>, like every other app. Comfortable, but it brings back the endless chats Vidit was meant to fix.</li>
+    <li><b>A short text phase, then a next step.</b> Keeps the call as the goal, but lets people break the ice first.</li>
+   </ul></div>
+  <div><span class="lbl">Why a middle ground</span><p>I chose the third option: a research-driven compromise between what the founders wanted and what users said they were comfortable with. Ten messages is enough to break the ice, and short enough that the call stays in sight. It's a starting point to test, not a proven number.</p></div>
+  <div class="tr"><span class="lbl">The trade-off</span><p>A limit can move conversations forward, but it can also create pressure, and locking the chat until the call can take away a sense of control. That's why the redesign adds a choice when the messages run out (talk, meet, or not yet), keeps the counter visible so it never comes as a surprise, and lets "Not yet" add 5 more messages instead of ending the chat.</p></div>
+ </div>
+</section>
+
+<section>
+ <div class="n rv">
   <span class="tag">Design principles</span>
   <h2 class="huge">The rules <em>behind the product</em></h2>
  </div>
  <div class="w"><div class="goals rv">
-  <div class="goal g1"><span class="no">01</span><div><h4>Real people only</h4><p>A short video check for everyone, matched to their photos, so the badge means something.</p></div></div>
+  <div class="goal g1"><span class="no">01</span><div><h4>Verified profiles</h4><p>A short video check for everyone, matched to their photos, to reduce impersonation and fake profiles.</p></div></div>
   <div class="goal g2"><span class="no">02</span><div><h4>10 messages, then a next step</h4><p>Enough to break the ice. Then both choose what feels right, instead of texting forever.</p></div></div>
   <div class="goal g3"><span class="no">03</span><div><h4>Respect everyone's time</h4><p>Both sides share when they're free, and the app finds the overlap. No back and forth.</p></div></div>
-  <div class="goal g4"><span class="no">04</span><div><h4>Safe by default</h4><p>The number stays private, verification videos are deleted, and block or report is always one tap away.</p></div></div>
+  <div class="goal g4"><span class="no">04</span><div><h4>Safer by default</h4><p>The number stays private, verification videos are deleted, and block or report is always one tap away.</p></div></div>
  </div></div>
 </section>
 
@@ -311,7 +340,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div>
     <span class="num">01 · Trust</span>
     <h3>A short video check, matched to your photos</h3>
-    <p class="body">Before anyone can match, they record a short selfie video. It's compared with their profile photos to confirm they're the person in the pictures, then deleted. It isn't a full ID check, but it makes fake profiles much harder.</p>
+    <p class="body">Before anyone can match, they record a short selfie video. It's compared with their profile photos to confirm they're the person in the pictures, then deleted. It isn't a full ID check and doesn't guarantee that every user is genuine or safe, but it helps reduce impersonation.</p>
     <ul class="pts"><li>Live guidance: face found, good light, turn your head</li><li>Private: the video never appears on the profile</li><li>A "checking" screen shows the work being done. People trust a result more when they see the effort behind it</li></ul>
    </div>
   </div>
@@ -361,8 +390,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div>
     <span class="num">06 · After the call</span>
     <h3>A clear next step, and a kind ending</h3>
-    <p class="body">After the call, each person answers privately: keep talking, meet in person, or not a match. If both say yes, the chat opens with no limits. If not, it closes kindly, so nobody gets ghosted.</p>
-    <ul class="pts"><li>Answers are private until both respond</li><li>"Let's meet" suggests a spot nearby</li><li>Designed to reduce ghosting with a clear, kind ending</li></ul>
+    <p class="body">After the call, each person answers privately: keep talking, meet in person, or not a match. If both say yes, the chat opens with no limits. If not, it closes kindly, which reduces ambiguity and encourages closure.</p>
+    <ul class="pts"><li>Answers are private until both respond</li><li>"Let's meet" suggests a spot nearby</li><li>People can still disappear, but a clear ending makes it less likely</li></ul>
    </div>
   </div>
  </div>
@@ -391,7 +420,16 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
   <h2 class="huge">A constraint can be <em>the product</em></h2>
   <p class="body">The brief asked for a call after every match. The research said almost nobody wants that. Keeping the goal while giving people a choice is the part of this project I'm proudest of.</p>
   <p class="body">Designing from zero meant defining the rules before the screens: what verification means, when a chat moves forward, and how to end things kindly. Once the rules were clear, the interface could stay simple.</p>
-  <p class="body"><b style="color:var(--ink)">Limits:</b> the survey was mostly women (83%), the Raya observation had three participants, and the screens weren't usability-tested before the startup stopped. Next, I'd test the "What's next" choice, starting with how often people pick "Not yet" twice.</p>
+  <p class="body"><b style="color:var(--ink)">Limits:</b> the survey was mostly women (83%), the Raya observation had three participants, and the screens weren't usability-tested before the startup stopped. </p>
+  <div class="why">
+   <div><span class="lbl">What I'd measure if it launched</span>
+    <ul>
+     <li><b>Chat to call:</b> how many matches reach a booked call, and how often people pick "Not yet" twice</li>
+     <li><b>Call completion:</b> how many booked calls actually happen</li>
+     <li><b>Onboarding drop-off:</b> where people leave, especially at photos and the video check</li>
+     <li><b>Feeling safe:</b> whether users feel safer than in other apps, through a short in-app survey</li>
+    </ul></div>
+  </div>
   <p class="note">Names and photos shown are illustrative.</p>
  </div>
 </section>
