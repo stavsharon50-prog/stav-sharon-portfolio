@@ -169,8 +169,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
 .lb .count{font-size:12px;opacity:.6;margin-bottom:12px}
 .lb h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,42px);line-height:1;margin-bottom:10px}
 .lb .lb-client{opacity:.75;margin-bottom:14px}
-.lb .lb-tags{display:flex;flex-wrap:wrap;gap:6px}
-.lb .lb-tags span{border:1px solid #ffffff55;border-radius:99px;padding:3px 10px;font-size:12px}
 .lb-nav{display:flex;gap:8px;margin-top:24px}
 .lb-nav button,.lb-close{border:1px solid #ffffff55;border-radius:99px;padding:8px 14px;color:#fff;font-size:13px;transition:background .2s}
 .lb-nav button:hover,.lb-close:hover{background:#ffffff22}
@@ -289,7 +287,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;paddin
       <div class="count" id="lbCount"></div>
       <h3 id="lbTitle"></h3>
       <div class="lb-client" id="lbClient"></div>
-      <div class="lb-tags" id="lbTags"></div>
       <div class="lb-hint" id="lbHint"></div>
       <div class="lb-nav"><button id="lbPrev" type="button">← Prev</button><button id="lbNext" type="button">Next →</button></div>
     </div>
@@ -375,7 +372,6 @@ function show(i){stopAll();cur=i;const w=WORK[i],vis=visible();
   lg.classList.toggle('single',w.media.length===1);lg.scrollLeft=0;
   const first=lg.querySelector('video');if(first&&first.muted)first.play().catch(()=>{});
   document.getElementById('lbTitle').textContent='';document.getElementById('lbClient').textContent='';
-  document.getElementById('lbTags').innerHTML=w.tags.map(t=>`<span>${t}</span>`).join('');
   document.getElementById('lbHint').textContent=w.media.length>1?`${w.media.length} pieces · scroll sideways →`:(w.media[0].t==='a'?'Press play for sound 🔊':'');
   document.getElementById('lbCount').textContent=`${String(vis.indexOf(i)+1).padStart(2,'0')} / ${String(vis.length).padStart(2,'0')}`}
 function open(i){last=document.activeElement;show(i);lb.classList.add('on');document.body.style.overflow='hidden';document.getElementById('lbClose').focus()}
