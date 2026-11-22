@@ -123,6 +123,7 @@ section{padding:clamp(72px,10vw,120px) 0 0}
 .grid6 p+p{margin-top:6px}.grid6 p b{color:var(--text);font-weight:600}
 .validate{max-width:640px;margin:36px auto 0;text-align:left}
 .validate .lbl{text-align:center;border:0;padding:0}
+.iter.maps img{aspect-ratio:2.4;object-position:center}
 @media(max-width:760px){.grid6{grid-template-columns:1fr}}
 
 /* design system */
@@ -195,7 +196,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 <section>
  <div class="n rv">
   <span class="tag">The problem</span>
-  <p class="stmt">Croptimize's models could predict where a crop will grow best over the coming decade. <span class="acc">But there was no interface, and nothing like it to learn from.</span></p>
+  <p class="stmt">Croptimize's models could predict where a crop will grow best over the coming decade. <span class="acc">But there was no interface, and no direct benchmark to learn from.</span></p>
   <p class="quote">"Where should we source from, and how safe is it?"</p>
   <small>The question behind every procurement decision</small>
   <p class="body">Croptimize is an Israeli climate-tech startup. It combines crop models developed at the Hebrew University with AI and geospatial data. The founders defined what users should get. My job was to make it understandable to people who aren't data scientists, and to design the whole experience around it.</p>
@@ -211,7 +212,7 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 <section>
  <div class="n rv">
   <span class="tag">Design process &amp; constraints</span>
-  <p class="stmt">A tight timeline, no existing product, no competitors and no access to end users. <span class="acc">So instead of guessing, I aligned with the founders on four principles.</span></p>
+  <p class="stmt">A tight timeline, no existing product or direct benchmark, and no access to end users. <span class="acc">So instead of guessing, I aligned with the founders on four principles.</span></p>
   <p class="body">User interviews and usability testing weren't possible. I worked from the business goals and the founders' requirements, turned them into clear flows, and explored different approaches until the interface made complex climate data simple to act on.</p>
   <p class="lbl" style="border:0;margin-top:40px">Design considerations</p>
  </div>
@@ -226,8 +227,8 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
 <section>
  <div class="n rv">
   <span class="tag">The guiding idea</span>
-  <h2 class="huge">People don't need more data. <span class="acc">They need a decision.</span></h2>
-  <p class="body">This became the rule for every screen: shape it around one question the user needs answered. The data is still there, but it supports the answer instead of competing with it.</p>
+  <h2 class="huge">Turn complex data <span class="acc">into clear decisions.</span></h2>
+  <p class="body">This was the rule for every screen: shape it around one question the user needs answered. The data is still there, but it supports the answer instead of competing with it.</p>
  </div>
 </section>
 
@@ -304,6 +305,27 @@ footer{padding:40px var(--pad) 56px;max-width:1240px;margin:0 auto;display:flex;
    <div><span class="no">04</span><h4>Visible filters</h4><p><b>Problem</b> Hidden filters make results hard to trust.</p><p><b>Change</b> Active filters appear as removable chips.</p></div>
    <div><span class="no">05</span><h4>Clean maps</h4><p><b>Problem</b> Satellite imagery competed with the risk data for attention.</p><p><b>Change</b> Vector maps that let the risk colors carry the meaning.</p></div>
    <div><span class="no">06</span><h4>Clear actions</h4><p><b>Problem</b> Icon-only actions made users guess what happens next.</p><p><b>Change</b> Labeled actions and navigation.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="n rv">
+  <span class="tag">A closer look</span>
+  <p class="stmt">From a satellite photo <span class="acc">to a map that answers one question.</span></p>
+  <p class="body">On the farm page, a buyer asks two things: where is this farm, and how risky is it? The first concept's map answered neither well.</p>
+ </div>
+ <div class="w">
+  <div class="iter maps rv">
+   <figure><img src="media/cs/map-before.jpg" alt="First concept map, satellite imagery"><figcaption><p class="lbl">Before · First concept</p><p>A satellite photo for location, and risk in a separate map further down the page.</p></figcaption></figure>
+   <figure><img src="media/cs/map-after.jpg" alt="Final map, vector base with a risk layer"><figcaption><p class="lbl">After · Final</p><p>One calm vector map. Risk is a layer on it, and satellite is one click away.</p></figcaption></figure>
+  </div>
+  <div class="validate rv">
+   <div class="pts">
+    <div><h4>The usability problem</h4><p>Satellite imagery has its own greens, browns and reds, the same colors the risk scale relies on. Farm outlines and labels got lost in the terrain, and because risk sat in a different map, users had to connect the two in their heads.</p></div>
+    <div><h4>The decision</h4><p>A quiet vector base where the only strong color is risk. Farms are pins in low, medium or high, with a legend on the map and the key facts in a tooltip. The risk layer is on by default.</p></div>
+    <div><h4>The trade-off</h4><p>Seeing the actual land can still matter, for example when checking a farm's boundaries, so satellite stayed as a toggle instead of being removed. The map gives up a bit of visual wow at first glance, in exchange for being readable in seconds.</p></div>
+   </div>
   </div>
  </div>
 </section>
