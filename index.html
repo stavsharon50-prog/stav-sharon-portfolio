@@ -301,6 +301,8 @@ const I=(...s)=>({cover:s[0],cycle:s.length>1?s:null,media:s.map(x=>({t:'i',src:
 const WORK=[
  {title:'Tiramisu for ₪1',client:'Restaurant promo',cats:['social','motion'],tags:['Social post','Motion'],...W('01')},
  {title:'Sultana',client:'Sultana Jewelry',cats:['reels'],tags:['Reel','Content creation'],...R('01')},
+ {title:'Sultana × Mishimono',client:'Sultana Jewelry × Mishimono',cats:['reels'],tags:['Reel','Content creation'],cover:'r05.jpg',preview:'rp05.mp4',
+   media:[{t:'a',src:'r05.mp4',poster:'r05.jpg'},{t:'v',src:'w13.mp4',poster:'w13.jpg'},{t:'v',src:'w14.mp4',poster:'w14.jpg'}]},
  {title:'Weekly Lineup',client:'OBI sound & kitchen',cats:['social','motion'],tags:['Weekly series','Motion'],cover:'obi-lineup-nov.jpg',cycle:['obi-lineup-nov.jpg','obi-lineup-feb.jpg','obi-lineup-dec.jpg'],
    media:[{t:'v',src:'r04.mp4',poster:'r04.jpg'},{t:'i',src:'obi-lineup-nov.jpg'},{t:'i',src:'obi-lineup-feb.jpg'},{t:'i',src:'obi-lineup-dec.jpg'}]},
  {title:'Holiday Desserts',client:'We Love You',cats:['social'],tags:['Social series','Art direction'],...I('wly-date.jpg','wly-apple.jpg','wly-flan.jpg','wly-basque.jpg','wly-cookies.jpg')},
