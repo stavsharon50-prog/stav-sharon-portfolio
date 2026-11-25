@@ -117,9 +117,12 @@ nav a{white-space:nowrap}@media(max-width:600px){nav a{padding:6px 10px;font-siz
 @media(max-width:900px){.res-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-left:calc(-1*var(--pad));margin-right:calc(-1*var(--pad));padding:0 var(--pad) 6px;scroll-padding-inline:var(--pad);scrollbar-width:none}.res-track::-webkit-scrollbar{display:none}.res-track figure{flex:none;width:78%;scroll-snap-align:start}}
 .clients{margin-top:clamp(64px,8vw,110px)}
 .logos{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:6px 0 2px}
-.logos-track{display:flex;width:max-content;animation:logoloop 40s linear infinite;align-items:center}
+.logos-track{display:flex;width:max-content;animation:logoloop 30s linear infinite;align-items:center;will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .logos-track img{margin-right:48px}
-@keyframes logoloop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes logoloop{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.logos img.sm{height:16px}
+@media(max-width:600px){.logos img.sm{height:18px}}
+@media(min-width:601px){.logos img.sm{height:25px}}
 .logos img{height:22px;width:auto;opacity:.55;filter:grayscale(1);transition:opacity .2s}
 .logos img:hover{opacity:1}
 
@@ -360,7 +363,7 @@ const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;let tick=0;
 if(!rm)setInterval(()=>{cyc.forEach(c=>{const im=c.children,k=[...im].findIndex(x=>x.classList.contains('on'));im[k].classList.remove('on');im[(k+1)%im.length].classList.add('on')})},1200);
 
 const L=document.getElementById('logos'),names=['yad2','AIG','NMC Live','Slimz','Paradiso','OBI','Café Europa','A.K.A.'];
-for(let r=0;r<2;r++)for(let k=0;k<3;k++)names.forEach((n,i)=>{const im=new Image();im.src=`media/c${i+1}.png`;const dup=r||k;im.alt=dup?'':n;if(dup)im.setAttribute('aria-hidden','true');L.appendChild(im)});
+for(let r=0;r<2;r++)for(let k=0;k<2;k++)names.forEach((n,i)=>{const im=new Image();im.src=`media/c${i+1}.png`;im.decoding='sync';if(i===7)im.className='sm';const dup=r||k;im.alt=dup?'':n;if(dup)im.setAttribute('aria-hidden','true');L.appendChild(im)});
 
 // lightbox
 const lb=document.getElementById('lb'),lg=document.getElementById('lbGallery');let cur=0,last=null;
